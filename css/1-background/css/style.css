@@ -1,0 +1,162 @@
+/* Exercice 1 */
+.bg-col-1{
+  background-color: #ff0000;
+}
+
+.bg-col-2{
+  background-color: #00ff00;
+}
+/* Fin exercice 1 */
+
+
+/* Exercice 2 */
+.bg-deg-1{
+  background: linear-gradient(#ff0000, #00ff00);
+}
+
+.bg-deg-2{
+  background: radial-gradient(#ff0000, #00ff00);
+}
+
+.bg-deg-3{
+  background: linear-gradient(to top right, #ff0000, #00ff00);
+}
+
+.bg-deg-4{
+  background: linear-gradient(70deg, #ff0000, #00ff00);
+}
+/* Fin exercice 2 */
+
+
+/* Exercice 3 */
+.bg-img-1{
+  background-image: url("../images/ville.jpg");
+}
+
+.bg-img-2{
+  background-image: url("../images/ville.jpg");
+  background-position: 50% 50%; 
+  /* center */
+}
+
+.bg-img-3{
+  background-image: url("../images/ville.jpg");
+  background-position: 100% 50%;
+  /* rigth */
+}
+/* Fin exercice 3 */
+
+
+/* Exercice 4 */
+.bg-chaton-1{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: no-repeat;
+}
+
+.bg-chaton-2{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: repeat-x;
+}
+
+.bg-chaton-3{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: repeat-y;
+}
+/* Fin exercice 4 */
+
+
+/* Exercice 5 */
+.bg-size-1{
+  background-image: url("../images/chaton.jpg");
+  background-size: 10%;
+}
+
+.bg-size-2{
+  background-image: url("../images/chaton.jpg");
+  background-size: 16.7% 50%;
+}
+
+.bg-size-3{
+  background-image: url("../images/chaton.jpg");
+  background-size: 110%;
+}
+/* Fin exercice 5 */
+
+
+/* Bonus size */
+.bg-size-b{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%; 
+  /* background-size: contain */
+}
+/* Fin bonus size */
+
+
+/* Exercice 5 */
+.bg-atta{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+  background-attachment: fixed;
+}
+/* Fin exercice 5 */
+
+
+/* Bonus attachement */
+.bg-atta-b{
+  background-image: url("../images/chaton.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover; 
+  background-attachment:scroll;
+}
+/* Fin bonus attachement */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ne pas toucher ! */
+body{
+  margin-bottom: 500px;
+}
+
+.margin{
+  margin: 30px;
+}
+
+div > .box1{
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 30px;
+}
+
+div > .box2{
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 30px;
+}

@@ -1,0 +1,135 @@
+#newsletter {
+    text-align: center;
+    background-color: #9b009d;
+    height: 50px;
+}
+
+span {
+    color: white;
+}
+
+button {
+    background-color: #0bd176;
+    color: white;
+    padding: 5px;
+}
+
+#champs_newsletter {
+    padding: 15px;
+}
+
+nav {
+    border-bottom: solid 1px gray;
+    height: 90px;
+}
+
+p {
+    font-family: 'Lato-Light', Fallback, sans-serif;
+}
+
+.menu+ul {
+    padding-top:20px;
+}
+
+ul {
+    list-style: none;
+}
+p+ul li {
+    font-family: 'Lato-Light', Fallback, sans-serif;;
+}
+
+h1:after {
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    margin: 30px auto;
+    width:5%;
+    height:3px;
+    background:#9b009d;
+}
+
+p+ul li::before {
+    content: "\2022";
+    color: #9b009d;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+#contenu {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 100px;
+}
+
+.menu ul{
+    padding-top: 30px;
+    font-size: 24px;
+
+}
+
+.logo1 {
+    display: inline;
+    position: relative;
+    left: 0px;
+}
+
+.logo1 img {
+    float: left;
+    padding: 5px;
+
+}
+
+.logo2 img {
+    float: left;
+    width: 150px;
+    margin-left:30px;
+}
+
+.menu li {
+    text-align: center;
+    display: inline;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-transform: uppercase;
+    float: left;
+}
+  
+
+h1 {
+    font-family: 'Lato-Light', Fallback, sans-serif;
+    font-size: 64px;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 100px;
+    position:relative;
+}
+
+h2 {
+    font-family: 'Lato-Light', Fallback, sans-serif;
+    font-weight: 200;
+    font-size: 36px;
+}
+
+footer {
+    background-color: #363636;
+    height: 300px;
+    bottom: 0;
+    text-align: center;
+}
+
+#section {
+    height: 100px;
+}
+
+#section div {
+    float: center
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+}

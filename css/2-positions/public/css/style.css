@@ -1,0 +1,50 @@
+body {
+  margin: 0
+}
+
+/* Exo margin */
+section{
+  background-color: #4da6ff;
+}
+
+h2{
+  background-color: yellow;
+  border: solid 2px;
+  height: 200px;
+}
+
+#tartine1 {
+  margin:50px;
+}
+
+
+#tartine2 {
+  margin-left:20px;
+}
+
+#tartine3 {
+  margin: auto;
+}
+/* fin exo margin */
+
+/* exo padding */
+#tartine4 {
+  padding: 50px;
+}
+
+#tartine5 {
+  padding-left: 20%;
+}
+/* fin exo padding */
+
+/* exo display */
+#tartine+#android {
+  
+}
+/* fin exo display */
+
+/* exo position */
+/* fin exo position */
+
+/* exo position (priorité) */
+/* fin exo position (priorité) */
