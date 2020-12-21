@@ -1,103 +1,150 @@
+body {
+    font-family: 'Lato-Light', Fallback, sans-serif;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-Bold.ttf')  format('truetype');
+}
+
+a {
+    text-decoration: none;
+}
+
+/* section newsletter */
 #newsletter {
-    text-align: center;
     background-color: #9b009d;
+    position: relative;
+    overflow: hidden;
     height: 50px;
 }
 
-span {
+#newsletter > .logo {
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+#champs_newsletter {
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+
+.logo img[alt=""] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}
+
+#champs_newsletter span {
     color: white;
+}
+
+input {
+    border-radius: 6px;
+    padding: 5px;
+    text-transform: uppercase;
+    border: none;
 }
 
 button {
     background-color: #0bd176;
     color: white;
+    border-radius: 6px;
     padding: 5px;
+    text-transform: uppercase;
+    border: none;
 }
 
-#champs_newsletter {
-    padding: 15px;
-}
-
+/* navbar */
 nav {
-    border-bottom: solid 1px gray;
-    height: 90px;
+    display: flex;
+    height: 100px;
+    border-bottom: solid 1px #ededed;
 }
 
-p {
-    font-family: 'Lato-Light', Fallback, sans-serif;
+nav > .logo {
+    padding-left: 130px;
+    padding-right: 130px;
+    position: relative;
+    height:100%;
+    border-right: solid 1px #ededed;
 }
 
-.menu+ul {
-    padding-top:20px;
+img[alt="mon_image"] {
+    width: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
 }
 
-ul {
-    list-style: none;
-}
-p+ul li {
-    font-family: 'Lato-Light', Fallback, sans-serif;;
+.menu {
+    width:100%;
 }
 
-h1:after {
-    content:'';
-    position:absolute;
-    left:0;
-    right:0;
-    top:100%;
-    margin: 30px auto;
-    width:5%;
-    height:3px;
-    background:#9b009d;
+.menu > ul {
+    display: flex;
+    /* ingored by margin-left: auto of .menu > ul > li:last-child ! */
+    justify-content: center; 
+    height: 100%;
+    margin: 0;
+    margin-left: 60px;
+    padding: 0;
 }
 
-p+ul li::before {
-    content: "\2022";
-    color: #9b009d;
-    font-weight: bold;
+.menu > ul > li {
+    margin-right:auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.menu > ul > li > a {
+    font-family: 'Montserrat-Bold', Fallback, sans-serif;
+    font-size: 14px;
     display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 16px;
+    color: #333333;
+    letter-spacing: 0.0625em;
+    text-decoration: none;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    border-bottom: solid 5px rgba(0, 0, 0, 0);
+    line-height: 20px;
+}
 
+.menu > ul > li > a:hover {
+    border-bottom: 5px solid black;
+}
+
+.menu > ul > li:last-child{
+    border-left: solid 1px #ededed;
+    margin-left: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* contenu */
 #contenu {
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 100px;
 }
-
-.menu ul{
-    padding-top: 30px;
-    font-size: 24px;
-
-}
-
-.logo1 {
-    display: inline;
-    position: relative;
-    left: 0px;
-}
-
-.logo1 img {
-    float: left;
-    padding: 5px;
-
-}
-
-.logo2 img {
-    float: left;
-    width: 150px;
-    margin-left:30px;
-}
-
-.menu li {
-    text-align: center;
-    display: inline;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-transform: uppercase;
-    float: left;
-}
-  
 
 h1 {
     font-family: 'Lato-Light', Fallback, sans-serif;
@@ -108,28 +155,56 @@ h1 {
     position:relative;
 }
 
+h1:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 30px auto;
+    width: 6%;
+    height: 3px;
+    background: #9b009d;
+}
+
 h2 {
+    margin-top: 60px;
     font-family: 'Lato-Light', Fallback, sans-serif;
     font-weight: 200;
     font-size: 36px;
 }
 
+/* footer */
+
 footer {
     background-color: #363636;
-    height: 300px;
-    bottom: 0;
     text-align: center;
 }
 
 #section {
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    border-bottom: 1px solid #3c3c3c;
 }
 
 #section div {
-    float: center
+    padding: 50px;
 }
 
-@font-face {
-    font-family: 'Lato-Light';
-    src: url('../fonts/Lato-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+#section div span {
+    color: white;
+    text-transform: uppercase;
+}
+
+section + img[alt=""] {
+    margin-top: 50px;
+    width: 10%;
+    margin-bottom: 50px;
+}
+
+img + p {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    color: white;
 }

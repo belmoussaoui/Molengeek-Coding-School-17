@@ -1,0 +1,23 @@
+/* selecteur1 selecteur2
+   Cible les éléments qui font partis du premier sélécteur */
+section p{
+    color: blue;
+}
+
+/* selecteur1, selecteur2
+Cible les deux éléments */
+section, p {
+    color: red;
+}
+
+/* selecteur1 + selecteur2
+Cible l'élément qui est de meme niveau et qui le suit directement */
+h2 + p{
+    color: green;
+}
+
+/* selecteur1 > selecteur2
+Cible l'élément contenu(enfant) direct  */
+section > span{
+    color: orange;
+}

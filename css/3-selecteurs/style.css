@@ -1,0 +1,41 @@
+/* Exo 01 */
+
+section {
+    padding-bottom: 50px;
+    border-bottom: solid 1px;
+}
+
+section:first-child h4 {
+    color: blue;
+}
+
+section:nth-child(2) {
+    border-bottom: solid 5px;
+}
+
+section:nth-child(3) h3, section:nth-child(3) ul {
+    color: red
+}
+
+section:nth-child(4) li > a {
+    font-size: 25px;
+}
+
+section:nth-child(5) h3 + span {
+    color: blue;
+}
+
+section:nth-child(6) img[alt="la-tartine"] {
+    border: solid;
+    border-radius: 50%;
+}
+
+section:last-of-type p:hover {
+    color: green;
+}
+
+/* with live server don't work */
+/* Code injected by live-server */
+/* section:last-child p:hover {
+    color: green;
+} */

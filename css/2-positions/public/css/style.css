@@ -2,30 +2,39 @@ body {
   margin: 0
 }
 
+
+
 /* Exo margin */
-section{
+section {
   background-color: #4da6ff;
 }
 
-h2{
+h2 {
   background-color: yellow;
   border: solid 2px;
-  height: 200px;
+  width: 300px;
 }
 
 #tartine1 {
   margin:50px;
 }
 
-
 #tartine2 {
-  margin-left:20px;
+  margin-left:20%;
 }
 
 #tartine3 {
   margin: auto;
 }
 /* fin exo margin */
+
+
+
+
+
+
+
+
 
 /* exo padding */
 #tartine4 {
@@ -37,14 +46,90 @@ h2{
 }
 /* fin exo padding */
 
+
+
+
+
+
+
+
+
 /* exo display */
-#tartine+#android {
-  
+#tartine6, #android1 {
+  margin: 20px;
+  padding: 30px;
+}
+
+#android1 {
+  display: none;
 }
 /* fin exo display */
 
+
+
+
+
+
+
+
+
+/* exo float */
+#tartine7, #android2 {
+  width: auto;
+  float: left;
+}
+
+#section1 {
+  overflow: hidden;
+}
+/* fin exo float
+
+
+
+
+
+
+
+
+
 /* exo position */
+#tartine8 {
+  position: fixed;
+  background-color: green;
+  margin: 0;
+  top: 50%;
+  left: 50%
+}
+
+#section2 {
+  position: relative;
+}
 /* fin exo position */
 
+
+
+
+
+
+
+
+
 /* exo position (priorité) */
+#android3 {
+  background-color: blue;
+  /* margin-left: 100px; */
+}
+
+#android3, #tartine9 {
+  position: absolute;
+}
+
+#tartine9 {
+  z-index: 1;
+}
+
+#section3 {
+  z-index: 2;
+  position: relative;
+}
 /* fin exo position (priorité) */
