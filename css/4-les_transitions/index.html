@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Les Transitions CSS</title>
+</head>
+
+<body>
+    <p><ul>
+        <li>1.Avant de commencer veuillez lier le fichier css</li>
+        <li>2.Dans le fichier css mettre un border bottom à toutes les sections saufe la dernière,soyez malin vous avez vu les last-child etc</li>
+        <li>3.Rajouter un padding-bottom de 50px à toutes les sections</li>
+    </ul></p>
+
+    <section id="les_hover_01">
+        <h1>Exo 01 : Les hover,changement de couleur au passage de la souris</h1>
+        <p>documentation sur les :
+            <a target="_blank" href="https://www.w3schools.com/cssref/sel_hover.asp"> hover</a>
+        </p>
+        <ul>
+            <li>1.Mettre la height et la width de la div à 150px
+            </li>
+            <li>2.Mettre le background-color en couleur lightblue
+            </li>
+            <li>3.Crée un hover qui au passage de la souris met le background-color de la div en couleur purple
+            </li>
+        </ul>
+        <div class="bg-color">
+        </div>
+    </section>
+
+    <section id="les_hover_02">
+        <h1>Exo 02 : Les hover,agrandissement d'une forme au passage de la souris</h1>
+        <ul>
+            <li>1.Mettre le background-color en couleur lightblue</li>
+            <li>2.Fixer la taille de la div en 150px sur 150px</li>
+            <li>3.Crée un hover de la div et mettre la hauteur à 200px et la largeur à 500px</li>
+        </ul>
+        <div class="height_and_width">
+
+        </div>
+    </section>
+
+    <section id="le_focus_03">
+        <h1>Exo 03 : Le focus,rajout d'une bordure au focus</h1>
+        <ul>
+            <li>1.Comme précédement pour le hover il faut maintenant crée un état focus pour l'input </li>
+            <li>2.Au focus l'input doit avoir une bordure bleue</li>
+            <li>3.Au focus l'input doit avoir une bordure arrondie de 10px</li>
+        </ul>
+        <form action="">
+            <input type="text" class="border_color" value="clique ici">
+        </form>
+    </section>
+
+    <section id="les_transition_04">
+        <h1>Exo 04 : Les transitions,changement de couelur en plusieures secondes</h1>
+        <ul>
+            <li>1.Mettre un background yellow</li>
+            <li>2.Mettre une taille de 150px sur 150px</li>
+            <li>3.Créer un hover avec un background rouge</li>
+            <li>4.Retourner dans la class qui n'est pas en hover et rajouter
+                <b>
+                    transition: 4s;
+                </b>
+            </li>
+        </ul>
+        <div class="transition_04">
+        </div>
+    </section>
+
+    <section id="les_transition_05">
+        <h1>Exo 05 : Les transitions,changement de couleur et de forme</h1>
+        <ul>
+            <li>1.Mettre le background orange</li>
+            <li>2.Mettre une taille de 150px sur 150px</li>
+            <li>3.Créer un hover avec un background purple</li>
+            <li>4.Dans le hover augmenté les border arrondies à 50%</li>
+            <li>5.Rajouter une transition de 2secondes dans le selecteur qui n'est pas en hover ( selecteur basique )</li>
+        </ul>
+        <div class="transition_05">
+        </div>
+    </section>
+
+    <section id="les_transition_06">
+        <h1>Exo 06 : Les transitions,déplacement à l'active</h1>
+        <ul>
+            <li>1.Mettre un background grey</li>
+            <li>2.Mettre une taille de 150px sur 50px de large</li>
+            <li>3.Vous avez vu les hover et les focus maintenant il faudra utiliser l'active</li>
+            <li>4.Dans le active rajouter une margine de 300px</li>
+            <li>Rajouter une transition de 3secondes dans le selecteur basique </li>
+        </ul>
+        <div class="transition_06">
+        </div>
+    </section>
+    <section id="les_transition_07">
+        <h1>Exo 07 : Les transitions,déplacement à l'active avec une poussée d'adrenaline</h1>
+        <ul>
+            <li>1.Mettre le background en green</li>
+            <li>2.Mettre une taille de 150px sur 50px de large</li>
+            <li>3.Rajouter un etat active</li>
+            <li>4.Dans le active rajouter une margine de 80%</li>
+            <li>5.Rajouter une transition de 3secondes dans le selecteur basique </li>
+            <li>6.En vous référent à la documentation sur les transitions de w3school en cliquant
+                <a target="_blank" href="https://www.w3schools.com/css/css3_transitions.asp">ici</a> trouver une propriété qui permet de crée un effet de transition lente pis rapide puis à nouveau lente</li>
+        </ul>
+        <div class="transition_07">
+        </div>
+    </section>
+    <section id="les_transition_08">
+        <h1>Exo 08 : Les transitions,déplacement à l'active avec une poussée d'adrenaline un changement de forme et de couleur</h1>
+        <embed src="public/videos/exo_08.mp4" autostart="true" height="100%" width="100%" />
+        <ul>
+            <li>1.Mettre le background en lightblue</li>
+            <li>2.Reproduire l'étape 2 à 6 de l'exercice précédent</li>
+            <li>3.Rajouter dans l'active un border arrondi de 50%</li>
+            <li>4.Réduire la hauteur dans l'active à 50px</li>
+            <li>5.Mettre un background purple dans l'active</li>
+        </ul>
+        <div class="transition_08">
+        </div>
+    </section>
+
+    <section id="les_transition_09">
+        <h1>Exo 09 : Les transitions,Evénement sur un élément enfant a l'active du parent</h1>
+        <embed src="public/videos/exo_09.mp4" autostart="true" height="100%" width="100%" />
+        <ul>
+            <li>1.Mettre un background blue ,une height de 150px ,une width de 150px sur transition_09 </li>
+            <li>2.Mettre un background lightblue sur son enfant une height de 20% et une width de 20%;</li>
+            <li>3.a l'active du parent il faut agire sur l'enfant et mettre un background red</li>
+            <h3>AIDE : <img src="public/images/exo_09.PNG" alt=""></h3>
+            <li>4.rajouter à l'enfant une transition de 3secondes</li>
+        </ul>
+        <div class="transition_09">
+            <div class="transition_09_enfant">
+            </div>
+        </div>
+    </section>
+
+    <section id="les_transition_10">
+        <h1>Exo 10 : L'exercice de la muerto qui est trop mort quand on le tue</h1>
+        <embed src="public/videos/exo_10.mp4" autostart="true" height="100%" width="100%" />
+        <ul>
+            <li>1.Bonne chance.</li>
+        </ul>
+        <div class="transition_10">
+            <div class="transition_10_intrus">
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

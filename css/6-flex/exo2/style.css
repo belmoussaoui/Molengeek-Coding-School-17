@@ -1,0 +1,15 @@
+div div {
+    background-color: burlywood;
+    width:100%;
+    text-align: center;
+    height: 130px;
+    margin: 10px;
+    vertical-align: middle;
+    line-height: 130px;
+}
+
+body > div {
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}

@@ -31,6 +31,7 @@ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 <kbd>Shift</kbd> + <kbd>Command</kbd> +  <kbd>/</kbd> = comment the current line
 <kbd>Shift</kbd> + <kbd>Option</kbd> +  <kbd>F</kbd> = corrige l'indentation du texte
 <kbd>Option</kbd> + <kbd>Z</kbd> = réduire/étendre le texte pour la visibilité
+<kbd>Control</kbd> + <kbd>Espace</kbd> = obtenir le raccourci si pas proposé
 
 
 

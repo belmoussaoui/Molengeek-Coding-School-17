@@ -1,0 +1,19 @@
+body {
+  height: 150vh;
+}
+div {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 1px solid black;
+  background: red;
+  margin-bottom: 200px;
+}
+div:nth-child(2n) {
+}
+
+h2 {
+  margin: 100px;
+  font-size: 50px;
+  color: green;
+}

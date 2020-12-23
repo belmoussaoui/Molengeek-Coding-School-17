@@ -1,0 +1,19 @@
+body {
+    background-color: burlywood;
+    height: 800px;
+}
+
+div div {
+    background-color: red;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    height: 300px;
+    padding: 0px 100px;
+}
+
+.flex-container {
+    height: 800px;
+    display: flex;
+    align-items: center;
+}

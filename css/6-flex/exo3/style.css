@@ -1,0 +1,33 @@
+* {
+    margin: 8px;
+}
+
+
+header, footer {
+    background-color: blue;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.container {
+    display: flex;
+    /* justify-content: space-between; */
+    height: 800px;
+    align-items: stretch
+}
+
+nav, aside {
+    background-color: orange;
+    width: 25%;
+    border-radius: 10px;
+}
+
+article {
+    background-color: lightblue;
+    width: 50%;
+    border-radius: 10px;
+}
+
+nav {
+    order: -1;
+}
