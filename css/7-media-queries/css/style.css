@@ -1,13 +1,13 @@
-.row {
+/* .row {
     display: flex;
     width: 100%;
+    justify-content: space-around;
 }
 
 .tier {
     background-color: aquamarine;
     text-align: center;
     margin: 20px;
-    flex-grow: 1;
     padding: 50px 0;
     font-size: 40px;
     width: 100%;
@@ -24,11 +24,57 @@
 }
 
 @media all and (max-width: 616px) {
+    .tier {
+        flex: 20%;
+    }
+}
+
+
+@media all and (max-width: 315px) {
+    .tier {
+        flex: 100%;
+    }
+} */
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.tier {
+    background-color: aquamarine;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 50px 0;
+    font-size: 40px;
+    flex-basis: 8.3%;
+}
+
+
+
+@media all and (max-width: 914px) {
     .row {
         flex-flow: wrap;
     }
 
     .tier {
-        flex: 33%;
+        /* https://stackoverflow.com/a/29546639 */
+        /* total * une partie - margin = taille d'un élément */
+        flex-basis: calc(100% * (1/6) - 20px);
+    }
+}
+
+@media all and (max-width: 616px) {
+    .tier {
+        flex-basis: calc(100% * (1/3) - 20px);
+    }
+}
+
+@media all and (max-width: 315px) {
+    .tier {
+        flex-basis: 100%;
     }
 }

@@ -5,7 +5,7 @@
 https://support.google.com/websearch/answer/2466433?hl=fr
 
 ## shortcut
-<kbd>Control</kbd> + <kbd>Shift</kbd> +<kbd>T</kbd> = open the last tab closed
+<kbd>Command</kbd> + <kbd>Shift</kbd> +<kbd>T</kbd> = open the last tab closed
 
 
 > Written with [StackEdit](https://stackedit.io/).

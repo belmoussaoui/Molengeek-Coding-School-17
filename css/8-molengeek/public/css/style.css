@@ -15,6 +15,7 @@ body {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 /* section newsletter */
@@ -146,6 +147,20 @@ img[alt="mon_image"] {
     margin-bottom: 100px;
 }
 
+#contenu ul li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+#contenu ul li:before {
+    content: "\2022";
+    color: #9b009d;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
 h1 {
     font-family: 'Lato-Light', Fallback, sans-serif;
     font-size: 64px;
@@ -162,7 +177,7 @@ h1:after {
     right: 0;
     top: 100%;
     margin: 30px auto;
-    width: 6%;
+    width: 80px;
     height: 3px;
     background: #9b009d;
 }
@@ -184,22 +199,21 @@ footer {
 #section {
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding: 40px 0;
     border-bottom: 1px solid #3c3c3c;
 }
 
 #section div {
-    padding: 50px;
+    padding: 25px;
 }
 
 #section div span {
-    color: white;
     text-transform: uppercase;
 }
 
 section + img[alt=""] {
     margin-top: 50px;
-    width: 10%;
+    width: 150px;
     margin-bottom: 50px;
 }
 
@@ -207,4 +221,59 @@ img + p {
     margin-bottom: 0;
     padding-bottom: 20px;
     color: white;
+}
+
+div a i {
+    width: 16px;
+    margin-right: 10px;
+    padding: 10px;
+    border: solid 2px white;
+    border-radius: 100%;
+}
+
+/* media queries */
+@media (max-width: 1200px) {
+    .menu {
+        display: none;
+    }
+
+
+    nav > .logo {
+        border-right: none;
+    }
+
+    #champs_newsletter span {
+        display: none;
+    }
+
+    #champs_newsletter {
+        width: 300px;
+        text-align: center;
+    }
+
+    input {
+        width: 170px;
+    }
+
+    #section div span {
+        display: none;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    .logo img[alt=""] {
+        display: none;
+    }
+}
+
+@media (max-width: 280px) {
+    h1 {
+        font-size: 44px;
+    }
+
+    #section div {
+        padding: 10px;
+    }
 }

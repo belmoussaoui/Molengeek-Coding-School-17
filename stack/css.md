@@ -76,6 +76,8 @@ les ``inline``n'ont pas de propriété de taille en hauteur (padding-top, margin
 
 on utilise ``inline-block`` si on a besoin d'une ``inline`` qui a besoin d'une propriété de hauteur.
 
+les ``inline`` et les ``inline-block`` considère l'indentation dans le code html! https://youtu.be/k1ID41O4FNM?t=1775
+
 ### flex
 est utilisé par bootsrap  pour créer les row, col.
 est énormément utilisé...
@@ -108,9 +110,35 @@ les éléments avec l'attribut float sont retiré du flux normal sauf pour les �
 ## Pseudo class
 ``h1:hoover`` est une pseudo classe.
 
+### ::after ::before
+``:after`` et ``:before`` sont dépréciés. il vaut mieux utilisés ``::after`` et ``::before``. on peut injecter du texte dans le html avec le css avec l'attribut ``content``. ce ne sont pas des pseudo classes mais un pseudo-élément!
+
+les éléments natives dépendent du système d'exploitation comme pour la balise ``select``, ``input``, les ``textarea``, ...
+
 ## Formats d'images
 ### webp
 le nouveau format d'image pour le web.
+
+## flex
+on peut tous faire avec! j'aime les containers!
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+## Transition et animation
+il faut deux états pour un élément pour appliquer une transformation. On met l'état `transition` dans l'état 1 pour indiquer de quel manière il transite à une état 2 indiqué par une pseudo-classe comme ``:hover``.
+
+les animations ``-webkit`` sont pour les navigateurs firefox / edge car les animations ne fonctionnent pas par défaut.
+https://stackoverflow.com/a/18083113
+
+## media queries
+le css s'applique suivant s'applique lorsque l'écran à une taille minimum de 100px et une taille maximum de 300px.
+
+faire attention au zoom qui fausse les valeurs de taille! 
+```css
+@media screen and (min-width: 100px) and (max-width:300px) {
+	/* du css! */
+}
+```
 
 
 

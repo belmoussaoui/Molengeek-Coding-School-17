@@ -22,7 +22,7 @@ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 
 <kbd>Alt</kbd> + (<kbd>Up</kbd> or <kbd>Down</kbd>) = move up/down selected line
 <kbd>Shift</kbd> + <kbd>Option</kbd> + (<kbd>Up</kbd> or <kbd>Down</kbd>) = copy to up/down selected line
-<kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>Right</kbd> = copy the current scope
+<kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>Right</kbd> = select the current scope
 <kbd>Option</kbd> + <kbd>Left Click</kbd> = add a new selector to mouse position
 <kbd>Option</kbd> + <kbd>Command</kbd> +  (<kbd>Up</kbd> or <kbd>Down</kbd>) = add a new selector to up/down
 <kbd>Option</kbd> +  (<kbd>Up</kbd> or <kbd>Down</kbd>) = move the current line to up/down
@@ -33,6 +33,13 @@ https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 <kbd>Option</kbd> + <kbd>Z</kbd> = réduire/étendre le texte pour la visibilité
 <kbd>Control</kbd> + <kbd>Espace</kbd> = obtenir le raccourci si pas proposé
 
+
+## snippet html
+on peut écrire du code pré fait dans un fichier json!
+https://forum.alsacreations.com/topic-1-79647-1-Visual-Studio-Code-snippet-HTML-avec-la-touche-clavier--Resolu.html
+https://code.visualstudio.com/docs/languages/html
+
+ouvrir le pannel de visual studio code et tappez "snippet". selectionez "Preference: Configure User Snippet" et ensuite "html".
 
 
 
