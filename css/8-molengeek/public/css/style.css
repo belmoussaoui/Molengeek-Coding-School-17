@@ -156,6 +156,7 @@ img[alt="mon_image"] {
     content: "\2022";
     color: #9b009d;
     font-weight: bold;
+    font-size: 25px;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
