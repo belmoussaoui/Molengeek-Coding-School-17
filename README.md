@@ -10,4 +10,4 @@ Donc certaines informations peuvent être manquantes et a contrario je peux ajou
 - **shell** : les exercices avec *Bash* et certains scripts pour automatiser la création de projets;
 - **html** : les exercices sur *HTML*;
 - **css** : les exercices sur *CSS*;
-- **git** : les exercices sur *Git* et les projets a écrire avec [Github](https://github.com/). 
+- **git** : les exercices sur *Git* et les projets a écrire avec [Github](https://github.com/) en format *zip*.
