@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Introduction GitHub</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <ul>
+                <h3>1. Git Diff</h3>
+                <li>Première chose à faire, vous rendre dans votre dossier 'conding-school-10/git'</li>
+                <li>Y créer un dossier exo_git_final qui sera votre projet d'apprentissage git final</li>
+                <li>Initialiser ce projet avec git</li>
+                <li>Créer un fichier index.html</li>
+                <li>Rajouter la structure html de base</li>
+                <li>Rajouter un h1 avec comme contenu hello world</li>
+                <li>Commiter avec comme nom "h1 = hello world"</li>
+                <li>Créer une nouvelle branch votreprenom</li>
+                <li>Mettez vous sur cette nouvelle branch</li>
+                <li>Changez le contenu de h1 "hello world" par "Goodbye"</li>
+                <li>Commiter avec comme nom "h1 = Goodbye"</li>
+                <li>Retourner sur la branch master</li>
+                <li>Faites un git diff master votreprenom</li>
+            </ul>
+        </li>
+
+        <li>
+            <ul>
+                <h3>2. Git Merge</h3>
+                <p>Vous venez de faire un git diff qui vous permet de voir la différence entre deux branch.</p>
+                <p>La version de prénom vous convient,dans se cas vous allez merger prénom sur master,c'est à dire écraser la version de master par la version de prénom</p>
+                <li>en étant sur la branch master faites : git merge votreprenom</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>3. Les Conflits</h3>
+                <p>Imaginons le cas ou plusieurs développeur sur le meme projet venaient à faire une modification au même endroit, comment les choses seraient elles gérées ?</p>
+                <li>Changez le contenu de votre h1 par "ceci est la branch master"</li>
+                <li>Faite un commit "changement du contenu du h1 par 'ceci est la branch master'"</li>
+                <li>Rendez vous sur la branch prénom</li>
+                <li>Changez le contenu du h1 par "ceci est la branch prénom"</li>
+                <li>Faite un commit "changement du contenu du h1 par 'ceci est la branch votreprenom'" </li>
+                <li>Retournez sur master</li>
+                <li>Mergez</li>
+                <p>Vous devriez obtenir un résultat comme celui ci</p>-
+                <div class="img-conflit"></div>
+                <li>Acceptez les donnés entrantes</li>
+                <p>Vous venez de résoudre un conflit en choisissant la version de prénom plus tot que celle de master</p>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>4. Github</h3>
+                <li>Allez sur votre compte github et commencez un projet en créant un repository du nom de "exo_final_git_prenom"</li>
+                <img src="public/images/repo01.JPG" alt="" width="80%">
+                <img src="public/images/repo02.JPG" alt="" width="80%">
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>5. Git Push</h3>
+                <li>Suivez la documentation comme sur votre écran pour savoir comment push votre travail en ligne sur votre compte github</li>
+                <img src="public/images/repo03.JPG" alt="" width="80%">
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>6. Git Clone</h3>
+                <p>Plutôt que de créer un nouveau repository github, nous allons partir d'un repo existant</p>
+                <li>Dans votre dossier Git/ tapez la commande git clone https://github.com/avoidwork/tiny-worker.git</li>
+            </ul>
+        </li>
+
+    </ul>
+</body>
+
+</html>

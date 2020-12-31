@@ -181,4 +181,9 @@ affiche tout le tableau
 echo ${tableau[*]}
 ```
 
+### getopts
+La commande interne **getopts** permet à un script d'analyser les options passées en argument.
+https://www.quennec.fr/book/export/html/341
+mais n'est pas adapté pour les `option long`
+
 > Written with [StackEdit](https://stackedit.io/).

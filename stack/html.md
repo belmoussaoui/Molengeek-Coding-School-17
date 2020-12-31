@@ -26,6 +26,10 @@ pas une balise, pour interpréter le caractère espace
 ### \<blockquote\>
 un cadre pour une citation
 
+## Validator W3C
+on peut check le code html via l'outil suivant:
+https://validator.w3.org/#validate_by_uri
+
 
 
 > Written with [StackEdit](https://stackedit.io/).

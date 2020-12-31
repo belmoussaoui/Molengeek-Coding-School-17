@@ -12,6 +12,9 @@ L'**identifiant** a priorité sur la **classe**.
 }
 ```
 Le titre est bleu si la balise est ``id=title-id`` et ``class=title-classe`` même si elle se trouve au-dessus dans le fichier.
+
+un lien pour les formules de priorités:
+https://specificity.keegan.st/
 ## Classe
 Une balise peut avoir plusieurs classes, ca permet de combiner plusieurs éléments a appliqués sur l'élément.
 
@@ -107,6 +110,7 @@ translate:transform(-50%);
 ### float
 les éléments avec l'attribut float sont retiré du flux normal sauf pour les éléments inline! plus très utilisé car remplacé par les flexbox! ou utilisé pour les divs côte à côte ``inline-block``
 
+
 ## Pseudo class
 ``h1:hoover`` est une pseudo classe.
 
@@ -115,14 +119,45 @@ les éléments avec l'attribut float sont retiré du flux normal sauf pour les �
 
 les éléments natives dépendent du système d'exploitation comme pour la balise ``select``, ``input``, les ``textarea``, ...
 
-## Formats d'images
-### webp
-le nouveau format d'image pour le web.
+### counter
+on peut créer des compteurs pour les li par exemple via la commande 
+```css
+ol {
+	counter-reset: nom_du_compteur;
+}
 
-## flex
+li::before {
+	conter-increment: nom_du_compteur;
+	content: counter(nom_du_compteur) "- ";
+}
+```
+
+### attribut
+les éléments html peuvent avoir un attribut ``data-{name}`` qui permet de stocker des données utilisables dans le css. c'est plus propre que d'utiliser un span pour certains cas.
+
+on utilise dans le css la fonction ``attr(data-{name})`` pour récupérer une variable.
+permet d'éviter de polluer l'html.
+
+### flex
 on peut tous faire avec! j'aime les containers!
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+### box-sizing
+mettre le ``box-sizing`` à ``border-box`` permet de prendre en compte les bordures et les paddings dans le calcul de width! 
+
+le container magique:
+```css
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* c'est une classe générique */
+.container {
+	padding: 0 15px;
+	max-width: 1080px;
+	margin: 0: auto;
+}
+```
 
 ## Transition et animation
 il faut deux états pour un élément pour appliquer une transformation. On met l'état `transition` dans l'état 1 pour indiquer de quel manière il transite à une état 2 indiqué par une pseudo-classe comme ``:hover``.
@@ -140,6 +175,8 @@ faire attention au zoom qui fausse les valeurs de taille!
 }
 ```
 
-
+## Questions et réponses
+### pourquoi le background-color ne s'applique pas à body mais à toute la page html?
+https://stackoverflow.com/a/11721746
 
 > Written with [StackEdit](https://stackedit.io/).

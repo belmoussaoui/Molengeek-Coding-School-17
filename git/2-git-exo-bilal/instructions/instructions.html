@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <ul>
+                <h3>1. Git init</h3>
+                <p>Il vous faut à l'aide de votre terminal initialiser votre projet git :</p>
+                <li>Première chose à faire, vous rendre dans votre dossier 'coding-school-10'</li>
+                <li>Y créer un dossier exo_git_prénom qui sera votre projet git</li>
+                <li>Initialiser votre projet git</li>
+                <h4>Astuce : git init </h4>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>2. Git status</h3>
+                <li>Ouvrir le dossier exo_git_prénom dans visual studio</li>
+                <li>Y crée à la racine un fichier index.html et y mettre la structure html graçe au snipped "!"</li>
+                <li>Grace au terminal visual studio regardez le nouveau status de votre projet et observez</li>
+                <h4>Astuce : git status</h4>
+                <p>Vous pouvez voir que votre fichier index.html y apparait en rouge,cela veux dire que ce fichier est différent
+                    de la dernière sauvegarde de votre repository github</p>
+            </ul>
+        </li>
+
+        <li>
+            <ul>
+                <h3>3. Git add</h3>
+                <p>A l'aide du terminal visual studio il va falloir annoncer à votre projet git que vous voulez faire une sauvegarde
+                    des dernières mises a jours que vous avez faites,pour votre part la dernière modification que vous avez
+                    faites est la création d'un fichier index.html </p>
+                <li>Mettez à jours votre projet</li>
+                <h4>Astuce : git add nomdufichier.extension</h4>
+                <li>Faites à présent un git status et observez</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>4. Git commit</h3>
+                <p>Quand on termine une étape importante on veut que notre avancée soit indépendante pour que si un jours vous
+                    voudriez revenir à ce point d'avancement précis il vous est possible de le faire</p>
+                <li>Faites un point de sauvegarde indépendant avec comme message "mon premier commit"</li>
+                <h4>Astuce : git commit -m"message"</h4>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>5. Créations des fichiers</h3>
+                <p>Toujours a l'aide du terminal visual studio et des commandes bash</p>
+                <li>Créez un fichier style.css dans le dossier public/css</li>
+                <li>Créez un fichier style.sass dans le dossier src/sass</li>
+                <li>Lier le fichier style.css au fichier index.html</li>
+                <li>Faites un git status pour voir ce qui doit être annoncer avant d'etre commiter</li>
+                <li>Rajouter dans votre projet votre nouvelle modification graçe a git add --all  </li>
+                <li>Verifiez que vous avez bien fait les choses graçe a git status</li>
+                <li>Crée un commit du nom de
+                    <strong>"créations des fichiers css,sass,html "</strong>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <ul>
+                <h3>6. Git branch : Partie 1</h3>
+                <p>Il faut voir un repository git comme un tronc d'arbre et les branch bah comme des branches sur les quels
+                    vous travaillez</p>
+                <li>Dans votre console affichez les branch existantes dans le repository</li>
+                <h4>Astuce : git branch</h4>
+                <li>Dans votre HTML entre les balises title changez Document par le nom de la branch elle était écrite en verte
+                    dans votre terminal après avoir fait votre git branch</li>
+                <li>Faites un commit avec comme nom, le nom de la branch n'oubliez pas que vous avez fait des modifications et
+                    qu'il faut annoncer ces modifications a votre projet avant de commiter votre sauvegarde</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>7. Git branch : Partie 2</h3>
+                <p>Pour le moment vous travaillez sur la branch master qui est celle crée par défaut</p>
+                <li>Créez votre propre branch avec votre prénom</li>
+                <h4>Astuce : git branch prénom</h4>
+                <li>Maintenant observez les branch avec git branch</li>
+                <p>Vous pouvez voir que votre branch à été rajouté a la liste mais contrairement à master qui est verte votre
+                    branch elle est blanche, c'est du au fait que actuellement vous travaillez sur la branch master et la
+                    couleur verte sert d'indicateur</p>
+
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>8. Git checkout de branch à branch </h3>
+                <p>Comme vous avez pu le constater vous travaillez sur la branch master</p>
+                <li>Regardez les branchs éxistantes graçe a git branch </li>
+                <li>Changez de branch à fin de travailler sur votre branch "prénom"</li>
+                <h4>Astuce : git checkout prénom</h4>
+                <li>Observez le changement en faisant git branch</li>
+                <p>Vous pouvez observez dans votre terminal que votre branch avec votre prénom est en verte alors que master
+                    est blanche, vous venez de changer de branch</p>
+                <p>L'interet des branch, c'est de travailler sur une branch isolée. Si on travaille en équipe sur le même
+                    projet (et donc le même repository), on créerait des conflits en travaillant tous sur la branch master.
+                    Voir d'empechez les autres de l'équipe d'envoyer leur sauvegarde sur la branch master pour mettre à
+                    jours le projet.
+                </p>
+                <p>Il faut voir votre branch comme votre partie personnel du site web que personne n'irait modifier, par exemple Vous travaillez sur la page de contact,cette page fera partie de votre branch, et votre collegue lui s'occupera de la page gallerie et elle sera attribuée à sa branch.</p>
+                <p>Quand vous aurez avancé dans votre partie vous irez mettre le contenu de votre branch sur la branch "master" et votre collegue mettra le contenu de sa branch a lui également sur "master"</p>
+                <p>Ce qui fait que "master" sera le résultat de votre branch + la branch de votre collegue</p>
+                <p>Pour ne pas poser de problème chaque membre de l'équipe créer sa branch et par la suite "en fin de journée
+                    généralement" tous rajoutent leurs modifications sur master</p>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>10. Git log</h3>
+                <p>Depuis le début nous créons des commit ( des points de sauvegardes ) chaque commit représente un avancement dans votre travail</p>
+                <p>Vous pouvez connaitre tous les commit que vous avez fait depuis le début graçe à git log</p>
+                <li>faites un git log</li>
+                <p>Vous devriez avoir une liste avec vos commit,votre dernier commit était "rajout de bootstrap" affiché tout en haut de votre terminal</p>
+                <p>Il devrait plus au moins ressembler a ça <br> <img src="public/images/commit_bootstrap.png" alt=""></p>
+                <p>La première ligne de votre commit est un numéro écrit en jaune ,nous reviendrons dessus par la suite.</p>
+                <li>Rendez-vous sur votre index.html et changez votre title master par votre prénom</li>
+                <li>Faites un commit du nom de "mon premier git log"</li>
+                <li>Faites un git log pour voir votre nouveau commit</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <h3>10. Git checkout de commit en commit</h3>
+                <p>Maintenant que nous avons pu voir ou se cachaient nos commit on va pouvoir revenir en arrière si on le désire</p>
+                <p>Vous avez déjà vu comment passer d'une branch a une autre, quand vous êtes passé de la branch "master" a la branch "prénom"</p>
+                <p>Nous allons faire pareil mais pour passer d'un commit a un plus ancien.</p>
+                <p>Pour l'instant vous êtes sur le dernier commit que vous avez fait.</p>
+                <li>Retournez sur le commit "rajout de bootstrap" graçe a son numéro écrit en jaune ( pour copier le numéro d'un commit double clique dessus )</li>
+                <h4>Astuce : git checkout 54ze5r4ze6r54z654r6z54r6z ( pour coller dans le terminal un numéro de commit faites un clique droit )</h4>
+                <p>Vous pouvez retourner voir dans votre fichier index.html est vous rendre compte que votre title s'appelle à nouveau master</p>
+                <li>Retournez sur votre dernier commit"</li>
+                <p>Quoi ? "mon premier git log" n'apparait pas ? C'est normal, c'était votre dernier commit est donc votre dernier commit est au même niveau que votre branch prénom, avec cette information là vous devriez facilement savoir comment revenir a votre dernièr commit.</p>
+                <li>Retournez voir votre title cela devrait être à nouveau votre prénom</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

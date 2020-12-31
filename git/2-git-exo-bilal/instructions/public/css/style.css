@@ -1,0 +1,24 @@
+body{
+    background-color: #ecf0f5;
+   
+}
+ul{
+    list-style-type: none
+}
+ul ul{
+    list-style-type: circle;
+    background-color:white;
+    border: 1px solid #f4f4f4;
+    border-top: 3px solid #00c0ef;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;
+}
+ul:last-child img{
+    box-shadow: 8px 8px 12px #aaa;
+}
+h3{
+    border-bottom: 1px solid #f4f4f4;
+}
