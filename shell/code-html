@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+# /user/local/bin/ in mac
+# /c/Program Files/Git/usr/bin in windows
+
+DEFAULT_NAME="projet"
+G=false
+S=false
+B=false
+
+check_folder () {
+    if [ -z "$1" ] || [[ "${@: -1}" == -* ]]; then
+        FOLDER=$DEFAULT_NAME
+    else
+        FOLDER="${@: -1}"
+    fi
+}
+
+opts_flag () {
+    while getopts "sbg-:" opt; do
+        case "$opt" in
+            -)
+                case ${OPTARG} in
+                    git)       G=true ;;
+                    sass)      S=true ;;
+                    bootstrap) B=true ;;
+                esac ;;
+            g) G=true ;;
+            s) S=true ;;
+            b) B=true ;;
+            *) : ;;
+        esac
+    done
+}
+
+html_project () {
+    mkdir "$FOLDER"
+    mkdir "$FOLDER"/public
+    mkdir "$FOLDER"/public/css
+    mkdir "$FOLDER"/public/js
+    mkdir "$FOLDER"/public/html
+    mkdir "$FOLDER"/public/img
+    touch "$FOLDER"/index.html
+    touch "$FOLDER"/public/css/style.css
+}
+
+add_git () {
+    git init "$FOLDER"
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+         echo ".DS_Store" >> "$FOLDER"/.gitignore
+    fi
+}
+
+add_sass () {
+    mkdir "$FOLDER"/src
+    mkdir "$FOLDER"/src/sass
+    touch "$FOLDER"/src/sass/style.sass
+}
+
+
+check_folder "$@"
+opts_flag "$@"
+html_project
+
+if [ "$G" = true ] ; then
+    add_git
+fi
+if [ "$S" = true ] ; then
+    add_sass
+fi
+
+code "$FOLDER"
