@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-# /user/local/bin/ in mac
-# /c/Program Files/Git/usr/bin in windows
-
 DEFAULT_NAME="projet"
 G=false
 S=false
 B=false
+
+help () {
+   echo "usage: code-html [--help] [-g | --git] [-s | --sass] <folder>"
+   echo "Create a project with an html structure and open it with Visual Studio Code."
+}
 
 check_folder () {
     if [ -z "$1" ] || [[ "${@: -1}" == -* ]]; then
@@ -21,6 +23,8 @@ opts_flag () {
         case "$opt" in
             -)
                 case ${OPTARG} in
+                    help)      help
+                               exit ;;
                     git)       G=true ;;
                     sass)      S=true ;;
                     bootstrap) B=true ;;
@@ -58,8 +62,8 @@ add_sass () {
 }
 
 
-check_folder "$@"
 opts_flag "$@"
+check_folder "$@"
 html_project
 
 if [ "$G" = true ] ; then
