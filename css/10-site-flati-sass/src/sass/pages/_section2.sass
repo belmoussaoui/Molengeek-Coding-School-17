@@ -1,0 +1,130 @@
+.section2
+    height: 772px
+    padding: 0 110px
+    padding-top: 65px 
+    background-color: rgb(240, 240, 240)
+    ul
+        display: flex
+        justify-content: center
+        padding: 0
+
+.card
+    border-radius: 6px
+    padding: 14px
+    margin: 0 15px
+    width: 242px
+    height: 234px
+    text-align: center
+    background-color: #e3e1e1
+
+    div
+        margin-top: 10px
+        font-size: 14px
+        font-weight: bold
+        color: #555
+        text-transform: uppercase
+    a
+        font-size: 14px
+        color: $color1
+        display: inline-block
+        margin-bottom: 10px
+        font-weight: bold
+    p
+        font-size: 13px
+        color: #555
+        line-height: 22px
+
+.icon-card
+    width: 60px
+    height: 60px
+    margin: 0 auto
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 100%
+    font-size: 24px
+    text-align: center
+    position: relative
+    color: #2980B9
+    &:before
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.row-container
+    margin-top: 100px
+    display: flex
+
+    ul
+        display: flex
+        flex-grow: 0
+        flex-shrink: 0
+        flex-basis: 66%
+        margin: 0 15px
+
+
+.recent-work
+    flex-grow: 0
+    flex-shrink: 0
+    flex-basis: 30%
+    padding: 0 15px
+    color: #555
+
+    h3
+        font-size: 24px
+        line-height: 40px
+        font-weight: 300
+    p
+        &:first-of-type
+            font-weight: 300
+            font-size: 16px
+            line-height: 25px!important
+            margin-bottom: 10px
+        &:nth-of-type(2)
+            font-size: 14px
+            line-height: 24px
+    button
+        background-color: #2BA6CB
+        color: white
+        padding: 12px 14px 15px
+        border-radius: 4px
+        border: none
+        margin-top: 20px
+
+
+.card-img
+    background-color: $color3
+    border-bottom-left-radius: 5px
+    border-bottom-right-radius: 5px
+    width: 253px
+    margin: 0 3px
+    position: relative
+    img
+        width: 253px
+        height: 159px
+    &:after
+        content: ''
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid rgb(52, 73, 94);
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+
+.card-img-body
+    text-align: center
+    color: white
+    height: 100px
+    padding: 0px 15px
+    div
+        font-size: 12px
+        font-weight: bold
+        text-transform: uppercase
+        letter-spacing: 0.1em
+        margin-top: 20px
+    p
+        margin-top: 15px
+        font-size: 13px
+        color: #bbb
+        line-height: 24px

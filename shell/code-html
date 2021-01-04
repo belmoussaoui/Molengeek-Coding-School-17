@@ -45,7 +45,7 @@ html_project () {
 add_git () {
     git init "$FOLDER"
     if [[ "$OSTYPE" == "darwin"* ]]; then
-         echo ".DS_Store" >> "$FOLDER"/.gitignore
+        echo ".DS_Store" >> "$FOLDER"/.gitignore
     fi
 }
 
@@ -53,6 +53,9 @@ add_sass () {
     mkdir -p "$FOLDER"/src/sass
     touch "$FOLDER"/src/sass/style.sass
     # sass --watch "$FOLDER"/src/sass/style.sass "$FOLDER"/public/css/style.css
+    if [ "$G" = true ] ; then
+        echo "style.css.map" >> "$FOLDER"/.gitignore
+    fi
 }
 
 opts_flag "$@"
