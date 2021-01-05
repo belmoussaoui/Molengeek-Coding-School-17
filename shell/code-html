@@ -4,9 +4,10 @@ DEFAULT_NAME="projet"
 G=false
 S=false
 B=false
+A=false
 
 help () {
-   echo "usage: code-html [--help] [-g | --git] [-s | --sass] <folder>"
+   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [-b | --bootstrap] [-a | --awesome] <folder>"
    echo "Create a project with an html structure and open it with Visual Studio Code."
 }
 
@@ -19,7 +20,7 @@ check_folder () {
 }
 
 opts_flag () {
-    while getopts "gsb-:" opt; do
+    while getopts "gsba-:" opt; do
         case "$opt" in
             -)
                 case ${OPTARG} in
@@ -28,24 +29,31 @@ opts_flag () {
                     git)       G=true ;;
                     sass)      S=true ;;
                     bootstrap) B=true ;;
+                    awesome)   A=true ;;
                 esac ;;
             g) G=true ;;
             s) S=true ;;
             b) B=true ;;
+            a) A=true ;;
             *) : ;;
         esac
     done
 }
 
 html_project () {
-    mkdir -p "$FOLDER"/public/{css,js,html,img}
-    touch "$FOLDER"/index.html "$FOLDER"/public/css/style.css
+    mkdir -p "$FOLDER"/assets/{css,img}
+    touch "$FOLDER"/index.html "$FOLDER"/assets/css/style.css
 }
 
 add_git () {
     git init "$FOLDER"
     if [[ "$OSTYPE" == "darwin"* ]]; then
         echo ".DS_Store" >> "$FOLDER"/.gitignore
+    fi
+    if [ "$A" = true ] || [ "$B" = true ] ; then
+        echo "node_modules" >> "$FOLDER"/.gitignore
+        # mkdir -p "$FOLDER"/docs
+        # echo "#"$FOLDER >> "$FOLDER"/docs/README.md
     fi
 }
 
@@ -58,15 +66,36 @@ add_sass () {
     fi
 }
 
+add_awesome () {
+    npm install --prefix "$FOLDER" @fortawesome/fontawesome-free
+}
+
+add_bootstrap () {
+    # npm install --prefix "$FOLDER" popper.js
+    npm install --prefix "$FOLDER" @popperjs/core@^2.5.4
+    npm install --prefix "$FOLDER" bootstrap@next
+}
+
 opts_flag "$@"
 check_folder "$@"
 html_project
 
-code "$FOLDER"
-
+if [ "$B" = true ] || [ "$A" = true ] ; then
+    cd "$FOLDER" && npm init -y
+    cd ../
+fi
+if [ "$B" = true ] ; then
+    add_bootstrap
+fi
+if [ "$A" = true ] ; then
+    add_awesome
+fi
 if [ "$G" = true ] ; then
     add_git
 fi
 if [ "$S" = true ] ; then
     add_sass
 fi
+
+code "$FOLDER"
+
