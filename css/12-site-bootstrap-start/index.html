@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Site Bootstrap</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container-fluid">
+            <a class="d-flex navbar-brand align-items-center" href="#">
+                <img src="./assets/img/coding-week.jpg" alt="" width="90" height="60"
+                    class="d-inline-block align-top me-2">
+                Logo
+            </a>
+            <ul class="d-flex navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container w-75">
+        <!-- <header class="p-5 mt-4 text-light d-flex justify-content-center align-items-center" style="background-color: #451661;">
+            <i class="bi bi-twitter mb-4" style="font-size: 80px;"></i><h1 style="font-size: 45px;">Bootstrap</h1>
+        </header> -->
+
+        <!-- https://elad.medium.com/how-to-crop-images-with-css-b8471d402b16 -->
+        <header class="p-5 mt-4 w-100 overflow-hidden">
+            <!-- $enable-negative-margins: true -->
+            <!-- https://getbootstrap.com/docs/5.0/utilities/spacing/#negative-margin -->
+            <img src="./assets/img/twitter_bootstrap-wallpaper-1920x1200.jpg" alt="" class="d-block w-100" style="margin:-20% 0">
+        </header>
+
+        <div class="container">
+            <div class="row row-cols-2 bg-light mt-4">
+                <div class="col d-flex p-3">
+                    <img src="./assets/img/team-1.png" alt="" width="190" class="me-4">
+                    <div>
+                        <h2 class="fw-light">Nom Prenom</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                </div>
+                <div class="col d-flex p-3">
+                    <img src="./assets/img/team-2.png" alt="" width="190" class="me-4">
+                    <div>
+                        <h2 class="fw-light">Nom Prenom</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                </div>
+                <div class="col d-flex p-3">
+                    <img src="./assets/img/team-3.png" alt="" width="190" class="me-4">
+                    <div>
+                        <h2 class="fw-light">Nom Prenom</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                </div>
+                <div class="col d-flex p-3">
+                    <img src="./assets/img/team-4.png" alt="" width="190" class="me-4">
+                    <div>
+                        <h2 class="fw-light">Nom Prenom</h2>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-info text-light mt-5">
+        <div class="container d-flex justify-content-between p-5">
+            <div class="w-50 text-center">
+                <h3>Informations sur la Coding School</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta nostrum culpa, quia ipsa assumenda eligendi? Earum, sunt. Omnis, voluptatum totam.</p>
+            </div>
+            <form>
+                <span>News Letter</span>
+                <input type="text" class="form-control d-inline w-auto">
+                <button class="btn btn-dark">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+
+</body>
+
+</html>
