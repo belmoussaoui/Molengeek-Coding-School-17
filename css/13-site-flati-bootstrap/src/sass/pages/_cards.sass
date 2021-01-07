@@ -1,0 +1,36 @@
+.cards
+    margin-top: 100px
+
+.card-info
+    text-align: center
+    background-color: #e3e1e1
+    border-radius: 6px
+    padding: 14px
+    width: 276px
+    header
+        div
+            margin-top: 10px
+            font-size: 14px
+            font-weight: bold
+            color: #555
+            text-transform: uppercase
+        a
+            font-size: 14px
+            color: $c1
+            display: inline-block
+            margin-bottom: 10px
+            font-weight: bold
+    p
+        font-size: 13px
+        color: #555
+        line-height: 22px
+
+.icon-card
+    @include set-size(60px);
+    background-color: white;
+    border-radius: 100%
+    font-size: 24px
+    position: relative
+    color: #2980B9
+    &:before
+        @include center-position
