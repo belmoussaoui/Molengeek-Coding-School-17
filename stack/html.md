@@ -27,8 +27,12 @@ pas une balise, pour interpréter le caractère espace
 un cadre pour une citation
 
 ## Validator W3C
-on peut check le code html via l'outil suivant:
+on peut check la validité code html via l'outil suivant:
 https://validator.w3.org/#validate_by_uri
+
+## pug
+`pug` est un préprocesseur pour `html` un peu à la manière d'un `sass` pour `css`:
+https://pugjs.org/api/getting-started.html
 
 
 

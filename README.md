@@ -10,4 +10,5 @@ Donc certaines informations peuvent être manquantes et a contrario je peux ajou
 - **shell** : les exercices avec *Bash* et certains scripts pour automatiser la création de projets;
 - **html** : les exercices sur *HTML*;
 - **css** : les exercices sur *CSS*;
-- **git** : les exercices sur *Git*.
+- **git** : les exercices sur *Git*;
+- **vs-code** : des listes d'extensions pour *Visual Studio Code*.

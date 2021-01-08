@@ -1,0 +1,13 @@
+@mixin underline
+    content: ""
+    height: 1px
+    position: absolute
+    left: 50%
+    bottom: -1rem
+    width: 100%
+    background-color: rgba(0, 0, 0, 0.20)
+
+@mixin bg-img ($url, $height)
+    background: url($url) no-repeat center
+    height: $height
+    background-size: cover

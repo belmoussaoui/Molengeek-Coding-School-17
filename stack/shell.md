@@ -121,6 +121,7 @@ chmod u+r+x filename.sh
 
 ## Script shell
 cheatsheet = https://devhints.io/bash
+https://github.com/denysdovhan/bash-handbook/blob/master/README.md
 ### Execution
 **.sh** pour l'extension d'un script
 
@@ -155,6 +156,9 @@ la variable **environnement**
 env
 ```
 
+on utilise des double quotes pour les variables pour les interpreter comme un argument (un literal)
+https://unix.stackexchange.com/a/78005
+
 ### eval
 utiliser `` `command` `` pour évaluer la commande
 
@@ -185,5 +189,14 @@ echo ${tableau[*]}
 La commande interne **getopts** permet à un script d'analyser les options passées en argument.
 https://www.quennec.fr/book/export/html/341
 mais n'est pas adapté pour les `option long`
+
+pour cela on devra faire preuve d'ingéniosité :
+https://stackoverflow.com/a/7680682
+
+### création de script
+on peut placer un script .sh dans le dossier /usr/local/bin pour l'utiliser depuis n'importe quelle position courante. sur git bash également : http://jrcodeodyssey.com/bash/windows/2019/07/17/custom-bash-commands.html#creating-a-custom-bash-script
+
+### . vs ./ vs source
+https://unix.stackexchange.com/a/312575
 
 > Written with [StackEdit](https://stackedit.io/).

@@ -1,0 +1,14 @@
+.nav-title
+    position: relative
+    &::after
+        @include underline
+        width: 80%
+        transform: translateX(-50%)
+
+nav
+    a
+        color: rgba(0, 0, 0, 0.66)
+        font-size: 0.8rem
+
+.banner
+    @include bg-img("../../assets/img/banner-bg.jpg", 580px)

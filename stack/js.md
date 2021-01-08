@@ -21,7 +21,11 @@ on peut check l'installation de npm
 npm -v # 6.14.9
 node -v # v14.15.3
 ```
-
+### installation
+```
+nmp i
+npm install
+```
 ### cdn vs npm
 on préférera toujours installer les packages npm que d'utiliser un cdn car si le site qui contient le cdn ne fonctionne plus, alors le site qu'on développe ne fonctionnera plus également!
 

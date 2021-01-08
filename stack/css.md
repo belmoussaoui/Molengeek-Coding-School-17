@@ -110,6 +110,11 @@ translate:transform(-50%);
 ### float
 les éléments avec l'attribut float sont retiré du flux normal sauf pour les éléments inline! plus très utilisé car remplacé par les flexbox! ou utilisé pour les divs côte à côte ``inline-block``
 
+### a
+pour les liens il vaut mieux toujours ajouter un `#` pour le href au minimum même si c'est pas le top
+```css
+<a href="#">mon message</a>
+```
 
 ## Pseudo class
 ``h1:hoover`` est une pseudo classe.
@@ -178,5 +183,25 @@ faire attention au zoom qui fausse les valeurs de taille!
 ## Questions et réponses
 ### pourquoi le background-color ne s'applique pas à body mais à toute la page html?
 https://stackoverflow.com/a/11721746
+
+### une petite espace blanc après une image contenu dans une div
+mettre l'image en ``display:block`` résout le problème
+
+### créer un triangle avec le css à partir de bordures
+https://css-tricks.com/snippets/css/css-triangle/
+
+### cropping une image tout simplement
+https://elad.medium.com/how-to-crop-images-with-css-b8471d402b16
+un image coupé en haut et en bas
+```html
+<div style="overflow:hidden">
+	<img style="margin: -20% 0">
+</div>
+<!--or -->
+<div style="display:flex; align-items:center; height: 300px">
+	<img>
+</div>
+```
+
 
 > Written with [StackEdit](https://stackedit.io/).

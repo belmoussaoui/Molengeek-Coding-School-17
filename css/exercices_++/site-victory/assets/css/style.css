@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Roboto, sans-serif, sans-serif;
+}
+
+.ff-1 {
+  font-family: Roboto, sans-serif, sans-serif;
+}
+
+.ff-2 {
+  font-family: Spectral;
+}
+
+.nav-title {
+  position: relative;
+}
+
+.nav-title::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: 50%;
+  bottom: -1rem;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 80%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+nav a {
+  color: rgba(0, 0, 0, 0.66);
+  font-size: 0.8rem;
+}
+
+.banner {
+  background: url("../../assets/img/banner-bg.jpg") no-repeat center;
+  height: 580px;
+  background-size: cover;
+}
+
+.cook-block div {
+  background-color: #f48877;
+}
+
+.cook-img {
+  border: solid 10px #eaf0ff;
+  border-radius: 100%;
+}
+
+.cook-title {
+  margin-top: 20px;
+  font-family: Spectral;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.cook-block div {
+  background-color: #f48877;
+}
+
+.cook-img {
+  border: solid 10px #eaf0ff;
+  border-radius: 100%;
+}
+
+.cook-title {
+  margin-top: 20px;
+  font-family: Spectral;
+  font-size: 22px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

@@ -6,6 +6,7 @@ master deviens main :-(
 https://www.zdnet.com/article/github-to-replace-master-with-main-starting-next-month/
 
 https://www.grafikart.fr/formations/git
+https://www.atlassian.com/fr/git/tutorials
 
 ## Git vs Github
 git est le langage et github est l'outil qui utilise le langage git pour l'hébergement de dépôts git.
@@ -13,6 +14,9 @@ git est le langage et github est l'outil qui utilise le langage git pour l'hébe
 git est basé sur un modèle distribué (décentralisé), on peut donc travailler hors ligne sur sa propre machine jusqu'au (``pull/push``?).
 
 d'ailleurs on peut utiliser git seul sans de dépôt distant! par contre par moyen de collaborer avec d'autres développeurs de cette manière. c'est uniquement pour garder un historique du code. 
+
+une vidéo expliquant la manière dont fonctionne git:
+https://www.youtube.com/watch?list=PLtAnN3kwIVucWlr1pyfnmw8qCNaq0tusi&v=PjTilX5DeyM&feature=emb_title
 
 ## Les états des fichiers
 un fichier peut être
@@ -110,6 +114,11 @@ afficher les commits sous forme de graphe
 ```git
 git log --all --decorate --oneline --graph
 ```
+
+on peut afficher l'historique sur vs code en cherchant ``git history`` dans le panel de vs code en installant https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory.
+
+### git reflog
+contient tous les commits même ceux effacés et qui n'ont pas était nettoyé par le garbage collector de git! c'est une astuce de pro. ``reflog`` donne accès aux derniers emplacements de  HEAD. permet donc de retrouver le ``SHA1`` (id d'un commit) qui a était effacé mais toujours en mémoire.
 
 ### git diff
 permet de voir les différences avec le dernier commit
