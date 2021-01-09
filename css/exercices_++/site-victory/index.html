@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,30 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <nav class="pt-5 pb-1 text-center bg-secondary">
+        <nav class="pt-5 pb-1 text-center bg-secondary navbar-expand-lg">
             <span class="nav-title d-block ff-2 fst-italic" style="font-size: 2.5rem;">Victory</span>
-            <ul class="navbar mx-auto text-uppercase mt-5" style="width:30%">
-                <li><a href="">Home</a></li>
-                <li><a href="">Our Menus</a></li>
-                <li><a href="">Blog Entries</a></li>
-                <li><a href="">Contact Us</a></li>
-            </ul>
+            <button class="navbar-toggler navbar-light bg-light mt-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar mx-auto text-uppercase mt-5 collapse-md" style="width:30%">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Our Menus</a></li>
+                    <li><a href="">Blog Entries</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </div>
         </nav>
         <div class="container-fluid p-0">
             <div class="banner p-0 d-flex align-items-center">
                 <div class="text-center text-light container">
                     <h3 class="text-uppercase fs-6">Here you can find delicious food</h3>
-                    <h1 class="text-uppercase mt-3">Asian Restaurant</h1>
+                    <h1 class="text-uppercase mt-3 ff-2">Asian Restaurant</h1>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, deleniti.</p>
                     <button class="btn bg-primary text-light mt-3">Order right now</button>
                 </div>
@@ -33,10 +42,10 @@
 
     <section class="container">
         <div class="d-flex justify-content-center mt-10">
-            <div class="col-3 ps-5 pt-5">
+            <div class="col-md-3 ps-5 pt-5 d-none d-lg-block">
                 <img src="./assets/img/cook_01.jpg" alt="" class="img-fluid">
             </div>
-            <div class="bg-primary col-3 text-light text-uppercase text-center cook-block">
+            <div class="bg-primary col-lg-3 col-12 text-light text-uppercase text-center cook-block">
                 <h2 class="fs-5 mt-5">We cook delicious</h2>
                 <div class="m-3 p-3">
                     <h6>You can call us on:</h6>
@@ -45,23 +54,23 @@
                 <span class="d-block mb-3">or</span>
                 <button class="btn text-uppercase text-primary bg-light mb-3">ORDER NOW</button>
             </div>
-            <div class="col-3 pe-5 pt-5">
+            <div class="col-md-3 pe-5 pt-5 d-none d-lg-block">
                 <img src="./assets/img/cook_02.jpg" alt="" class="img-fluid">
             </div>
         </div>
         <div class="container">
-            <div class="row text-center mt-10 jusify-content-evenly mx-8 mb-10">
-                <div class="col-3">
+            <div class="row text-center mt-10 jusify-content-evenly mx-lg-4 mx-md-8 mb-10">
+                <div class="col-lg-3 col-md-6 col-12">
                     <img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
                     <div class="cook-title">Breakfast</div>
                 </div>
-                <div class="col-3"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
+                <div class="col-lg-3 col-md-6 col-12"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
                     <div class="cook-title">Lunch</div>
                 </div>
-                <div class="col-3"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
+                <div class="col-lg-3 col-md-6 col-12"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
                     <div class="cook-title">Dinner</div>
                 </div>
-                <div class="col-3"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
+                <div class="col-lg-3 col-md-6 col-12"><img src="./assets/img/cook_breakfast.png" alt="" class="cook-img">
                     <div class="cook-title">Desserts</div>
                 </div>
             </div>
@@ -70,12 +79,272 @@
 
     <section id="book">
         <div class="container-fluid p-0">
-            <div class="banner p-0 d-flex align-items-center">
-                
+            <div class="banner p-0 d-flex justify-content-center text-center">
+                <div>
+                    <h2 class="mt-8 mb-md-6 mb-2">Book your table now</h2>
+                    <div class="row mx-auto">
+                        <div class="col p-0 d-md-block d-none">
+                            <img src="./assets/img/book_left_image.jpg" alt="" class="w-100">
+                        </div>
+                        <div class="col-10 mx-auto pb-3 p-2" style="background-color: white; max-width: 390px;">
+                            <div class="mt-3">Reservation</div>
+                            <div class="row row-cols-md-2 row-cols-1 gy-2 align-items-center h-75 mt-1">
+                                <div class="col">
+                                    <select class="form-select form-style" aria-label="Default select example">
+                                        <option selected>Select day</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select form-style" aria-label="Default select example">
+                                        <option selected>Select hour</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input class="col form-control form-style" placeholder="Full name">
+                                </div>
+                                <div class="col">
+                                    <input class="col form-control form-style" placeholder="Phone number">
+                                </div>
+                                <div class="col">
+                                    <select class="form-select form-style" aria-label="Default select example">
+                                        <option selected>How many persons</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <button class="btn bg-primary text-light text-uppercase px-3 py-1">Book
+                                        Table</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="phone-app bg-primary text-center">
+        <div class="container pt-8">
+            <h2 class="">Get application for your phone</h2>
+            <button class="btn bg-light text-primary text-uppercase px-3 py-1 mb-8 mt-3">Download now</button>
+        </div>
+    </section>
+
+    <section id="food">
+        <div class="container pt-10 mb-10">
+            <h2 class="text-dark text-center mb-8">Weekly featured food</h2>
+            <div class="row gx-4 gy-4 mx-md-10 mx-0">
+                <div class="col-lg-4 col-12">
+                    <div class="bg-secondary px-3 pb-3">
+                        <div class="title-card title-food ff-2 fs-3 pt-3 mb-5">Breakfast</div>
+                        <div class="card card-style">
+                            <div class="position-relative">
+                                <img src="./assets/img/breakfast_item.jpg" alt=""
+                                    class="card-img-top position-relative">
+                                <div class="position-absolute info-card pos-eb">
+                                    $4.50
+                                </div>
+                            </div>
+                            <div class="card-body p-2">
+                                <h5 class="card-title fw-normal ff-2 fs-6">Kale Chips Art Party</h5>
+                                <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                                    architecto odit, officiis non animi vitae?</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="bg-secondary px-3 pb-3">
+                        <div class="title-card title-food ff-2 fs-3 pt-3 mb-5">Breakfast</div>
+                        <div class="card card-style">
+                            <div class="position-relative">
+                                <img src="./assets/img/breakfast_item.jpg" alt=""
+                                    class="card-img-top position-relative">
+                                <div class="position-absolute info-card pos-eb">
+                                    $4.50
+                                </div>
+                            </div>
+                            <div class="card-body p-2">
+                                <h5 class="card-title fw-normal ff-2 fs-6">Kale Chips Art Party</h5>
+                                <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                                    architecto odit, officiis non animi vitae?</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="bg-secondary px-3 pb-3">
+                        <div class="title-card title-food ff-2 fs-3 pt-3 mb-5">Breakfast</div>
+                        <div class="card card-style">
+                            <div class="position-relative">
+                                <img src="./assets/img/breakfast_item.jpg" alt=""
+                                    class="card-img-top position-relative">
+                                <div class="position-absolute info-card pos-eb">
+                                    $4.50
+                                </div>
+                            </div>
+                            <div class="card-body p-2">
+                                <h5 class="card-title fw-normal ff-2 fs-6">Kale Chips Art Party</h5>
+                                <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                                    architecto odit, officiis non animi vitae?</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="bg-secondary">
+        <div class="container pt-10">
+            <h2 class="text-dark text-center mb-10">Our blog post</h2>
+            <div class="row row-cols-2 gx-3 gy-3 mx-md-15 pb-10">
+                <div class="col-lg-6 col-12">
+                    <div class="card card-style bg-transparent">
+                        <div class="row g-0">
+                            <div class="col-lg-6 col-12 p-0 position-relative">
+                                <img src="./assets/img/blog_post_01.jpg" alt="" class="w-100">
+                                <div class="position-absolute info-card pos-st">
+                                    26 Oct 2020
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-0  bg-light">
+                                <div class="card-body px-2">
+                                    <h5 class="card-title fw-normal ff-2 fs-5">Stumptown Tofu Schlitz</h5>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Branding</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                        </ol>
+                                    </nav>
+                                    <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Incidunt, cum facilis ea explicabo alias excepturi neque obcaecati natus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card card-style bg-transparent">
+                        <div class="row g-0">
+                            <div class="col-lg-6 col-12 p-0 position-relative">
+                                <img src="./assets/img/blog_post_01.jpg" alt="" class="w-100">
+                                <div class="position-absolute info-card pos-st">
+                                    26 Oct 2020
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-0  bg-light">
+                                <div class="card-body px-2">
+                                    <h5 class="card-title fw-normal ff-2 fs-5">Stumptown Tofu Schlitz</h5>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Branding</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                        </ol>
+                                    </nav>
+                                    <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Incidunt, cum facilis ea explicabo alias excepturi neque obcaecati natus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card card-style bg-transparent">
+                        <div class="row g-0">
+                            <div class="col-lg-6 col-12 p-0 position-relative">
+                                <img src="./assets/img/blog_post_01.jpg" alt="" class="w-100">
+                                <div class="position-absolute info-card pos-st">
+                                    26 Oct 2020
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-0  bg-light">
+                                <div class="card-body px-2">
+                                    <h5 class="card-title fw-normal ff-2 fs-5">Stumptown Tofu Schlitz</h5>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Branding</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                        </ol>
+                                    </nav>
+                                    <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Incidunt, cum facilis ea explicabo alias excepturi neque obcaecati natus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card card-style bg-transparent">
+                        <div class="row g-0">
+                            <div class="col-lg-6 col-12 p-0 position-relative">
+                                <img src="./assets/img/blog_post_01.jpg" alt="" class="w-100">
+                                <div class="position-absolute info-card pos-st">
+                                    26 Oct 2020
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-0  bg-light">
+                                <div class="card-body px-2">
+                                    <h5 class="card-title fw-normal ff-2 fs-5">Stumptown Tofu Schlitz</h5>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Branding</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                                        </ol>
+                                    </nav>
+                                    <p class="card-text ff-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                        Incidunt, cum facilis ea explicabo alias excepturi neque obcaecati natus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="">
+        <div class="container">
+            <h2 class="text-center pt-10">Signup for our newsletters</h2>
+            <div class="d-flex justify-content-center flex-column flex-md-row pt-5">
+                <input type="email" class="col-md-3 me-md-1" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <button class="btn text-light text-uppercase mt-md-0 mt-1 ms-md-1 px-2"
+                    style="font-size: 0.8rem; border: solid white 1px; border-radius: 3px;">Send message</button>
             </div>
         </div>
 
     </section>
-    
+
+    <footer style="background-color: #383E4E;">
+        <div class="container text-light">
+            <div class="d-flex justify-content-center text-center py-6 mx-10">
+                <span class="col">Copyright @ 2020 Victory Template</span>
+                <ul class="d-flex p-0 justify-content-center col">
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                    <li>.</li>
+                </ul>
+                <span class="col">Design: TemplateMo</span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
 </body>
+
 </html>
