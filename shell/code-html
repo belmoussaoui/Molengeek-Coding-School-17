@@ -41,39 +41,47 @@ opts_flag () {
 }
 
 html_project () {
-    mkdir -p "$FOLDER"/assets/{css,img}
-    touch "$FOLDER"/index.html "$FOLDER"/assets/css/style.css
+    mkdir "$FOLDER"
+    cd "$FOLDER"
+    mkdir -p assets/{css,img}
+    touch index.html assets/css/style.css
 }
 
 add_git () {
-    git init "$FOLDER"
+    git init ./
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo ".DS_Store" >> "$FOLDER"/.gitignore
+        echo ".DS_Store" >> .gitignore
     fi
     if [ "$A" = true ] || [ "$B" = true ] ; then
-        echo "node_modules" >> "$FOLDER"/.gitignore
-        # mkdir -p "$FOLDER"/docs
-        # echo "#"$FOLDER >> "$FOLDER"/docs/README.md
+        echo "node_modules" >> .gitignore
+        mkdir docs
+        # echo "#"$FOLDER >> docs/README.md
     fi
 }
 
 add_sass () {
-    mkdir -p "$FOLDER"/src/sass
-    touch "$FOLDER"/src/sass/style.sass
-    # sass --watch "$FOLDER"/src/sass/style.sass "$FOLDER"/public/css/style.css
+    mkdir -p assets/sass
+    touch assets/sass/style.sass
+    # sass --watch src/sass/style.sass public/css/style.css
     if [ "$G" = true ] ; then
-        echo "style.css.map" >> "$FOLDER"/.gitignore
+        echo "style.css.map" >> .gitignore
+    fi
+    if [ "$B" = true ] ; then
+        touch assets/sass/bootstrap.sass
+        touch assets/sass/_variables.sass
+        if [ "$G" = true ] ; then
+            echo "bootstrap.css.map" >> .gitignore
+        fi
     fi
 }
 
 add_awesome () {
-    npm install --prefix "$FOLDER" @fortawesome/fontawesome-free
+    npm install @fortawesome/fontawesome-free
 }
 
 add_bootstrap () {
-    # npm install --prefix "$FOLDER" popper.js
-    npm install --prefix "$FOLDER" @popperjs/core@^2.5.4
-    npm install --prefix "$FOLDER" bootstrap@next
+    npm install @popperjs/core@^2.5.4
+    npm install bootstrap@next
 }
 
 opts_flag "$@"
@@ -81,8 +89,7 @@ check_folder "$@"
 html_project
 
 if [ "$B" = true ] || [ "$A" = true ] ; then
-    cd "$FOLDER" && npm init -y
-    cd ../
+    npm init -y
 fi
 if [ "$B" = true ] ; then
     add_bootstrap
@@ -97,5 +104,4 @@ if [ "$S" = true ] ; then
     add_sass
 fi
 
-code "$FOLDER"
-
+code ./
