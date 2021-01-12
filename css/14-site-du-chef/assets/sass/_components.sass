@@ -1,0 +1,48 @@
+button
+    text-transform: uppercase
+    padding: 1rem 2rem
+    border-radius: 100px
+    border: none
+    font-size: 0.8rem
+
+.btn-primary
+    background-color: white
+    color: black
+
+.btn-secondary
+    background-color: $primary
+    color: white
+
+h1
+    font-family: $font-family-secondary
+    color: white
+    font-size: 3rem
+    .fs-big
+        font-size: 4.5rem
+    @include media-breakpoint-down(xl)
+        font-size: 2rem
+        .fs-big
+            font-size: 3rem
+
+h2
+    text-align: center
+    font-family: $font-family-secondary
+    text-transform: capitalize
+    font-size: 2.25rem
+    position: relative
+    margin: 50px 0
+    span
+        font-size: 3.1rem
+        color: $primary
+        text-transform: uppercase
+    &::after
+        content: ''
+        background: url("../img/decoration_line.png") no-repeat
+        width: 442px
+        height: 13px
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: -0.5rem
+        @media (max-width: 442px)
+            display: none
