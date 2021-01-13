@@ -4417,7 +4417,16 @@ h2::after {
 #header-top .carousel-indicators li {
   width: 15px;
   height: 15px;
+  border: 1px solid transparent;
   border-radius: 100% !important;
+}
+
+#header-top .carousel-indicators .active {
+  width: 10px;
+  height: 10px;
+  border: 4px solid transparent;
+  -webkit-box-shadow: 0 0 0 1px white;
+          box-shadow: 0 0 0 1px white;
 }
 
 #nav-top ul li {
@@ -4436,13 +4445,17 @@ h2::after {
   }
 }
 
+#nav-top ul li:hover {
+  background-color: #c42d40;
+}
+
 .nav-menu a {
   color: #ccc;
   position: relative;
   background-color: white !important;
   border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   border-radius: 0px !important;
-  padding: 10px 0px;
+  padding: 10px 50px;
   margin: 0 10px;
 }
 
@@ -4515,6 +4528,12 @@ h2::after {
   border-top: solid rgba(255, 255, 255, 0.3) 1px;
 }
 
+@media (max-width: 442px) {
+  #book h2:first-child {
+    padding-top: 50px;
+  }
+}
+
 .book-form {
   background: url("../img/book_table_bg.jpg") top no-repeat;
   background-size: cover;
@@ -4549,6 +4568,12 @@ h2::after {
   color: black;
 }
 
+@media (max-width: 350px) {
+  .book-form input, .book-form select {
+    min-width: 180px;
+  }
+}
+
 .blog img {
   border-radius: 20px;
   border: solid 5px rgba(0, 0, 0, 0.1);
@@ -4577,8 +4602,8 @@ h2::after {
 }
 
 #testimonials {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url("../img/testimonials_background.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/testimonials_background.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.4))), url("../img/testimonials_background.jpg");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url("../img/testimonials_background.jpg");
   background-size: cover;
 }
 

@@ -8,9 +8,16 @@
     border-image: url('../img/bottom_decoration_img.png') 30 round
     .carousel-indicators
         li
-            width: 15px;
-            height: 15px;
+            width: 15px
+            height: 15px
+            border: 1px solid transparent;
             border-radius: 100%!important
+        .active
+            // section bricolage ;-)
+            width: 10px
+            height: 10px
+            border: 4px solid transparent
+            box-shadow: 0 0 0 1px white
 
 #nav-top
     ul
@@ -24,3 +31,5 @@
             @include media-breakpoint-down(xl)
                 padding-left: 1em
                 padding-right: 1em
+            &:hover
+                background-color: $primary

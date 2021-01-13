@@ -12,7 +12,7 @@ help () {
 }
 
 check_folder () {
-    if [ -z "$1" ] || [[ "${@: -1}" == -* ]]; then
+    if [ -z "$1" ] || [[ "${@: -1}" == -* ]] ; then
         FOLDER=$DEFAULT_NAME
     else
         FOLDER="${@: -1}"
@@ -49,9 +49,7 @@ html_project () {
 
 add_git () {
     git init ./
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo ".DS_Store" >> .gitignore
-    fi
+    [[ "$OSTYPE" == "darwin"* ]] && echo ".DS_Store" >> .gitignore
     if [ "$A" = true ] || [ "$B" = true ] ; then
         echo "node_modules" >> .gitignore
         mkdir docs
@@ -63,15 +61,11 @@ add_sass () {
     mkdir -p assets/sass
     touch assets/sass/style.sass
     # sass --watch src/sass/style.sass public/css/style.css
-    if [ "$G" = true ] ; then
-        echo "style.css.map" >> .gitignore
-    fi
+    [ "$G" = true ] && echo "style.css.map" >> .gitignore
     if [ "$B" = true ] ; then
         touch assets/sass/bootstrap.sass
         touch assets/sass/_variables.sass
-        if [ "$G" = true ] ; then
-            echo "bootstrap.css.map" >> .gitignore
-        fi
+        [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
     fi
 }
 
@@ -88,20 +82,10 @@ opts_flag "$@"
 check_folder "$@"
 html_project
 
-if [ "$B" = true ] || [ "$A" = true ] ; then
-    npm init -y
-fi
-if [ "$B" = true ] ; then
-    add_bootstrap
-fi
-if [ "$A" = true ] ; then
-    add_awesome
-fi
-if [ "$G" = true ] ; then
-    add_git
-fi
-if [ "$S" = true ] ; then
-    add_sass
-fi
+[ "$B" = true ] || [ "$A" = true ] && npm init -y
+[ "$B" = true ] && add_bootstrap
+[ "$A" = true ] && add_awesome
+[ "$G" = true ] && add_git
+[ "$S" = true ] && add_sass
 
 code ./
