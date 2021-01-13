@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-FOLDER=$1
-mkdir "$FOLDER"
-cd "$FOLDER"
-touch main.ts
-code ./
-tsc -w --pretty src/main.ts
