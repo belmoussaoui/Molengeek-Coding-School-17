@@ -1,0 +1,30 @@
+body{
+    background-color: #ecf0f5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    
+   
+}
+ul{
+    list-style-type: none
+}
+ul ul{
+    list-style-type: circle;
+    background-color:white;
+    border: 1px solid #f4f4f4;
+    border-top: 3px solid #00c0ef;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+i.astuce{
+    background-color: black;
+}
+i.astuce:hover{
+    background-color: white;
+}
+.pb-1{
+    padding-bottom: 10px;
+}
