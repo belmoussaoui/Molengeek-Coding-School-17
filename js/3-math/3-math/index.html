@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Les Méthodes Combinées</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <ul class="pb-1">
+                <h1>Instructions :</h1>
+                <h3>Dans un fichier js lié répondez aux questions ci-dessous</h3>
+                <li>Dans votre fichier js précédez chaque réponse d'exercice d'un commentaire avec comme contenu le numéro de l'exercice, exemple // Exo 1</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>1. La méthode alert</h3>
+                <li>Déclenchez une alerte avec comme texte "Exo 1"</li>
+                <p>
+                    <i>Réponse  : </i>
+                    <i class="astuce">
+                        <br>
+                        // Exo 1<br>
+                        alert('Exo 1');
+                    </i><br><br>                    
+                </p>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>2. La méthode prompt part 1</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un prompt avec comme question "Citez trois prénoms"</li>
+                <li>Affichez ces 3 prénoms dans un console log</li>
+                <p>
+                    <i>Réponse  : </i>
+                    <i class="astuce">
+                        <br>
+                        // Exo 2
+                        <br>
+                        console.log(prompt('Citez trois prénoms'));
+                    </i><br><br>                    
+                </p>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>3. Jouer avec une donnée récupérée</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Créez une variable contenant un prompt qui pose la question "Bonjour comment t'appelles-tu ?</li>
+                <li>Déclenchez une alert renvoi "Bonjour," concatené a ce qui contient la variable du prompt</li>
+                <p>
+                    <i>Réponse  : </i>
+                    <i class="astuce">
+                        <br>
+                        // Exo 3
+                        <br>
+                        // let quelPrenom = prompt("Comment t'appelles-tu ?");
+                        <br>
+                        // alert('Bonjour,'+quelPrenom);
+                    </i><br><br>                    
+                </p>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>4. La méthode prompt part 2</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un premier prompt avec comme question "Entrez un nombre" et stockez la réponse dans une variable</li>
+                <li>Déclenchez un second prompt avec comme question "Entre un second nombre" et stockez la réponse dans une variable</li>
+                <li>Déclenchez une alert content la multiplication entre vos deux nombres précédé de la chaine de caractères "Votre résultat est égale à "</li>
+                <p>
+                    <i>Réponse  : </i>
+                    <i class="astuce">
+                        <br>
+                        // Exo 4
+                        <br>
+                        let nb1 = prompt('Entrez un nombre');
+                        <br>
+                        let nb2 = prompt('Entrez un second nombre');
+                        <br>
+                        alert("Votre résultat est = "+nb1*nb2);
+                    </i><br><br>                    
+                </p>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>5. La longueur d'un string</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un prompt avec comme question "Comment t'appelles-tu ?"</li>
+                <li>Affichez une alert avec comme texte "Votre prénom contient <b>x</b> caractères</li>
+                <p>
+                    <i>Réponse  : </i>
+                    <i class="astuce">
+                        <br>
+                        // Exo 5
+                        <br>
+                        let prenomLongueur = prompt('Comment t\'appelles-tu ?');
+                        <br>
+                        alert("votre prénom contient "+prenomLongueur.length+" caractères")                   
+                    </i><br><br>                    
+                </p>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>6. Modifier une valeur part 1</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un prompt avec comme question "Comment t'appelles-tu ?"</li>
+                <li>Affichez une alert contenant uniquement la première lettre</li>
+                <li>Affichez une seconde alert comprenant le reste</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>7. Modifier une valeur part 2</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un prompt avec comme question "Comment t'appelles-tu ?"</li>
+                <li>Affichez une alert contenant la première lettre que vous mettrez en majuscule concaténé au reste en minuscule</li>
+                <i>Explication : <br>Si l'utilisateur rentre JEROME ou jerome l'alert doit renvoyer Jerome</i>
+            </ul>
+        </li>
+       
+        <li>
+            <ul class="pb-1">
+                <h3>8. Trouver l'index</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Déclenchez un prompt avec comme écris "Ecris une phrase"</li>
+                <li>Déclenchez un second prompt avec écris "De quel mot veux tu connaitres la position dans la phrase suivante : "X"</li>
+                <li>Renvoyez via une alerte la position du mot précédez de la phrase "La position de ton mot démarre à l'indice : X</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>9. On split un peu tout ça</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <i>Utilise des variables !</i>
+                <li>Déclenchez un prompt avec comme écris "Ecris une phrase"</li>
+                <li>Déclenchez un second prompt avec écris "Quel mot veux tu retirer dans la phrase suivante</li>"<i>Affichez ici le phraese écrite dans le prompt</i>"
+                <li>Renvoyez via une alerte la phrase sans le mot retiré</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>10. L'objet Math et ses méthodes : Arrondi Inférieur</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Dans une variable utilisez un prompt avec écris "Ecris un nombre à virgule"</li>
+                <li>Dans une alert renvoyez le contenu de cette variable arrondi a l'entier inférieur le plus proche</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>11. Arrondi Supérieur</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Dans une variable utilisez un prompt avec écris "Ecris un nombre à virgule"</li>
+                <li>Dans une alert renvoyez le contenu de cette variable arrondi a l'entier supérieur le plus proche</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>12. Arrondi le plus proche</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Dans une variable utilisez un prompt avec écris "Ecris un nombre à virgule"</li>
+                <li>Dans une alert renvoyez le contenu de cette variable arrondi au plus proche</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>13. Le plus petit</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Répétez cette instruction 3 fois : Dans une variable utilisez un prompt avec écris "Ecris un nombre" et stockez la dans une variable</li>
+                <li>Avec l'aide d'une méthode retournez le plus petit nombre parmis les trois variables</li>
+            </ul>
+        </li>
+        <li>
+            <ul class="pb-1">
+                <h3>14. Le plus grand</h3>
+                <li>Commentez la réponse de l'exo précédent</li>
+                <li>Répétez cette instruction 3 fois : Dans une variable utilisez un prompt avec écris "Ecris un nombre a virgule" et stockez la dans une variable,avec l'aide d'une méthode arrondissez les réponses</li>
+                <li>Avec l'aide d'une méthode retournez le plus grand nombre parmis les trois variables</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script src="./public/js/main.js"></script>
+
+</html>
