@@ -20,7 +20,6 @@
 ouvrir le pannel et rechercher **shortcut**
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 
-<kbd>Alt</kbd> + (<kbd>Up</kbd> or <kbd>Down</kbd>) = move up/down selected line
 <kbd>Shift</kbd> + <kbd>Option</kbd> + (<kbd>Up</kbd> or <kbd>Down</kbd>) = copy to up/down selected line
 <kbd>Shift</kbd> + <kbd>Control</kbd> + <kbd>Right</kbd> = select the current scope
 <kbd>Option</kbd> + <kbd>Left Click</kbd> = add a new selector to mouse position
@@ -40,6 +39,9 @@ https://forum.alsacreations.com/topic-1-79647-1-Visual-Studio-Code-snippet-HTML-
 https://code.visualstudio.com/docs/languages/html
 
 ouvrir le pannel de visual studio code et tappez "snippet". selectionez "Preference: Configure User Snippet" et ensuite "html".
+
+## cli visual studio code
+install code
 
 
 

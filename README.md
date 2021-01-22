@@ -11,4 +11,5 @@ Donc certaines informations peuvent être manquantes et a contrario je peux ajou
 - **html** : les exercices sur *HTML*;
 - **css** : les exercices sur *CSS*;
 - **git** : les exercices sur *Git*;
-- **vs-code** : des listes d'extensions pour *Visual Studio Code*.
+- **vs-code** : des listes d'extensions pour *Visual Studio Code* des coachs;
+- **js** : les exercices sur *JS* écrits en *typescript*.

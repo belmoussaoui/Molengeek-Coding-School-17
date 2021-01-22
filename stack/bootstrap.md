@@ -109,7 +109,7 @@ par exemple
 ```html
 <div class="row justify-content-md-center">
 ```
-la valeur `md` dans `justify-content-md-ceneter` indique que l'attribut s'applique si la fenêtre est en **médium** (≥768px). la classe `row`est importante car elle indique que l'élément html est en `display: flex`! on peut utiliser `d-flex` pour indiquer que ``display: flex``. donc cette élément est centre au centre de l'écran si plus grand que 768px
+la valeur `md` dans `justify-content-md-center` indique que l'attribut s'applique si la fenêtre est en **médium** (≥768px). la classe `row`est importante car elle indique que l'élément html est en `display: flex`! on peut utiliser `d-flex` pour indiquer que ``display: flex``. donc cette élément est au centre de l'écran si plus grand que 768px
 
 ```html
 <div  class="container-md-fluid py-md-5 container bg-primary text-center">
