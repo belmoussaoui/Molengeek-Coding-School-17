@@ -33,7 +33,7 @@ var meteo;
     meteo[meteo["pluie"] = 1] = "pluie";
     meteo[meteo["soleil"] = 2] = "soleil";
 })(meteo || (meteo = {}));
-let type = parseInt(prompt("un type de météo (0 pour des nuages, 1 pour la pluie et 3 pour le soleil):"));
+let type = parseInt(prompt("un type de météo (0 pour des nuages, 1 pour la pluie et 2 pour le soleil):"));
 switch (type) {
     // 0
     case meteo.nuages:
