@@ -56,8 +56,8 @@ for (var i = donnees.length - 1; i >= 0; i--) {
             break;
     }
 }
-;
-console.log(typesString);
-console.log(typesNumber);
-console.log(typesObject);
-console.log(typesAny);
+console.log(...typesString);
+console.log(...typesNumber);
+console.log(...typesObject);
+console.log(...typesAny);
+console.log(...typesString);

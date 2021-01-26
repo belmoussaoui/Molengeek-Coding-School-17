@@ -18,7 +18,7 @@ for (let i = 20; i >= 0; i -= 2) {
 
 // Exo 4
 let classe = ["Mohammed", "Yasmina", "Amine", "Salim", "Abdel", "Majda", "Bilal", "Laurie", "Yahya", "Mahad", "Nghia", "Saïd", "Camille", "Antoine", "Ayoub", "Yassin", "Cem", "Gauthier"];
-let longPrenoms : string[] = [];
+let longPrenoms: string[] = [];
 classe.forEach(elem => {
     if (elem.length > 5) {
         longPrenoms.push(elem);
@@ -27,8 +27,8 @@ classe.forEach(elem => {
 console.log(...longPrenoms);
 
 // Exo 5
-let sommes : number[] = [14, 7, 97, 65, 247, 67, 101, 4, 34, 78, 1, 900, 0, 11, 32, 23, 61];
-let grossesSommes : number[] = [];
+let sommes: number[] = [14, 7, 97, 65, 247, 67, 101, 4, 34, 78, 1, 900, 0, 11, 32, 23, 61];
+let grossesSommes: number[] = [];
 for (var i = sommes.length - 1; i >= 0; i--) {
     if (sommes[i] > 60) {
         grossesSommes.push(sommes.splice(i, 1)[0]);
@@ -62,9 +62,10 @@ for (var i = donnees.length - 1; i >= 0; i--) {
             typesAny.push(elem);
             break;
     }
-};
+}
 
-console.log(typesString);
-console.log(typesNumber);
-console.log(typesObject);
-console.log(typesAny);
+console.log(...typesString);
+console.log(...typesNumber);
+console.log(...typesObject);
+console.log(...typesAny);
+console.log(...typesString);
