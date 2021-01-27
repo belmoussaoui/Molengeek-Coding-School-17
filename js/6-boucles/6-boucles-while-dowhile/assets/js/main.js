@@ -79,22 +79,32 @@ var valeur;
 //     rep = prompt("Mauvaise Réponse! " + enigme).split(" ");
 // } while (rep[0] != "5817" || rep[1] != "34902")
 // alert("félictation!");
-// Exo 5
-let annee = 2021;
-let randomAnnee = Math.floor(Math.random() * (2020 - 1970)) + 1970;
-let rep = -1;
-let index = 0;
-while (index < 3 && annee - randomAnnee !== rep) {
-    rep = parseInt(prompt(`Si je suis né(e) en ${randomAnnee}, quel âge ai-je aujourd’hui ?`));
-    index++;
-}
-if (annee - randomAnnee === rep) {
-    console.log("Félicitation!");
-}
+// // Exo 5
+// let annee = 2021;
+// let randomAnnee = Math.floor(Math.random() * (2020 - 1970)) + 1970;
+// let rep = -1;
+// let index = 0;
+// while (index < 3 && annee - randomAnnee !== rep) {
+//     rep = parseInt(prompt(`Si je suis né(e) en ${randomAnnee}, quel âge ai-je aujourd’hui ?`));
+//     index++;
+// }
+// if (annee - randomAnnee === rep) {
+//     console.log("Félicitation!");
+// }
 // Exo 6
 let panierFruits = [];
-while (panierFruits.length < 8) {
-    panierFruits.push(prompt("Ajoute un fruit"));
+while (panierFruits.length < 2) {
+    do {
+        var fruit = prompt("Ajoute un fruit");
+    } while (!fruit);
+    panierFruits.push(fruit[0].toUpperCase() + fruit.slice(1));
 }
-alert(...panierFruits);
-let fruit = prompt("voulez vous retirer un fruit?");
+do {
+    alert(panierFruits);
+    let fruit = prompt("voulez vous retirer un fruit?");
+    var index = panierFruits.indexOf(fruit[0].toUpperCase() + fruit.slice(1));
+    if (index > -1) {
+        panierFruits.splice(index, 1);
+    }
+} while (index > -1 && panierFruits.length);
+alert(panierFruits);

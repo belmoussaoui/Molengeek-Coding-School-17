@@ -4,8 +4,8 @@ chiffre = Math.min(Math.max(chiffre, 0), 9);
 let compteur = 0;
 do {
     console.log(compteur);
-    chiffre > 0 ? compteur++: compteur--;
-} while (chiffre > 0 ? compteur <= chiffre : compteur >= chiffre)
+    compteur++;
+} while (compteur <= chiffre)
 
 //  Exercice 2
 let classe1: Array<string> = ["Mohammed", "Yasmina", "Amine", "Salim", "Abdel", "Majda", "Bilal", "Laurie", "Yahya", "Mahad", "Nghia", "Saïd", "Camille", "Antoine", "Ayoub", "Yassin", "Cem", "Gauthier"];
