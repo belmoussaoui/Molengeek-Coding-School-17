@@ -1,7 +1,8 @@
 // Exercice 1
 let chiffre = parseInt(prompt("un chiffre")) || 0;
+chiffre = Math.min(Math.max(chiffre, 0), 9);
 let compteur = 0;
-while (compteur != chiffre) {
+while (chiffre > 0 ? compteur <= chiffre : compteur >= chiffre) {
     console.log(compteur);
     chiffre > 0 ? compteur++: compteur--;
 }
