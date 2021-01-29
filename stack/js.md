@@ -1,4 +1,8 @@
 ﻿# JS
+q/r avancées sur js
+https://github.com/carpacciao/javascript-questions/blob/master/fr-FR/README_fr-FR.md
+
+http://pythontutor.com/visualize.html#mode=edit
 ## NPM
 **npm** (node packages manager) est un gestionnaire de packets pour javascript comme **pip** (pip installs packages) pour python par exemple. **npm** installe automatiquement **node js** (serveur pour js).
 
@@ -43,8 +47,18 @@ pour avoir accès à la valeur primitif d'un type primitif, on interroge directe
 ### Math
 l'objet natif **Math** est statique, donc pas besoin d'instancier l'objet.
 
+### Eval
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/eval
+**Avertissement :** L'exécution de JavaScript à partir d'une chaîne de caractères constitue un risque de sécurité énorme. Il est beaucoup trop facile pour un mauvais acteur d'exécuter du code arbitraire lorsque vous utilisez `eval()`. Voir la section [N'utilisez eval() qu'en dernier recours !](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/eval#Nutiliser_eval_quen_dernier_recours_!) ci-dessous.
+
+### Console.table
+```console.table(elem)``` affiche les éléments dans un tableau!
+
 #### NaN ≠ NaN
 `NaN` n'est pas égal à un `NaN`.
+
+### fonction
+une fonction fructueuse est une retourne une valeur sinon la fonction n'est pas fructueuse.
 
 #### unary operator
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus
@@ -81,12 +95,29 @@ function sum(...theArgs) {
 console.log(sum(1, 2, 3));
 console.log(sum(1, 2, 3, 4));
 ```
+
+le paramètre arguments disparaît avec les fonctions fléchés!
+
 #### décomposition
 ```js
 function f(...[a, b, c]) {
   return a + b + c;
 }
 ```
+
+## littéraux de gabarits avec étiquettes
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits#gabarits_%C3%A9tiquet%C3%A9s_2
+Les _gabarits étiquetés_ (_tagged templates_) sont une forme plus avancée de gabarits. On peut ici utiliser une fonction pour analyser les différents fragments du gabarit. Le premier argument passé à la fonction est l'ensemble de valeurs issues de chaînes de caractères sous la forme d'un tableau. Les arguments ensuite passés à la fonction seront les expressions contenues dans le gabarit.
+
+## Type guard
+Un type de garde est un conditionnel qui vérifie si une variable est d'un certain type, comme ceci :
+```
+if (typeof margin === 'string')  {  
+	// margin must be a string here  
+}
+```
+Ce concept s'appelle le rétrécissement des types. Le rétrécissement des types est lorsque TypeScript peut déterminer le type d'une variable à un moment donné dans notre code.
+
 # TS
 https://www.typescriptlang.org/
 https://www.typescriptlang.org/docs/handbook/intro.html
@@ -140,6 +171,11 @@ par défaut, le typage de typescript est stricte. c'est-à-dire que si on décla
 let variable = "hello";
 ```
 cette variable ne peut pas être attribué par un autre type!
+
+on peut spécifier plusieurs types pour une même variable
+```ts
+let  ID: string | number;
+```
 
 ### string vs String
 toujours utilisé les types primitifs en minuscules (valeurs primitifs) https://stackoverflow.com/a/14727461
@@ -230,8 +266,15 @@ function logGreeting(name: string): void {
 }
 ```
 
+### les types
+on peut créer un type spécial de function via les alias (voir la section correspondante). Remarquons que les noms des paramètres n'ont pas d'incidence sur la création de la fonction.
+```ts
+type  StringsToNumberFunction  =  (arg0:  string, arg1:  string)  =>  number;
+```
+et toujours mettre les parenthèses pour les arguments même s'il y en a qu'un seul!
+
 ## les commentaires
-le typescript ajoute un nouveau type de commenataire en plus de `// ...` et 
+le typescript ajoute un nouveau type de commentaire en plus de `// ...` et 
 ```javascript
 /*
 	message
@@ -299,6 +342,83 @@ let tup: [number, number, number] = [1,2,3];
 let concatResult = tup.concat([4,5,6]);
 // ts infers the variable `concatResult` as an array of numbers, not a tuple.
 ```
+
+## Enums
+### notation
+on peut utiliser les enums pour spécifier le type d'une variable
+```ts
+enum  Pet  {
+	Hamster,
+	Rat,
+	Chinchilla,
+	Tarantula
+}
+let petOnSaleTS:  Pet  =  Pet.Chinchilla;
+```
+avec les enum, il vaut mieux toujours utiliser des string comme valeur parce que c'est plus restrictive
+```ts
+let whichWayToAntarctica: DirectionNumber; 
+whichWayToAntarctica = DirectionNumber.South; //valid
+whichWayToAntarctica = 1; // valid
+
+whichWayToAntarctica = 943205 // valid, will not lead to type errors.
+```
+## Object
+### notation
+```ts
+let aPerson:  {name:  string, age:  number};
+aPerson =  {name:  'User McCodecad', age:  22};
+```
+
+## Alias
+```ts
+type  MyString  =  string;  
+let myVar:  MyString  =  'Hi';  // Valid code.
+```
+ca permet d'éviter les répétitions comme dans l'exemple suivant:
+```ts
+// version sans alias
+let aCompany:  {companyName:  string, boss:  {name:  string, age:  number}, employees:{name:  string, age:  number}[], employeeOfTheMonth:  {name:  string, age:  number}, moneyEarned:  number};
+
+// version avec alias
+type  Person  =  {name:string, age:number};  
+let aCompany:  {companyName:  string, boss:  Person, employees:Person[], employeeOfTheMonth:  Person, moneyEarned:  number};
+```
+En utilisant des alias de type, nous pouvons rendre notre code beaucoup plus simple à comprendre.
+
+les alias peuvent fonctionner avec des valeurs différentes aux types!
+```ts
+type Color = 'green'  | 'yellow'  | 'red';
+```
+https://thisthat.dev/literal-union-type-vs-string-enums/
+
+## les types génériques (template)
+### variables
+comme en c++, peut être pratique pour un objet d'héritage
+```ts
+type  Family<T>  =  {  
+	parents: [T,  T], mate: T, children: T[]  
+};
+```
+et une implémentation du type family
+```ts
+let aStringFamily:  Family<string>  =  {  
+	parents:  ['stern string',  'nice string'],  
+	mate:  'string next door',  
+	children:  ['stringy',  'stringo',  'stringina',  'stringolio']  
+};
+```
+
+### fonctions
+le premier `<T>` permet définir le type de la fonction par exemple par `string`.
+```ts
+function getFilledArray<T>(value:  T, n:  number):  T[]  {  
+	return  Array(n).fill(value);  
+}
+getFilledArray<string>('cheese', 3)
+```
+
+
 
 
 > Written with [StackEdit](https://stackedit.io/).

@@ -27,6 +27,7 @@ function modulo(a, b) {
     return a % b;
 }
 // Exo 6 Carré / Exo 7 Exposant
+// let puissance = (a, b = 2) => b >= 1? a * puissance(a, b-1): 1
 function puissance(a, b = 2) {
     return a ** b;
 }
