@@ -22,7 +22,7 @@ classe.forEach((prenom, index) => {
 });
 
 // 6 et 7
-classe.forEach((prenom, index) => {
+classe.forEach((prenom) => {
     if (['a', 'e', 'm', 'f', 'y', 'n'].includes(prenom[0])) {
         console.log(prenom);
         if (prenom.length > 5) {

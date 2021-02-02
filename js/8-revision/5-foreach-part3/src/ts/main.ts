@@ -1,5 +1,5 @@
 // 1
-let classe : string[] = ["mohammed","yasmina", "amine", "salim", "abdel", "majda", "bilal", "laurie", "yahya"]
+let classe : string[] = ["mohammed", "yasmina", "amine", "salim", "abdel", "majda", "bilal", "laurie", "yahya"]
 
 // 2
 classe.forEach((prenom, index) => {
