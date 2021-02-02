@@ -16,7 +16,7 @@ console.log(tableau[0][0].toLowerCase() + tableau[0][1].toUpperCase());
 console.log(tableau[0] + tableau[2]);
 // 8
 let elem1 = tableau[1].slice(0, Math.ceil(tableau[1].length / 2));
-let elem2 = tableau[4].slice(Math.floor(tableau[2].length / 2));
+let elem2 = tableau[tableau.length - 1].slice(Math.floor(tableau[tableau.length - 1].length / 2));
 console.log(elem1 + elem2);
 // 9
 console.log(tableau[2].slice(0, 2).toUpperCase() + tableau[4].toLowerCase());

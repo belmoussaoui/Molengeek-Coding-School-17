@@ -66,12 +66,45 @@ let leTableau = [4,"true",true,"bonjour",511,"coding school",{},2020,1 ,"maryam"
 // console.log(secondPot);
 
 // 5
-// let panier = ["pomme", "banane", "carotte", "aubergine"];
-// panier.forEach((elem) => {
-//     console.log(elem);
+// let panier = [];
+// let legumeIndex = [];
+// for (let i = 0; i < 4; i++) {
+//     if (parseInt(prompt("0 pour fruit et 1 pour légume"))) {
+//         legumeIndex.push(i)
+//         panier.push(prompt("votre legume"));
+//     } else {
+//         panier.push(prompt("votre fruit"));
+//     }
+// }
+
+// panier.forEach((elem, index, tab) => {
+//     if (legumeIndex.includes(index)) {
+//         console.log(elem, "est un légume");
+//     } else {
+//         console.log(elem, "est un fruit");
+//     }
 // })
 
 // 6
-// 
+let vetements = ['chaussure classique','t-shirt super héro','pull col roulé','basket de sport','chaussettes blanches','pentalon noir','soutien-gorge','pull rayé','t-shirt soleil souriant','caleçon blanc'];
+let sousVetements = [];
+let chaussures = [];
+
+for (let i = vetements.length; i >= 0; i--) {
+    const elem = vetements.shift();
+    let categorie = parseInt(prompt(elem + " 1: sousVetements, 2: vetements, 3: chausures"));
+    switch (categorie) {
+        case 1:
+            sousVetements.push(elem);
+            break;
+        case 2:
+            chaussures.push(elem);
+            break;
+        case 3:
+            vetements.push(elem);
+            break;
+    }
+}
+console.log(vetements, sousVetements, chaussures);
 
 
