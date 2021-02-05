@@ -3,6 +3,9 @@ q/r avancées sur js
 https://github.com/carpacciao/javascript-questions/blob/master/fr-FR/README_fr-FR.md
 
 http://pythontutor.com/visualize.html#mode=edit
+
+https://www.javascripttutorial.net/es6/when-you-should-not-use-arrow-functions/
+https://dev.to/kayut/using-arrow-function-to-define-a-method-2em3
 ## NPM
 **npm** (node packages manager) est un gestionnaire de packets pour javascript comme **pip** (pip installs packages) pour python par exemple. **npm** installe automatiquement **node js** (serveur pour js).
 
@@ -118,6 +121,30 @@ if (typeof margin === 'string')  {
 ```
 Ce concept s'appelle le rétrécissement des types. Le rétrécissement des types est lorsque TypeScript peut déterminer le type d'une variable à un moment donné dans notre code.
 
+## fonctions fléchés dans objet
+il vaut mieux éviter d'utiliser les fonctions fléchés dans un objet littéral car le `this`ne fait référence à l'objet courent!
+Une **expression de fonction fléchée** (_arrow function_ en anglais) permet d’avoir une syntaxe plus courte que [les expressions de fonction](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_function) et ne possède pas ses propres valeurs pour `this`, `arguments`, `super`, ou `new.target`. Les fonctions fléchées sont souvent [anonymes](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Function/name) et ne sont pas destinées à être utilisées pour déclarer des méthodes.
+https://stackoverflow.com/a/31095976
+https://stackoverflow.com/questions/22939130/when-should-i-use-arrow-functions-in-ecmascript-6
+
+## import export
+les importations et exportations
+dans `fichier2.js`
+```js
+export default class Personne {
+	constructor() {
+		console.log('ok');
+	}
+}
+let elias = new Personne();
+export {elias}
+```
+dans `fichier1.js`
+```js
+import Personne from "fichier.js"
+let bilal = new Personne();
+```
+
 # TS
 https://www.typescriptlang.org/
 https://www.typescriptlang.org/docs/handbook/intro.html
@@ -156,6 +183,7 @@ list.lenght
 >> index.ts:5:23 - error TS2551: Property 'lenght' does not exist on type 'string'. Did you mean 'length'?
 ```
 là ou javascript retourne la valeur `undefined`!
+
 
 
 ## les types
@@ -392,6 +420,10 @@ type Color = 'green'  | 'yellow'  | 'red';
 ```
 https://thisthat.dev/literal-union-type-vs-string-enums/
 
+The biggest difference between `interface` and `type` is that `interface` can only be used to type objects, while `type` can be used to type objects, primitives, and more. As it turns out,  `type`  is more versatile and functional than  `interface`. So why would we use  `interface`?
+
+Sometimes, we don’t want a type that can do everything. We’d like our types to be constrained so we’re more likely to write consistent code. Since  `interface`  may only type objects, it’s a perfect match for writing object-oriented programs because these programs need many typed objects. So, let’s get started writing types with  `interface`. https://www.codecademy.com/courses/learn-typescript/lessons/typescript-advanced-object-types/exercises/interfaces-and-types
+
 ## les types génériques (template)
 ### variables
 comme en c++, peut être pratique pour un objet d'héritage
@@ -417,6 +449,96 @@ function getFilledArray<T>(value:  T, n:  number):  T[]  {
 }
 getFilledArray<string>('cheese', 3)
 ```
+## narrowing (rétrécissement)
+### check si une méthode existe
+on utilise `in` pour savoir si une méthode/propriété existe.
+```ts
+type  Soccer  =  {  
+	kick:  ()  =>  void;  
+} 
+function play(sport:  Tennis  |  Soccer)  {  
+	if  ('serve'  in sport)  {  
+		return sport.serve();  
+	}  
+	if  ('kick'  in sport)  {  
+		return sport.kick();  
+	}  
+}
+```
+
+## classe
+### interface
+on peut utiliser les interfaces comme des interfaces de java. c'est à dire qu'on implémente une interface dans une classe.
+```ts
+interface  Robot  {  
+identify:  (id:  number)  =>  void;  
+}  
+class  OneSeries  implements  Robot  {  
+	identify(id:  number)  {  
+		console.log(`beep! I'm ${id.toFixed(2)}.`);  
+	}  
+	answerQuestion()  {  
+		console.log('42!');  
+	}  
+}
+```
+
+#### types composés
+on peut utilisé des types d'interfaces dans des interface pour rendre le code plus lisible
+```ts
+interface  About  {  
+	general:  {  
+		id:  number;  
+		name:  string;  
+		version:  {  
+			versionNumber:  number;  
+		}  
+	}
+}
+// équivalent à 
+interface  About  {  
+	general:  General;  
+}  
+  
+interface  General  {  
+	id:  number;  
+	name:  string;  
+	version:  Version;  
+}  
+  
+interface  Version  {  
+	versionNumber:  number;  
+}
+```
+
+#### Extending Interfaces
+on peut étendre une interface par une autre interface:
+```ts
+interface  Shape  {  
+	color:  string;  
+}  
+interface  Square  extends  Shape  {  
+	sideLength:  number;  
+}
+const mySquare: Square = { sideLength: 10, color: 'blue' };
+```
+
+#### Index Signatures
+on peut définir un type pour les attributs comme dans l'exemple suivant:
+```ts
+interface  SolarEclipse  {
+	[latitude:  string]:  boolean;  
+}
+
+let signature: SolarEclipse : { 
+	'40.712776':  true;  
+	'41.203323':  true;  
+	'40.417286':  false;  
+}
+```
+
+
+
 
 
 
