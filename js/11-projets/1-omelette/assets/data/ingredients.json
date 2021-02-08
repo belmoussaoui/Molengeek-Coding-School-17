@@ -1,0 +1,8 @@
+[
+    {"name": "oignons", "price":0.8, "state":"entier"},
+    {"name": "oeuf", "price":2.5, "state":"entier"},
+    {"name": "epice", "price":0.5, "state":"condiment"},
+    {"name": "fromage", "price":5.0, "state":"entier"},
+    {"name": "sel", "price":1.0, "state":"condiment"},
+    {"name": "huile", "price":2.5, "state":"liquide"}
+]
