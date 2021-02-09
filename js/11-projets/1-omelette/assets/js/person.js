@@ -1,11 +1,11 @@
-export default class Person {
+export default class Person {
     name;
     place;
     money;
     #rightHand;
     #leftHand;
-    
-    constructor(name, place, money=0) {
+
+    constructor(name, place, money = 0) {
         this.name = name;
         this.place = place;
         this.money = money;
@@ -13,7 +13,7 @@ export default class Person {
         this.#leftHand = [];
     }
 
-    toMove(newPlace) {
+    toMove(newPlace, delay = 0) {
         this.place.removePerson(this);
         this.place = newPlace;
         this.place.addPerson(this);
@@ -36,12 +36,12 @@ export default class Person {
         }
     }
 
-    leftTakeItem(index=0) {
+    leftTakeItem(index = 0) {
         this.#leftHand = this.place.getItem(index);
         console.log(`${this.name} a pris ${this.#leftHand[0].type}`);
     }
 
-    leftDropItem(index=0) {
+    leftDropItem(index = 0) {
         let item = this.#leftHand.splice(index, 1).shift();
         this.place.addItem(item);
         console.log(`${this.name} a déposé ${item.type}`);
@@ -56,10 +56,10 @@ export default class Person {
         return this.#leftHand[0].content.slice(0);
     }
 
-    dropCart(recipe) {
+    *dropCart(recipe) {
         for (let elem of this.#leftHand[0].content) {
             recipe.addContent(elem);
-            console.log(`${this.name} dépose ${elem.name} dans ${recipe.name}`);
+            yield console.log(`${this.name} dépose ${elem.name} dans ${recipe.name}`);
         }
         this.#leftHand[0].content = [];
     }

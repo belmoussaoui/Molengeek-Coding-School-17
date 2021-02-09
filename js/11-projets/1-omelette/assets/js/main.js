@@ -1,7 +1,7 @@
 import Person from "./person.js"
 import Place from "./place.js"
 import Ingredient from "./ingredient.js"
-import {Bowl, Stove} from "./recipes.js"
+import { Bowl, Stove } from "./recipes.js"
 
 var $actor = null;
 var $places = {};
@@ -13,7 +13,17 @@ var $dataIngredients = null;
 window.onload = async function () {
     createObjects();
     await loadData();
-    omeletStory();
+    const iterator = omeletStory();
+    nextStep(iterator);
+}
+
+function nextStep(iterator) {
+    setTimeout(() => {
+        let res = iterator.next();
+        if (!res.done) {
+            nextStep(iterator);
+        }
+    }, 1000);
 }
 
 function createObjects() {
@@ -66,44 +76,44 @@ function setupGrocery() {
     }
 }
 
-function omeletStory() {
-    $actor.toMove($places["house"]);
-    $actor.toMove($places["grocery"]);
-    $actor.leftTakeItem();
-    takeAllContent();
-    payAllContent();
-    $actor.toMove($places["house"]);
-    $actor.dropCart($bowl);
-    $actor.toMove($places["grocery"]);
-    $actor.leftDropItem();
-    $actor.toMove($places["house"]);
-    cutAll();
-    $bowl.mix("omelette");
-    dropBowl();
-    $stove.food();
+function* omeletStory() {
+    yield $actor.toMove($places["house"]);
+    yield $actor.toMove($places["grocery"]);
+    yield $actor.leftTakeItem();
+    yield* takeAllContent();
+    yield* payAllContent();
+    yield $actor.toMove($places["house"]);
+    yield* $actor.dropCart($bowl);
+    yield $actor.toMove($places["grocery"]);
+    yield $actor.leftDropItem();
+    yield $actor.toMove($places["house"]);
+    yield* cutAll();
+    yield $bowl.mix("omelette");
+    yield* dropBowl();
+    yield $stove.food();
 }
 
-function takeAllContent() {
+function* takeAllContent() {
     for (let ingredient of $places["grocery"].content()) {
-        $actor.addInCart(ingredient);
+        yield $actor.addInCart(ingredient);
     }
 }
 
-function payAllContent() {
+function* payAllContent() {
     for (let article of $actor.cartContent()) {
-        $actor.pay(article);
+        yield $actor.pay(article);
     }
-    console.log(`il vous reste ${$actor.money.toFixed(2)} euros!`);
+    yield console.log(`il vous reste ${$actor.money.toFixed(2)} euros!`);
 }
 
-function cutAll() {
+function* cutAll() {
     for (let ingredient of $bowl.content()) {
-        $actor.cut(ingredient, $knife);
+        yield $actor.cut(ingredient, $knife);
     }
 }
 
-function dropBowl() {
+function* dropBowl() {
     while ($bowl.content().length > 0) {
-        $stove.addContent($bowl.shift());
+        yield $stove.addContent($bowl.shift());
     }
 }
