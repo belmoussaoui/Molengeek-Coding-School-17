@@ -26,7 +26,6 @@ export default class Patient {
         if (this.peutPayer(traitement.prix)) {
             this.argent -= traitement.prix;
             this.etatSante = "bien";
-            console.log(`${this.nom} est soigné`);
             return true;
         }
         return false;

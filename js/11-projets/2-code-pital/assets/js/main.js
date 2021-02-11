@@ -11,7 +11,10 @@ let chat = {
     "type": "sphynx",
     miaou() {
         setTimeout(() => {
-            console.log('miaou');
+            // miaou seulement si patient dans le cabinet
+            if (doctor.cabinets.length > 1) {
+                console.log('miaou');
+            }
             this.miaou();
         }, 2000);
     }
@@ -23,20 +26,20 @@ let doctor = {
     argent: 0,
     cabinets: [chat],
     attente: patients,
-    diagnostique() {
+    *diagnostique() {
         let patient = this.cabinets[this.cabinets.length - 1];
         let traitement;
-        console.log(`La maladie de ${patient.nom} est ${patient.maladie}`);
+        yield console.log(`La maladie de ${patient.nom} est ${patient.maladie}`);
         for (let d of diagnostiques) {
             if (d.maladie === patient.maladie) {
                 traitement = d.traitement;
                 break;
             }
         }
-        console.log(`Le traitement de ${patient.nom} est ${traitement}`);
+        yield console.log(`Le traitement de ${patient.nom} est ${traitement}`);
         if (patient.payer(this, 50)) {
-            console.log(patient.nom, "a payé le docteur");
-            console.log(patient.nom, "a actuelement", patient.argent + "$");
+            yield console.log(patient.nom, "a payé le docteur");
+            yield console.log(patient.nom, "a actuelement", patient.argent + "$");
         };
         patient.traitement = traitement;
         patient.etat = "traitement";
@@ -89,22 +92,24 @@ function* codePital() {
         console.log("---------------------");
         yield console.log(`Dans la salle d'attente il y a ${doctor.attente.length} personne(s)`);
         yield doctor.patientIn();
-        yield doctor.diagnostique();
+        yield* doctor.diagnostique();
         let patient = doctor.patientOut();
-        yield patient.goTo([], pharmacie)
+        yield;
+        patient.goTo([], pharmacie)
         yield console.log(`${patient.nom} est allé à pharmacie`);
         if (!patient.takeCare(traitements)) {
+            yield
             yield console.log(`${patient.nom} n'a pas assez d'argent pour payer le traitement`)
             yield console.log(`${patient.nom} est mort, donc il est au cimetiere`);
-            cimetiere.push(patient.nom);
+            patient.goTo(pharmacie, cimetiere);
+        } else {
+            yield
+            yield console.log(`${patient.nom} est soigné`);
         }
     }
-
-
 }
 
 nextStep(codePital());
-
 function nextStep(iterator) {
     setTimeout(() => {
         let res = iterator.next();
