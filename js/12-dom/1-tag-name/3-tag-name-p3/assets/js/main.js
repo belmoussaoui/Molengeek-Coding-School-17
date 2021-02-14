@@ -14,7 +14,7 @@ console.log(firstp.getElementsByTagName("i")[0]);
 // 4
 let allp = lastDiv.getElementsByTagName("p");
 let lastp = allp[allp.length - 1];
-console.log(lastp);
+// console.log(lastp);
 console.log(lastp.getElementsByTagName("b")[0]);
 
 // 5
