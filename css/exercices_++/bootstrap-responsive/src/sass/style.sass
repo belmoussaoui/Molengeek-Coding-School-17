@@ -1,0 +1,13 @@
+// https://blog.assistancy.be/blog/bootstrap-5-override-theme-colors-sass
+// @import ../../node_modules/bootstrap/scss/functions
+// @import ../../node_modules/bootstrap/scss/variables
+// $theme-colors: (primary: $primary,secondary: $secondary,success: $success,info: $info,warning: $warning,danger: $danger,light: $light,dark: $dark,"pink": pink)
+// @import ../../node_modules/bootstrap/scss/bootstrap
+
+
+$spacer: 1rem
+$spacers: (0: 0)
+@for $i from 1 through 10
+    $spacers: map-merge($spacers, ($i: ($i * $spacer)))
+
+@import ../../node_modules/bootstrap/scss/bootstrap
