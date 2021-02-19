@@ -12,4 +12,5 @@ Donc certaines informations peuvent être manquantes et a contrario je peux ajou
 - **css** : les exercices sur *CSS*;
 - **git** : les exercices sur *Git*;
 - **vs-code** : des listes d'extensions pour *Visual Studio Code* des coachs;
-- **js** : les exercices sur *JS* écrits en *typescript*.
+- **js** : les exercices sur *JS* écrits en *typescript*/*javascript*;
+- **coding-week-19** : préparation de la coding week 19.
