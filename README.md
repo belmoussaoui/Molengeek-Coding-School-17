@@ -1,7 +1,6 @@
 # Coding-School-17
 Mon cours avec les exercices et mes prises de notes.
-Mes notes sont écrites avant tout pour moi.
-Donc certaines informations peuvent être manquantes et a contrario je peux ajouter de la matière non vue.
+https://trello.com/b/c79LNQaH/coding-school-17
 
 ## Répertoire de travail
 - **stack** : les notes de cours en markdown écrites avec [Stack Edit](https://stackedit.io/);
