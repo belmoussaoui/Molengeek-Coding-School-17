@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container text-center mt-4">
+
+    <h1>Exercices Fun sur le Dom</h1>
+    <div id="exo-counter">
+      <h2>Exo Counter</h2>
+      <p>Quand on clique sur "Count", on va incrémenter le nombre qui se trouve dans le span</p>
+      <button class="btn btn-primary">Count</button>
+      <span class="ml-4">0</span>
+    </div>
+    <div id="exo-move-square">
+      <h2>Exo Move Square</h2>
+      <p>Quand on clique sur le carré vert, il va a l'extrémité droite. Quand on reclique dessus il va à gauche. <br> Pour ça on va alterner les classes "off" et "on".</p>
+      <div id="parent-square">
+        <div id="square" class="off"></div>
+      </div>
+      <p>Indice : <span class="indice">chercher la méthode toggle() pour alterner les classes;</span></p>
+      <p>Avancé : écrire 'On' dans le carré s'il contient la classe 'on', écrire 'Off' s'il contient la class 'off'</p>
+    </div>
+    <div id="exo-numerote-title">
+      <h2>Exo Number Titles</h2>
+      <p>Numéroter tous les titres grace à une fonction qui se lance quand on appuie sur la touche "6" du clavier </p>
+      <p>donc : "Exo Counter" => "1. Exo Counter". Et ainsi de suite pour tous les titres.</p>
+      <p>Avancé : quand on réappuie sur "6", ça enlève la numérotation</p>
+      <p>Indice : <span class="indice">Pour chaque titre, réassigner la string d'un compteur concatainé au titre actuel.</span></p>
+    </div>
+    <div id="exo-multi-click">
+      <h2>Exo Multi Click</h2>
+      <p>Quand on clique sur le carré ci-dessous, il faut qu'il se transforme en cercle. <br>Il n'est pas remplacé puisqu'il y a une transition.</p>
+      <p>Quand on reclique dessus, il colore son fond en rouge <br>Quand on clique à nouveau on revient au point de départ, et ainsi de suite.</p>
+      <div class="transition" id="multi-click"></div>
+      <div id="exo-set-color">
+        <h2>Exo Set Color</h2>
+        <input type="color" id="pick-color">
+        <p>Quand on change la valeur de l'input color, ça change aussi la couleur de ce paragraphe.</p>
+        <p>Indice : <span class="indice">Ecouter l'event "change" sur l'input</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/exo1.js"></script>
+</body>
+
+</html>

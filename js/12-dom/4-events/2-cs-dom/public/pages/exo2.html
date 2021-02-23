@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container text-center mt-4">
+
+    <h1>Exercices sur l'insertion/suppression d'éléments</h1>
+    <div id="exo-copy-img">
+      <h2>Exo copy images</h2>
+      <p>Faire une fonction qui se lance à chaque click sur le bouton.
+        <br>Cette fonction copie l'image de mignon qui est dans #mignon-container et l'ajoute dans le #mignon-container
+      </p>
+      <button class="btn btn-primary mb-2">add image</button>
+      <div id="mignon-container">
+        <img width='200' src="../images/mignons.gif" alt="">
+      </div>
+    </div>
+    <div id="exo-rm-img">
+      <h2>Exo rm images</h2>
+      <p>Faire en sorte que quand je clique sur une image elle se supprime. Donc qu'elle s'enlève du dom.
+      </p>
+      <div id="mignon2-container">
+        <img width='200' src="../images/mignons2.gif" alt="">
+        <img width='200' src="../images/mignons2.gif" alt="">
+        <img width='200' src="../images/mignons2.gif" alt="">
+        <img width='200' src="../images/mignons2.gif" alt="">
+        <img width='200' src="../images/mignons2.gif" alt="">
+      </div>
+      <p>Avancé : Quand il n'y a plus du tout d'images, on attend 1 seconde puis on ajoute à nouveau les 5 images supprimables.</p>
+    </div>
+
+    <div id="exo-add-li">
+      <h2>Exo creation d'une balise li</h2>
+      <p>Créer un élément li (donc pas en le copiant).
+        <br>Mettre du texte dedans
+        <br>Ajouter le li entre les 2 li ci-dessous (là où devrait se trouver le 'li num 2')
+      </p>
+      <ul class="w-25 mx-auto text-left">
+        <li>li num 1</li>
+        <li>li num 3</li>
+      </ul>
+    </div>
+
+    <div id="exo-li-from-input">
+      <h2>Exo ajout d'une tache à une liste</h2>
+      <p>Faire une fonction qui se lance quand on clique sur le button submit. => attention au rafraichissement de page
+        <br>Cette fonction crée un élément li,
+        <br>Elle attribue la valeur de l'input à ce li.
+        <br>Elle insère ce nouveau li au début du ul.
+        <br>Elle vide l'input.
+      </p>
+      <p>Indice : <span class="indice">preventDefault()</span></p>
+      <div class="form-row justify-content-center">
+        <div class="col-sm-3 my-1">
+          <input type="text" class="form-control" placeholder="task">
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+      <ul class="w-25 mx-auto text-left">
+        <li>task 2</li>
+        <li>task 1</li>
+      </ul>
+      <p>Avancé : Faire en sorte que quand je cilque sur le bouton "edit order" il devienne vert et que je puisse changer l'ordre des items (li)
+        <br>Le changement d'ordre se fera en clickant sur le premier li à échanger avec un autre.
+        <br>Une fois qu'on reclique sur le bouton "edit order" il redevient à sa couleur initale et on ne peut plus échanger les li.
+      </p>
+
+      <button class="btn btn-light mb-4">edit order</button>
+    </div>
+
+  </div>
+
+  <script src="../js/exo2.js"></script>
+</body>
+
+</html>

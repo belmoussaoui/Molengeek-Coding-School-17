@@ -24,7 +24,7 @@ document.querySelectorAll("p")[1].textContent =
 h1.setAttribute("id", "bigTitle");
 
 // 7
-let div = document.querySelector("h1");
+let div = document.querySelector("div");
 div.setAttribute("class", "container");
 
 // 8
