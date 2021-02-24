@@ -69,6 +69,7 @@ submit.addEventListener("click", () => {
     input.value = "";
     // https://stackoverflow.com/a/43838105
     ulTask.prepend(li);
+    li.addEventListener("click", swap);
 });
 
 //bonus
@@ -80,23 +81,29 @@ let edit = document.querySelectorAll("#exo-li-from-input button")[1];
 edit.addEventListener("click", () => {
     onActive = !onActive;
     edit.style.backgroundColor = onActive ? "green" : "#f8f9fa";
-
-    let allli = document.querySelectorAll("#exo-li-from-input li");
-    for (let li of allli) {
-        li.addEventListener("click", () => {
-            if (onActive) {
-                if (index1 === -1) {
-                    allli = document.querySelectorAll("#exo-li-from-input li");
-                    index1 = [...allli].indexOf(li);
-                } else {
-                    allli = document.querySelectorAll("#exo-li-from-input li");
-                    index2 = [...allli].indexOf(li);
-                    ulTask.insertBefore(allli[index1], allli[index2 + 1]);
-                    ulTask.insertBefore(allli[index2], allli[index1 + 1]);
-                    index1 = -1;
-                    index2 = -1;
-                }
-            }
-        });
+    if (!onActive) {
+        index1 = index2 = -1;
     }
 });
+
+function allLi() {
+    return document.querySelectorAll("#exo-li-from-input li");
+}
+
+function swap(e) {
+    if (onActive) {
+        if (index1 === -1) {
+            index1 = [...allLi()].indexOf(e.target);
+        } else {
+            let li = allLi();
+            index2 = [...li].indexOf(e.target);
+            ulTask.insertBefore(li[index1], li[index2 + 1]);
+            ulTask.insertBefore(li[index2], li[index1 + 1]);
+            index1 = index2 = -1;
+        }
+    }
+}
+
+for (let li of allLi()) {
+    li.addEventListener("click", swap);
+}
