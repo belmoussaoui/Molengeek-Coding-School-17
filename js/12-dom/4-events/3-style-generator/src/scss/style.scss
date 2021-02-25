@@ -1,0 +1,44 @@
+$primary: #ea3323;
+$secondary: #6520f5;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.btn-color {
+    width: 40px;
+    height: 40px;
+    text-transform: uppercase;
+    border: none;
+    color: black;
+}
+
+hr {
+    height: 2px !important;
+    color: #6520f5;
+    opacity: 1;
+}
+
+.btn-border-style {
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.btn-border-top {
+    width: 60px;
+    /* padding:0; */
+}
+
+.btn-border {
+    width: 60px;
+    height: 40px;
+    border-left: solid 2px #bcbcbc;
+    border-top: solid 2px #bcbcbc;
+    border-bottom: solid 2px #efefef;
+    border-right: solid 2px #efefef;
+    border-radius: 0px;
+}
+
+#target {
+    width: 350px;
+    height: 150px;
+    border: solid 3px black;
+}

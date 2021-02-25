@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body class="mx-5">
+    <h1 class="pb-2" style="background-color:#2F91F4">Le Dom - Exo: StyleGenerator</h1>
+    <hr>
+    <div class="d-flex align-items-center">
+        <div id="colors">
+            <button type="button" class="btn btn-primary btn-color" style="background-color:#D6D4D4">w</button>
+            <button type="button" class="btn btn-primary btn-color bg-primary">r</button>
+            <button type="button" class="btn btn-primary btn-color" style="background-color:#42932F">g</button>
+            <button type="button" class="btn btn-primary btn-color bg-secondary">b</button>
+        </div>
+
+
+        <div id="border-style" class="mx-1">
+            <button type="button" class="btn btn-border-style" style="border: solid 3px black"></button>
+            <button type="button" class="btn btn-border-style" style="border: dashed 3px black"></button>
+            <button type="button" class="btn btn-border-style" style="border: solid 1px black"></button>
+        </div>
+        
+        <div id="border-top">
+            <button type="button" class="btn btn-border-top" style="background-color: #EEEEEE;">top</button>
+            <button type="button" class="btn btn-border-top" style="border-top: solid 3px red">top</button>
+            <button type="button" class="btn btn-border-top" style="border-top: solid 6px red">top</button>
+        </div>
+    </div>
+
+    <div id="second" class="mt-5 d-flex align-items-center">
+        <input class="p-2" type="color" style="width:200px; height:40px"/>
+        <div id="border-size" class="ms-1">
+            <input type="number" min="0" class="btn btn-border" style="border-top: solid 4px"/>
+            <input type="number" min="0" class="btn btn-border" style="border-right: solid 4px"/>
+            <input type="number" min="0" class="btn btn-border" style="border: solid 4px;"/>
+            <input type="number" min="0" class="btn btn-border" style="border-bottom: solid 4px"/>
+            <input type="number" min="0" class="btn btn-border" style="border-left: solid 4px"/>
+        </div>
+    </div>
+    
+    <div id="third" class="mt-5">
+        <input type="button" class="btn rounded btn-border" style="border-radius: 5px;"/>
+        <input type="button" class="btn btn-border" style="border-top-left-radius: 5px"/>
+        <input type="button" class="btn btn-border" style="border-top-right-radius: 5px"/>
+        <input type="button" class="btn btn-border" style="border-bottom-right-radius: 5px"/>
+        <input type="button" class="btn btn-border" style="border-bottom-left-radius: 5px"/>
+    </div>
+
+
+    <div class="mt-5" id="target">
+    </div>
+
+    <script src="./node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
