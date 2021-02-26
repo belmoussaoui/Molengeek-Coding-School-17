@@ -45,6 +45,55 @@ for (const borderSize of borderSizes) {
 
 function setBorderSize(e) {
     const element = e.currentTarget;
-    target.style.border = "solid black " + element.value + "px";
-    console.log("solid black " + element.value + "px");
+    let value = "solid " + element.value + "px";
+    let i = [...borderSizes].indexOf(element);
+    switch (i) {
+        case 0:
+            target.style.borderTop = value;
+            break;
+        case 1:
+            target.style.borderRight = value;
+            break;
+        case 2:
+            target.style.border = value;
+            break;
+        case 3:
+            target.style.borderBottom = value;
+            break;
+        default:
+            target.style.borderLeft = value;
+    }
+}
+
+const borderRadius = document.querySelectorAll("#third input");
+let i = 1;
+for (const radius of borderRadius) {
+    radius.addEventListener("change", window["setBorderSize" + i]);
+    i++;
+}
+
+function setBorderSize1(e) {
+    const element = e.currentTarget;
+    let value = element.value + "px";
+    target.style.borderRadius = value;
+}
+function setBorderSize2(e) {
+    const element = e.currentTarget;
+    let value = element.value + "px";
+    target.style.borderTopLeftRadius = value;
+}
+function setBorderSize3(e) {
+    const element = e.currentTarget;
+    let value = element.value + "px";
+    target.style.borderTopRightRadius = value;
+}
+function setBorderSize4(e) {
+    const element = e.currentTarget;
+    let value = element.value + "px";
+    target.style.borderBottomRightRadius = value;
+}
+function setBorderSize5(e) {
+    const element = e.currentTarget;
+    let value = element.value + "px";
+    target.style.borderBottomLeftRadius = value;
 }

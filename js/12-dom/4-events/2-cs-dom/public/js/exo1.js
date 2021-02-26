@@ -41,7 +41,6 @@ const multi = document.getElementById("multi-click");
 let state = 0;
 multi.addEventListener("click", () => {
     state = (state + 1) % 3;
-    console.log(state);
     switch (state) {
         case 0:
             multi.style.borderRadius = "0";

@@ -57,6 +57,7 @@ li.textContent = "li num 2";
 let refChild = document.querySelectorAll("ul li")[1];
 let ul = document.querySelector("ul");
 ul.insertBefore(li, refChild);
+//ul.firstElementChild.insertAdjacentElement("beforeend", li)
 
 // 4
 let submit = document.querySelector("#exo-li-from-input button");
@@ -64,11 +65,14 @@ let ulTask = document.querySelector("#exo-li-from-input ul");
 let input = document.querySelector("#exo-li-from-input input");
 
 submit.addEventListener("click", () => {
+    //if (input.value !== "")
     let li = document.createElement("li");
     li.textContent = input.value;
     input.value = "";
     // https://stackoverflow.com/a/43838105
     ulTask.prepend(li);
+
+    // bonus
     li.addEventListener("click", swap);
 });
 
@@ -77,7 +81,8 @@ submit.addEventListener("click", () => {
 let index1 = -1;
 let index2 = -1;
 let onActive = false;
-let edit = document.querySelectorAll("#exo-li-from-input button")[1];
+let edit = document.querySelector("#exo-li-from-input>button");
+
 edit.addEventListener("click", () => {
     onActive = !onActive;
     edit.style.backgroundColor = onActive ? "green" : "#f8f9fa";
@@ -93,10 +98,10 @@ function allLi() {
 function swap(e) {
     if (onActive) {
         if (index1 === -1) {
-            index1 = [...allLi()].indexOf(e.target);
+            index1 = [...allLi()].indexOf(e.currentTarget);
         } else {
             let li = allLi();
-            index2 = [...li].indexOf(e.target);
+            index2 = [...li].indexOf(e.currentTarget);
             ulTask.insertBefore(li[index1], li[index2 + 1]);
             ulTask.insertBefore(li[index2], li[index1 + 1]);
             index1 = index2 = -1;
