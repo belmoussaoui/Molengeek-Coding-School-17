@@ -37,9 +37,13 @@ body,
     flex-wrap: wrap;
 }
 
-.btn-random {
-    display: block;
+.btn-div {
     margin: 0 auto;
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
@@ -50,7 +54,14 @@ body,
     padding: 10px 8px;
 }
 
+.btn-reset {
+    background-color: rgba(255, 255, 255, 0);
+    color: #00d1b2;
+    border-color: #00d1b2;
+}
+
 .box {
+    cursor: pointer;
     box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%);
     color: #4a4a4a;
     border-radius: 2px;

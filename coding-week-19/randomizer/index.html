@@ -14,11 +14,16 @@
             <img class="vue-logo" src="https://vuejs.org/images/logo.png" />
             Randomizer
         </h1>
-        <button @click="onRandom" class="btn-random">
-            Random <i class="fas fa-random"></i>
-        </button>
+        <div class="btn-div">
+            <button v-if="isStarting" @click="onReset" class="btn btn-reset">
+                Reset <i class="fas fa-undo"></i>
+            </button>
+            <button v-if="!isTerminate" @click="onRandom" class="btn btn-random">
+                Random <i class="fas fa-random"></i>
+            </button>
+        </div>
         <div id="list" :key="index">
-            <div v-for="name in list" class="box" v-bind:class="{ active: isActive(name), deactivate: isDeactivate(name), chosen: isChosen(name) }">
+            <div @click="onSwitch(name)" v-for="name in list" class="box" v-bind:class="{ active: isActive(name), deactivate: isDeactivate(name), chosen: isChosen(name) }">
                 <span class="name">{{name}}</span>
             </div>
         </div>

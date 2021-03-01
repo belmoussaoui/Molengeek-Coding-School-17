@@ -6,9 +6,10 @@ S=false
 B=false
 A=false
 T=false
+SC=false
 
 help () {
-   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [-b | --bootstrap] [-a | --awesome] <folder>"
+   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [--scss] [-b | --bootstrap] [-a | --awesome] <folder>"
    echo "Create a project with an html structure and open it with Visual Studio Code."
 }
 
@@ -32,6 +33,7 @@ opts_flag () {
                     bootstrap)  B=true ;;
                     awesome)    A=true ;;
                     typescript) T=true ;;
+                    scss)       SC=true ;;
                 esac ;;
             g) G=true ;;
             s) S=true ;;
@@ -60,13 +62,30 @@ add_git () {
 }
 
 add_sass () {
-    mkdir -p src/sass
-    touch src/sass/style.sass
+    type="sass"
+    if [ "$SC" = true ] ; then
+        type="scss"
+
+    fi
+    mkdir -p src/$type
+    touch src/$type/style.$type
     # sass --watch src/sass/style.sass public/css/style.css
     [ "$G" = true ] && echo "style.css.map" >> .gitignore
     if [ "$B" = true ] ; then
-        touch src/sass/bootstrap.sass
-        touch src/sass/_variables.sass
+        touch src/$type/bootstrap.$type
+        touch src/$type/_variables.$type
+        [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
+    fi
+}
+
+add_scss () {
+    mkdir -p src/scss
+    touch src/scss/style.scss
+    # sass --watch src/scss/style.sass assets/scss/style.css
+    [ "$G" = true ] && echo "style.css.map" >> .gitignore
+    if [ "$B" = true ] ; then
+        touch src/scss/bootstrap.sass
+        touch src/scss/_variables.sass
         [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
     fi
 }
@@ -95,7 +114,7 @@ html_project
 [ "$B" = true ] && add_bootstrap
 [ "$A" = true ] && add_awesome
 [ "$G" = true ] && add_git
-[ "$S" = true ] && add_sass
+[ "$S" = true ] || [ "$SC" = true ] && add_sass
 [ "$T" = true ] && add_typescript
 
 code ./

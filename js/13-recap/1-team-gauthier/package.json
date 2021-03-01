@@ -1,0 +1,24 @@
+{
+  "name": "Exo_recap_JS",
+  "dependencies": {
+    "admin-lte": "^2.4.8",
+    "bootstrap": "^5.0.0-beta2"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-larson/C17_Bilal-Gauthier_ExoRecapJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mr-larson/C17_Bilal-Gauthier_ExoRecapJS/issues"
+  },
+  "homepage": "https://github.com/mr-larson/C17_Bilal-Gauthier_ExoRecapJS#readme",
+  "description": ""
+}

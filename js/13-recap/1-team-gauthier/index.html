@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exo_Recap_JS</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+  <!-- Header Start -->
+  <section id="header" class="container my-4">
+    <div class="header bg-primary">
+      <h1 class="text-light"> Javascript DOM </h1>
+    </div>
+    <!-- Button Start -->
+    <div class="d-flex justify-content-around">
+      <button class="btn">Exercice 1</button>
+      <button class="btn">Exercice 2</button>
+      <button class="btn">Exercice 3</button>
+      <button class="btn">Exercice 4</button>
+      <button class="btn">Exercice 5</button>
+      <button class="btn">Exercice 6</button>
+    </div>
+  </section>
+
+  <!-- Exo 1 Start -->
+  <section id="exo1" class="container bg-secondary my-4 d-none">
+    <div class="container">
+      <h2 class="titre"> Le titre</h2>
+      <p>list de propriété et méthode à retrouver dans la documentation.</p>
+      <ul>
+        <li>innerText</li>
+        <li>innerHTML</li>
+        <li>querySelector</li>
+        <li>querySelectorAll()</li>
+        <li>style</li>
+        <li>classList</li>
+      </ul>
+      <p>Changer le contenu du H2 par " le titre modifié</p>
+      <p>changer la couleur du H2 (la couleur que vous voulez)</p>
+      <p>Ajouter une class background boostrap au H2</p>
+    </div>
+  </section>
+
+  <!-- Exo 2 Start -->
+  <section id="exo2" class="container bg-secondary py-5 px-2 d-none">
+    <p>Mettre un écouteur d'événement sur les boutons nav et changer le panel en conséquence</p>
+  </section>
+
+  <!-- Exo 3 Start -->
+  <section id="exo3" class="container bg-secondary py-5 px-2 d-none">
+    <h2 class="fw-bold">welcome inconnu</h2>
+    <p>écriver dans l'input ci-dessous le nom de la personne que vous voulez accueillir</p>
+    <p>lorsque vous cliquez sur le bouton "go" le nom que vous avez ajouter dans l'input sera alors mis dans le span du H2 et l'input sera alors vidé de tout contenu. Attention, interdiction de toucher à l'HTML</p>
+    <input type="text">
+    <button> go </button>
+  </section>
+
+  <!-- Exo 4  -->
+
+  <div id="exo4" class="container bg-secondary d-none">
+    <h2>Déplacer les éléments</h2>
+    <div class="row">
+      <div class="parentBox col-md-5 bg-primary d-flex">
+        <div id="box1" class="box">
+
+        </div>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+      <div class="parentBox col-md-5 bg-primary d-flex">
+          <div id="box2" class="box d-none">
+
+          </div>
+      </div>
+    </div>
+    <div class="boxButtons mt-5">
+      <button class="bg-warning">change place</button>
+    </div>
+    <div class="boxButtons mt-2">
+      <span class="bg-success">nombre de click 0</span>
+    </div>
+  </div>
+
+  <!-- Exo 5 -->
+
+  <section id="exo5" class="container bg-secondary d-none p-5">
+    <h2>Générer des éléments du DOM</h2>
+    <p>cliquer sur le bouton ci-dessous pour générer des oeufs</p>
+    <button class="bg-success text-light p-2 border-0 rounded mt-3">Ajouter un oeuf</button>
+    <div id="oeufs">
+
+    </div>
+
+  </section>
+
+
+  <!-- Exo 6 -->
+
+  <section class="container bg-secondary d-none p-5">
+
+  </section>
+
+  <script src="public/js/main.js" type="module"></script>
+</body>
+
+
+
+</html>

@@ -30,6 +30,8 @@ const app = new Vue({
         list: list,
         current: [...list],
         chosen: "",
+        isStarting: false,
+        isTerminate: false,
     },
     created() {
         this.run();
@@ -54,20 +56,23 @@ const app = new Vue({
             }
             if (count <= 0) {
                 clearInterval(timer);
+                timer = null;
                 setTimeout(() => {
                     this.chosen = this.current.splice(this.index, 1).shift();
-                }, 1000);
+                }, 600);
             }
         },
         onRandom: function () {
             if (this.current.length === 1) {
                 this.index = 0;
                 this.run();
+                this.isTerminate = true;
             } else {
                 this.chosen = "";
                 counter = count = Math.floor(Math.random() * (max - min)) + min;
                 timer = setInterval(this.run, 1000 / 60);
             }
+            this.isStarting = true;
         },
         isActive: function (name) {
             return this.chosen === name;
@@ -77,6 +82,27 @@ const app = new Vue({
         },
         isChosen: function (name) {
             return !this.chosen && this.current[this.index] === name;
+        },
+        onReset: function (name) {
+            this.chosen = "";
+            this.current = [...this.list];
+            this.index = -1;
+            this.isStarting = false;
+            clearInterval(timer);
+            timer = null;
+            this.isTerminate = false;
+        },
+        onSwitch: function (name) {
+            if (!timer) {
+                if (!this.current.includes(name)) {
+                    this.current.push(name);
+                } else {
+                    this.current.splice(this.current.indexOf(name), 1);
+                    if (this.current.lenght === 0) {
+                        this.isTerminate = true;
+                    }
+                }
+            }
         },
     },
 });
