@@ -10629,7 +10629,6 @@ textarea.form-control-lg {
 p {
   margin: 0 !important;
   padding: 0 !important;
-  /** Header Start **/
 }
 
 .header {
@@ -10637,16 +10636,46 @@ p {
 }
 
 h1, .h1 {
+  background: linear-gradient(#0d6efd, #182d70 99%);
   text-align: center;
+  text-shadow: 0 0 10px #0c112e;
+  animation: changeColor 10s linear infinite;
+}
+@keyframes changeColor {
+  0% {
+    opacity: 1;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    filter: hue-rotate(360deg);
+  }
 }
 
 .btn {
+  border-radius: 20px;
   color: #0d6efd;
+  transition: 0.9s;
+  text-shadow: 1px 1px 0 #252d55;
+}
+
+.btn:hover {
+  color: #0d6efd;
+  border-radius: 23px;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
 .btn:focus {
-  background: #0d6efd;
+  transition-delay: 0.2s;
+  font-size: 19px;
+  border-radius: 23px;
   color: #fff;
+  box-shadow: 0 0 10px #5f98d8, 0 0 20px #727880;
+  background: linear-gradient(to right, #0d6efd, #172b6b 99%);
 }
 
 .box {
@@ -10679,6 +10708,121 @@ h1, .h1 {
   border: none;
   border-radius: 5px;
   padding: 5px;
+}
+
+#calculatrice {
+  width: 200px;
+  background: linear-gradient(to top, #66666679, #adadad63 90%);
+  border-radius: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  margin: 0 !important;
+  padding: 10px;
+  padding-left: 2px;
+}
+#calculatrice input {
+  border-radius: 5px;
+  padding-right: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+#calculatrice button {
+  background: linear-gradient(to bottom, #56565800, #21232c9f 90%);
+  height: 30px;
+  width: 26px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  transition: 0.5s;
+}
+#calculatrice .operator {
+  background: linear-gradient(to bottom, #090d2107, #008cffbe 90%);
+  height: 30px;
+  width: 26px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  transition: 0.5s;
+}
+#calculatrice .operator:active {
+  background: #008cffbe;
+  transition-duration: 0.5s;
+  transition: 0.2s;
+}
+#calculatrice .equal {
+  background: linear-gradient(to bottom, #090d2107, #00ff4cbe 90%);
+  height: 30px;
+  width: 26px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  transition: 0.5s;
+}
+#calculatrice .equal:active {
+  background: #00ff4cbe;
+  transition-duration: 0.5s;
+  transition: 0.2s;
+}
+#calculatrice .c {
+  background: linear-gradient(to bottom, #090d2107, #ff0055be 90%);
+  height: 30px;
+  width: 26px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  transition: 0.5s;
+}
+#calculatrice .c:active {
+  background: #ff0055be;
+  transition-duration: 0.5s;
+  transition: 0.2s;
+}
+#calculatrice button:hover {
+  background: rgba(255, 255, 255, 0.007);
+  transition: 0.2s;
+}
+#calculatrice button:active {
+  background: #181818be;
+  transition-duration: 0.5s;
+  transition: 0.2s;
+}
+
+#exo7 button {
+  border: solid white 1px;
+}
+#exo7 .check {
+  background-color: #198754;
+  color: white;
+}
+#exo7 .edit {
+  background-color: #ffc107;
+  color: black;
+}
+#exo7 .trash {
+  background-color: #dc3545;
+  color: white;
+}
+#exo7 ul input {
+  border: none;
+  outline-style: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 400px;
+}
+
+.green {
+  background: linear-gradient(to left, #198754, #0cc048 99%);
+  box-shadow: 0 0 10px rgba(12, 192, 72, 0.692), 0 0 20px rgba(114, 120, 128, 0.589);
 }
 
 /*# sourceMappingURL=style.css.map */

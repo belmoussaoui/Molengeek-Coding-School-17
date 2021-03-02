@@ -1,19 +1,47 @@
 @import ../../node_modules/bootstrap/scss/bootstrap
-
+// Header Start
 p
     margin:0 !important
     padding:0 !important
-                    /** Header Start **/
+
 .header
     margin:5vh
 h1
+    background: linear-gradient( $primary, rgb(24, 45, 112) 99%)
     text-align: center
-.btn
-    color: $primary
-.btn:focus
-    background: $primary
-    color: #fff
+    text-shadow: 0 0 10px #0c112e
+    animation: changeColor 10s linear infinite
+    @keyframes changeColor 
+        0% 
+            opacity: 1
+            filter: hue-rotate(0deg)
+        50%
+            opacity: 0
+        100% 
+            opacity: 1
+            filter: hue-rotate(360deg)
 
+// BTN Exo Start  
+.btn
+    border-radius: 20px
+    color: $primary
+    transition: 0.9s
+    text-shadow: 1px 1px 0 #252d55
+
+            
+.btn:hover
+    color: $primary
+    border-radius: 23px
+    font-size: 18px
+    transition: 0.3s
+    
+.btn:focus
+    transition-delay: 0.2s
+    font-size: 19px
+    border-radius: 23px
+    color: #fff
+    box-shadow: 0 0 10px rgb(95, 152, 216), 0 0 20px rgb(114, 120, 128)
+    background: linear-gradient( to right, $primary, rgb(23, 43, 107) 99%)
 
 // exo 4
 
@@ -41,3 +69,105 @@ h1
         border-radius: 5px
         padding: 5px
 
+// Calculatrice Start
+
+#calculatrice
+    width: 200px
+    background: linear-gradient( to top, #66666679, #adadad63 90%)
+    border-radius: 20px
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+    border-left: 1px solid rgba(255, 255, 255, 0.2)
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2)
+    color: white
+    text-align: center
+    margin: 0 !important
+    padding: 10px
+    padding-left: 2px
+    input
+        border-radius: 5px
+        padding-right: 2px
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+        border-right: 1px solid rgba(255, 255, 255, 0.2)
+    button
+        background: linear-gradient( to bottom, #56565800, #21232c9f 90%)
+        height: 30px
+        width: 26px
+        border-radius: 5px
+        border: none
+        color: white
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+        font-size: 15px
+        transition: 0.5s
+    .operator
+        background: linear-gradient( to bottom, #090d2107, #008cffbe 90%)
+        height: 30px
+        width: 26px
+        border-radius: 5px
+        border: none
+        color: white
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+        font-size: 15px
+        transition: 0.5s
+    .operator:active
+        background: #008cffbe
+        transition-duration: 0.5s
+        transition: 0.2s
+    .equal
+        background: linear-gradient( to bottom, #090d2107, #00ff4cbe 90%)
+        height: 30px
+        width: 26px
+        border-radius: 5px
+        border: none
+        color: white
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+        font-size: 15px
+        transition: 0.5s
+    .equal:active
+        background: #00ff4cbe
+        transition-duration: 0.5s
+        transition: 0.2s
+    .c
+        background: linear-gradient( to bottom, #090d2107, #ff0055be 90%)
+        height: 30px
+        width: 26px
+        border-radius: 5px
+        border: none
+        color: white
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2)
+        font-size: 15px
+        transition: 0.5s
+    .c:active
+        background: #ff0055be
+        transition-duration: 0.5s
+        transition: 0.2s
+    button:hover
+        background: rgba(255, 255, 255, 0.007)
+        transition: 0.2s
+    button:active
+        background: #181818be
+        transition-duration: 0.5s
+        transition: 0.2s
+
+#exo7
+    button
+        border: solid white 1px 
+    .check
+        background-color: $success
+        color: white
+    .edit
+        background-color: $warning
+        color: black
+    .trash
+        background-color: $danger
+        color: white
+    ul
+        input
+            border: none
+            outline-style: none
+            background-color: rgba(0, 0, 0, 0)
+            width: 400px
+
+// Exo 7
+.green
+    background: linear-gradient(to left, $success, rgb(12, 192, 72) 99%)
+    box-shadow: 0 0 10px rgba(12, 192, 72, 0.692), 0 0 20px rgba(114, 120, 128, 0.589)
