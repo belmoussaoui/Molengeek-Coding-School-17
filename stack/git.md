@@ -7,6 +7,7 @@ https://www.zdnet.com/article/github-to-replace-master-with-main-starting-next-m
 
 https://www.grafikart.fr/formations/git
 https://www.atlassian.com/fr/git/tutorials
+https://danielkummer.github.io/git-flow-cheatsheet/index.fr_FR.html
 
 ## Git vs Github
 git est le langage et github est l'outil qui utilise le langage git pour l'hébergement de dépôts git.

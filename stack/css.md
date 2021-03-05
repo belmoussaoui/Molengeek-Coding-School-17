@@ -76,7 +76,7 @@ le **display:none** est surtout utilisé avec le **js** pour faire apparaître u
 ### inline vs block
 le block prends toutes la page en x et donc la prochaine balise est à la ligne contrairement au inline qui prends que la place qu'il a besoin
 
-les ``inline``n'ont pas de propriété de taille en hauteur (padding-top, margin-top, height, ...)
+les ``inline`` n'ont pas de propriété de taille en hauteur (width, height, ...)
 
 on utilise ``inline-block`` si on a besoin d'une ``inline`` qui a besoin d'une propriété de hauteur.
 
@@ -179,6 +179,13 @@ faire attention au zoom qui fausse les valeurs de taille!
 @media screen and (min-width: 100px) and (max-width:300px) {
 	/* du css! */
 }
+```
+
+media query est dans une intervalle et mets par défaut `min-width: 0px`
+```sass
+@media screen and  (min-width: 0px)  and  (  max-width: 576px)
+	body
+		background-color: yellow
 ```
 
 ## Questions et réponses

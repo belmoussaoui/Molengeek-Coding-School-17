@@ -39,6 +39,8 @@ on préférera toujours installer les packages npm que d'utiliser un cdn car si 
 ### Node js
 Node.js est une plateforme logicielle libre en JavaScript orientée vers les applications réseau événementielles hautement concurrentes qui doivent pouvoir monter en charge. Elle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements, et implémente sous licence MIT les spécifications CommonJS. Parmi les modules natifs de Node.js, on retrouve http qui permet le développement de serveur HTTP. Il est donc possible de se passer de serveurs web tels que Nginx ou Apache lors du déploiement de sites et d'applications web développés avec Node.js. Concrètement, Node.js est un environnement bas niveau permettant l’exécution de JavaScript côté serveur.
 
+Normalement le javascript s'exécute côté client!
+
 ## les objets natifs vs types
 `console` est un objet natif? non je ne pense pas, c'est plutôt un élément du dom. `Date` est un objet natif et on a besoin de l'instancier.
 
@@ -48,7 +50,7 @@ les types primitifs en js sont immuable, c'est-à-dire que les méthodes ne modi
 pour avoir accès à la valeur primitif d'un type primitif, on interroge directement la variable qui fait appel à la méthode `valueOf`!
 
 ### Math
-l'objet natif **Math** est statique, donc pas besoin d'instancier l'objet.
+l'objet natif **Math** est statique (faux surement un singleton), donc pas besoin d'instancier l'objet.
 
 ### Eval
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/eval
@@ -145,6 +147,22 @@ import Personne from "fichier.js"
 let bilal = new Personne();
 ```
 
+## for in
+le `for in` permet de parcourir des objets mais l'ordre n'a pas d'importance! le `1`va être afficher en premier!
+```javascript
+let scores = {
+	HTML: 100,
+	CSS: 80,
+	JS: 95,
+	React: 50,
+	Laravel: 5,
+	1: "hello world"
+};
+for (let att in scores) {
+	console.log(att);
+}
+```
+
 # TS
 https://www.typescriptlang.org/
 https://www.typescriptlang.org/docs/handbook/intro.html
@@ -215,7 +233,7 @@ let mustBeAString : string;
 l'exemple suivante retourne une erreur dans 100% des cas:
 ```typescript
 let phoneNumber : string;
-if  (Math.random()  >  0.5)  {
+if  (Math.random()  >  0.5) {
 	phoneNumber =  '+61770102062';
 }  else  {
 	phoneNumber =  7167762323;
@@ -536,7 +554,6 @@ let signature: SolarEclipse : {
 	'40.417286':  false;  
 }
 ```
-
 
 
 
