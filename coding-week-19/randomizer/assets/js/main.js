@@ -1,24 +1,32 @@
 const list = [
-    "Mohammed",
-    "Yasmina",
-    "Amine",
-    "Salim",
     "Abdel",
-    "Majda",
-    "Bilal",
-    "Laurie",
-    "Mahad",
-    "Saïd",
-    "Camille",
-    "Antoine",
-    "Ayoub",
-    "Yassin",
-    "Cem",
-    "Gauthier",
+    "Heritier",
+    "Ilias D",
+    "Ilias E",
+    "Kevin",
+    "Mohamed",
+    "Mouna",
+    "Nouamane",
+    "Emre",
+    "Seifedin",
+    "Shawen",
+    "Ali",
+    "Chris",
+    "Elvis",
+    "Haroune",
+    "Ismail",
+    "Jean",
+    "Leila",
+    "Martin",
+    "Nadir",
+    "Nathan",
+    "Yassine",
+    "Sam",
+    "Tran"
 ];
 
-let min = 8 * list.length * 2;
-let max = 8 * list.length * 6;
+let min = 300;
+let max = 400;
 let counter;
 let count;
 let timer;
@@ -38,9 +46,9 @@ const app = new Vue({
     },
     methods: {
         run: function () {
-            if (count < 80) {
+            if (count < 40) {
                 count -= 0.25;
-            } else if (count < 160) {
+            } else if (count < 90) {
                 count -= 0.5;
             } else {
                 count -= 1;

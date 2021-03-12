@@ -13,7 +13,7 @@ body,
     font-family: Roboto Slab, sans-serif;
     text-align: center;
     margin-top: 0;
-    padding-top: 50px;
+    padding-top: 10px;
     margin-bottom: 0 !important;
     font-weight: 300;
     font-size: 3rem;
@@ -68,7 +68,7 @@ body,
     background-color: #fff;
     width: 150px;
     height: 110px;
-    margin: 15px;
+    margin: 10px 15px;
     border-radius: 2px;
     position: relative;
 }
