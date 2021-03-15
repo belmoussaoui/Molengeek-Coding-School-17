@@ -1,0 +1,52 @@
+#carousel-1 {
+    height: 810px;
+    // first and last because slider is in loop!
+    .slider-item:nth-child(1),
+    .slider-item:last-child {
+        background-image: url("../../../assets/img/slider-1.jpg");
+    }
+    .slider-item:nth-child(2) {
+        background-image: url("../../../assets/img/slider-2.jpg");
+    }
+    .slider-item {
+        div.position-absolute {
+            top: 33%;
+            margin-left: 200px;
+        }
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        height: 810px;
+    }
+
+
+}
+
+#top-header {
+    #contact {
+        font-size: 15px;
+        height: 50px;
+        ul {
+            margin: 0;
+            a {
+                color: white;
+            }
+        }
+    }
+    nav {
+        height: 100px;
+        border-top: solid $primary 6px;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 800;
+        li {
+            padding: 0px 12px;
+        }
+        img {
+            width: 120px;
+        }
+        form button {
+            margin-right: 150px;
+        }
+    }
+}
