@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1 style="font-size: 64px;">Introducton à Javascript</h1>
+                <div>
+                    <img src="./assets/img/js.png" alt="" style="width:150px">
+                </div>
+                <div>
+                    <span style="display: inline-block; position:absolute; left:0; margin-top:200px; font-size: 20px;">coding week 19 - 15/03/21</span>
+                </div>
+            </section>
+            <section>
+                <section>
+                    <h2>Qu'est ce que javascript</h2>
+                </section>
+                <section>
+                    <p>js est un langage de programmation pour le navigateur</p>
+                </section>
+                <section>
+                    <p>premier langage le plus utilisé</p>
+                </section>
+                <section>
+                    <p>java vs javascript</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Hello world</h2>
+                </section>
+                <section>
+                    <p>créer un fichier avec l'extension .js</p>
+                </section>
+                <section>
+                    <p>lier le fichier js à un document html</p>
+                </section>
+                <section>
+                    <p>alert pour afficher un message à l'utilisateur</p>
+                </section>
+                <section>
+                    <p>on peut utiliser console.log() pour aider ler developeur</p>
+                </section>
+            </section>
+            <section>
+                <h2>Les variables</h2>
+                <ul>
+                    <li>une instruction en js;</li>
+                    <li>une boite dans laquelle on peut mettre une donnée</li>
+                    <li>on utilise let pour déclarer une variable</li>
+                    <li>on utilise le = pour affecter une valeur à notre variable</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Différence entre Number et String</h2>
+                <ul>
+                    <li>il existe 7 types de données, nous on va voir les numbers et les string</li>
+                    <li>les nombre</li>
+                    <li>on peut additioner deux nombres</li>
+                    <li>on peut concatener deux strings</li>
+                    <li>on peut soustraire deux nombres</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="./node_modules/reveal.js/dist/reveal.css"/>
+    <link rel="stylesheet" href="./node_modules/reveal.js/dist/theme/night.css"/>
+    <link rel="stylesheet" href="./node_modules/reveal.js/plugin/highlight/monokai.css"/>
+    <script src="./node_modules/reveal.js/dist/reveal.js"></script>
+    <script type="module">
+        import RevealHighlight from "./node_modules/reveal.js/plugin/highlight/highlight.esm.js";
+
+        let deck = new Reveal({
+            plugins: [RevealHighlight],
+        });
+        deck.initialize();
+    </script>
+</body>
+</html>

@@ -1,10 +1,8 @@
 @import ./variables
 
-$spacer: 1rem
+$spacer: 0.5rem
 $spacers: (0: 0)
 @for $i from 1 through 10
     $spacers: map-merge($spacers, ($i: ($i * $spacer)))
-
-
 
 @import ../../node_modules/bootstrap/scss/bootstrap
