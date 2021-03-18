@@ -47,8 +47,8 @@ opts_flag () {
 html_project () {
     mkdir "$FOLDER"
     cd "$FOLDER"
-    mkdir -p assets/{css,img,js}
-    touch index.html assets/css/style.css
+    mkdir -p public/{css,img,js}
+    touch index.html public/css/style.css
 }
 
 add_git () {
@@ -81,7 +81,7 @@ add_sass () {
 add_scss () {
     mkdir -p src/scss
     touch src/scss/style.scss
-    # sass --watch src/scss/style.sass assets/scss/style.css
+    # sass --watch src/scss/style.sass public/scss/style.css
     [ "$G" = true ] && echo "style.css.map" >> .gitignore
     if [ "$B" = true ] ; then
         touch src/scss/bootstrap.sass

@@ -32,8 +32,8 @@ function gotoItem() {
     toogleActive();
 }
 
-setInterval(() => {
-    toogleActive();
-    index = (index + 1) % indicators.length;
-    gotoItem();
-}, 5000);
+// setInterval(() => {
+//     toogleActive();
+//     index = (index + 1) % indicators.length;
+//     gotoItem();
+// }, 5000);
