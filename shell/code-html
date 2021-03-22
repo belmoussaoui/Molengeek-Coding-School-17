@@ -7,9 +7,10 @@ B=false
 A=false
 T=false
 SC=false
+R=false
 
 help () {
-   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [--scss] [-b | --bootstrap] [-a | --awesome] <folder>"
+   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [--scss] [--typescript] [-b | --bootstrap] [-a | --awesome] [-r | --react] <folder>"
    echo "Create a project with an html structure and open it with Visual Studio Code."
 }
 
@@ -34,11 +35,13 @@ opts_flag () {
                     awesome)    A=true ;;
                     typescript) T=true ;;
                     scss)       SC=true ;;
+                    react)      R=true ;;
                 esac ;;
             g) G=true ;;
             s) S=true ;;
             b) B=true ;;
             a) A=true ;;
+            r) R=true ;;
             *) : ;;
         esac
     done
@@ -106,9 +109,20 @@ add_typescript () {
     # tsc -w
 }
 
+create_react () {
+    npx create-react-app "$FOLDER"
+    cd "$FOLDER"
+    rm -rf ./public/{logo192.png,logo512.png,manifest.json,robots.txt}
+    rm -rf ./src/{App.css,App.test.js,index.css,logo.svg,reportWebVitals.js,setupTests.js}
+}
+
 opts_flag "$@"
 check_folder "$@"
-html_project
+if [ "$R" = false ] ; then
+    html_project
+else
+    create_react
+fi
 
 [ "$B" = true ] || [ "$A" = true ] && npm init -y
 [ "$B" = true ] && add_bootstrap
