@@ -6,11 +6,9 @@ S=false
 B=false
 A=false
 T=false
-SC=false
-R=false
 
 help () {
-   echo "usage: code-html [--help] [-g | --git] [-s | --sass] [--scss] [--typescript] [-b | --bootstrap] [-a | --awesome] [-r | --react] <folder>"
+   echo "usage: code-html [--help] [-g | --git] [-s | --scss] [--typescript] [-b | --bootstrap] [-a | --awesome] <folder>"
    echo "Create a project with an html structure and open it with Visual Studio Code."
 }
 
@@ -30,11 +28,10 @@ opts_flag () {
                     help)       help
                                 exit ;;
                     git)        G=true ;;
-                    sass)       S=true ;;
                     bootstrap)  B=true ;;
                     awesome)    A=true ;;
                     typescript) T=true ;;
-                    scss)       SC=true ;;
+                    scss)       S=true ;;
                     react)      R=true ;;
                 esac ;;
             g) G=true ;;
@@ -64,12 +61,8 @@ add_git () {
     fi
 }
 
-add_sass () {
-    type="sass"
-    if [ "$SC" = true ] ; then
-        type="scss"
-
-    fi
+add_scss () {
+    type="scss"
     mkdir -p src/$type
     touch src/$type/style.$type
     # sass --watch src/sass/style.sass public/css/style.css
@@ -77,18 +70,6 @@ add_sass () {
     if [ "$B" = true ] ; then
         touch src/$type/bootstrap.$type
         touch src/$type/_variables.$type
-        [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
-    fi
-}
-
-add_scss () {
-    mkdir -p src/scss
-    touch src/scss/style.scss
-    # sass --watch src/scss/style.sass public/scss/style.css
-    [ "$G" = true ] && echo "style.css.map" >> .gitignore
-    if [ "$B" = true ] ; then
-        touch src/scss/bootstrap.sass
-        touch src/scss/_variables.sass
         [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
     fi
 }
@@ -106,7 +87,6 @@ add_typescript () {
     touch tsconfig.json
     mkdir -p src/ts
     touch src/ts/main.ts
-    # tsc -w
 }
 
 create_react () {
@@ -114,21 +94,18 @@ create_react () {
     cd "$FOLDER"
     rm -rf ./public/{logo192.png,logo512.png,manifest.json,robots.txt}
     rm -rf ./src/{App.css,App.test.js,index.css,logo.svg,reportWebVitals.js,setupTests.js}
+    mkdir ./src/components
 }
 
 opts_flag "$@"
 check_folder "$@"
-if [ "$R" = false ] ; then
-    html_project
-else
-    create_react
-fi
+html_project
 
 [ "$B" = true ] || [ "$A" = true ] && npm init -y
 [ "$B" = true ] && add_bootstrap
 [ "$A" = true ] && add_awesome
 [ "$G" = true ] && add_git
-[ "$S" = true ] || [ "$SC" = true ] && add_sass
+[ "$S" = true ] && add_scss
 [ "$T" = true ] && add_typescript
 
 code ./
