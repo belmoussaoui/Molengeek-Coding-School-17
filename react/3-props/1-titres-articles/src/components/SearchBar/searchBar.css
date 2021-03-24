@@ -1,0 +1,9 @@
+input {
+    margin: 0px 5px;
+}
+
+button {
+    background-color: #00edc2;
+    color: white;
+    font-size: 16px;
+}

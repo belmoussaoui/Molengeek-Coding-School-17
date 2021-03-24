@@ -12,4 +12,5 @@ https://trello.com/b/c79LNQaH/coding-school-17
 - **git** : les exercices sur *Git*;
 - **vs-code** : des listes d'extensions pour *Visual Studio Code* des coachs;
 - **js** : les exercices sur *JS* écrits en *typescript*/*javascript*;
-- **coding-week-19** : préparation de la coding week 19.
+- **coding-week-19** : préparation de la coding week 19;
+- **react** : les exercices sur *React*.

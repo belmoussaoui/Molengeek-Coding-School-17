@@ -1,18 +1,17 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./app.css";
 import Header from "./components/Header/Header";
-import Contenu from "./components/Section/Section";
+import Body from "./components/Body/Body";
 import Footer from "./components/Footer/Footer";
 
 class App extends React.Component {
     render() {
         return (
-            <div className="app">
+            <>
                 <Header />
-                <Contenu />
+                <Body />
                 <Footer />
-            </div>
+            </>
         );
     }
 }

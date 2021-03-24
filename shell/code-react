@@ -23,7 +23,6 @@ opts_flag () {
                     awesome)    A=true ;;
                     scss)       S=true ;;
                 esac ;;
-            g) G=true ;;
             s) S=true ;;
             b) B=true ;;
             a) A=true ;;
