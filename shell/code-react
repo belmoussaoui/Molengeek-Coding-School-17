@@ -43,7 +43,7 @@ create_react () {
     npx create-react-app "$FOLDER"
     cd "$FOLDER"
     rm -rf ./public/{logo192.png,logo512.png,manifest.json,robots.txt}
-    rm -rf ./src/{App.test.js,index.css,logo.svg,reportWebVitals.js,setupTests.js}
+    rm -rf ./src/{App.test.js,App.css,index.css,logo.svg,reportWebVitals.js,setupTests.js}
     mkdir ./src/components
 }
 

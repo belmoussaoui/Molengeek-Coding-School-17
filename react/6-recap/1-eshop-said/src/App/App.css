@@ -1,0 +1,10 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.boissons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
