@@ -211,5 +211,14 @@ un image coupé en haut et en bas
 </div>
 ```
 
+### label avec attribut for
+https://stackoverflow.com/questions/18432376/what-does-for-attribute-do-in-html-label-tag
+l'attribut "for" d'un label permet que lorsqu'on clique sur ce label, le navigateur vers l'input associé. c'est aussi utile pour les lecteurs d'écran.
+
+### definitions
+En CSS, un attribut est synonyme d'une propriété et d'une valeur, et désigne donc un  [mot clé](https://fr.wikipedia.org/wiki/Mot_cl%C3%A9 "Mot clé")  avec sa valeur[1](https://fr.wikipedia.org/wiki/Attribut_(informatique)#cite_note-1).
+
+Par exemple, dans l'expression  `p { text-align:center; }`, l'attribut est  `text-align:center`.
+
 
 > Written with [StackEdit](https://stackedit.io/).

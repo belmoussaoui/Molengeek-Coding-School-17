@@ -60,8 +60,9 @@ button.addEventListener("click", (event) => {
 	alert("je suis un event");
 });
 ```
-event indique tous les informations de l'évenement!
-objet est un objet avec des attributs qui permet par exemple d'exécuter une seule fois la fonction callback avec l'objet `{once: true}`
+event indique tous les informations de l'événement!
+objet est un objet avec des attributs qui permet par exemple d'exécuter une seule fois la fonction callback avec l'objet `{once: true}`.
+ne jamais utilisé l'attribut onClick d'une balise html! car ca ne fonctionne pas si le script lié au html et de `type=module`.
 
 
 #### preventdefault
@@ -69,7 +70,7 @@ permet d'annuler le comportement par défaut d'un événement comme les bouton d
 
 
 ### currentTarget vs target
-
+...
 
 ### getComputedStyle
 cette fonction permet d'obtenir le style final attribuer par défaut + bootstrap + css

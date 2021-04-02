@@ -28,6 +28,10 @@ on peut check l'installation de npm
 npm -v # 6.14.9
 node -v # v14.15.3
 ```
+
+#### package-lock.json
+Le fichier package-lock.json n’est pas fait pour être modifié ou lu par un humain. Il est généré par npm à partir de package.json. Il contient notamment la liste complète des dépendances qui seront installées dans le dossier node_modules. Il référence non seulement les dépendances présentes dans le fichier package.json, mais également les dépendances de ces dépendances.
+
 ### installation
 ```
 nmp i
@@ -44,6 +48,19 @@ Normalement le javascript s'exécute côté client!
 ## les objets natifs vs types
 `console` est un objet natif? non je ne pense pas, c'est plutôt un élément du dom. `Date` est un objet natif et on a besoin de l'instancier.
 
+### slice vs splice
+slice permet d'obtenir un ensemble de sous élément à partir d'un index de départ
+```js
+// splice
+let a = [1, 2, 3, 4]
+a.splice(0); // return [1, 2, 3, 4]
+console.log(a); // []
+
+// slice
+a = [1, 2, 3, 4]
+a.slice(0); // return [1, 2, 3, 4]
+console.log(a); // [1,2,3,4]
+```
 ### types primitif
 les types primitifs en js sont immuable, c'est-à-dire que les méthodes ne modifient pas la valeur de la primitif. nous avons besoin de réaffecter à chaque fois la variable.
 
