@@ -1,0 +1,99 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./font";
+@import "./canvas";
+@import "./skills";
+
+html,
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.navbar {
+    top: 0;
+    /* background: #32324CDE; */
+    background-color: rgba(0, 0, 0, 0);
+    font-family: "Raleway";
+}
+
+.nav-link {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-family: "Raleway";
+}
+
+.navbar-toggler {
+    background-color: #000;
+}
+
+#inner {
+    margin: auto;
+    width: 100%;
+}
+
+#next {
+    display: none;
+    border-radius: 50%;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: rgba(0.2, 0.2, 0.2, 0.4);
+}
+
+#previous {
+    display: none;
+    border-radius: 50%;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: rgba(0.2, 0.2, 0.2, 0.4);
+}
+
+#btn-about {
+    border-radius: 0;
+    border-color: #06aed5;
+    background-color: #06aed5;
+    color: #fff;
+}
+
+h3 {
+    font-size: 24pt;
+    font-family: "Roboto";
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: $primary;
+}
+
+p {
+    font-size: 14pt;
+    font-family: "Raleway";
+}
+
+.btn-social {
+    color: #fff;
+    font-size: 16pt;
+}
+
+.a-icon {
+    color: #b5b682;
+    font-weight: bold;
+    margin: 10px 20px 10px 0px;
+    font-size: 17px;
+}

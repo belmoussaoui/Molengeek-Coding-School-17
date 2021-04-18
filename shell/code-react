@@ -23,6 +23,7 @@ opts_flag () {
                     awesome)    A=true ;;
                     scss)       S=true ;;
                 esac ;;
+            g) G=true ;;
             s) S=true ;;
             b) B=true ;;
             a) A=true ;;
@@ -36,6 +37,16 @@ check_folder () {
         FOLDER=$DEFAULT_NAME
     else
         FOLDER="${@: -1}"
+    fi
+}
+
+add_git () {
+    git init ./
+    [[ "$OSTYPE" == "darwin"* ]] && echo ".DS_Store" >> .gitignore
+    if [ "$A" = true ] || [ "$B" = true ] ; then
+        echo "node_modules" >> .gitignore
+        mkdir docs
+        # echo "#"$FOLDER >> docs/README.md
     fi
 }
 
