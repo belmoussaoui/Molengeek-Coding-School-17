@@ -16,4 +16,4 @@ https://trello.com/b/c79LNQaH/coding-school-17
 -   **js** : les exercices sur _JS_ écrits en _typescript_/_javascript_;
 -   **coding-week-19** : préparation de la coding week 19;
 -   **react** : les exercices sur _React_;
--   **react** : les exercices sur _Laravel_.
+-   **laravel** : les exercices sur _Laravel_.
