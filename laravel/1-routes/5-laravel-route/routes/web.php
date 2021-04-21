@@ -23,5 +23,8 @@ Route::get('/dateDuJour', function () {
 
 Route::get('/fruit', function () {
     $fruits = ["pomme", "fraise", "banane", "ananas"];
+    shuffle($fruits);
+    // ou directement
+    // $fruits = Arr::shuffle(["pomme", "fraise", "banane", "ananas"]);
     return view('fruit', compact("fruits"));
 })->name("fruit");

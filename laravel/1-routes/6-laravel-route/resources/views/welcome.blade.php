@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href={{ asset("css/app.css") }}>
 </head>
 <body>
-    @include("navbar")
-    <p>
-        {{date('Y-m-d H:i:s')}}
-    </p>
-    @include("footer")
-    <script  src={{  asset("js/app.js")  }}></script>
+    <ul>
+        @foreach ($personne as $att=>$value)
+            <li>{{ $att."=>".$value }}</li>         
+        @endforeach
+        {{ $personne->prenom }}
+    </ul>
 </body>
 </html>
