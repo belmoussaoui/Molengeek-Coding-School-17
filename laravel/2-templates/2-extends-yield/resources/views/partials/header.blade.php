@@ -8,10 +8,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link" href={{ route("about") }}>About</a>
+                <a class="nav-link {{ "about" ==  Route::currentRouteName() ? 'active' : '' }}" href={{ route("about") }}>About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href={{ route("services") }}>Services</a>
+                <a class="nav-link {{ "services" ==  Route::currentRouteName() ? 'active' : '' }}" href={{ route("services") }}>Services</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link">Contact</a>
