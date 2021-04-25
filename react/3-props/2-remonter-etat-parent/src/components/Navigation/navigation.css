@@ -1,0 +1,8 @@
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 0px 4px;
+    border: 1px solid #85fda3;
+    font-size: 18px;
+}

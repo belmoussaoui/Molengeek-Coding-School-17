@@ -1,7 +1,6 @@
 # Coding-School-17
 
 Mon cours avec les exercices et mes prises de notes.
-https://trello.com/b/c79LNQaH/coding-school-17
 
 ## Répertoire de travail
 
@@ -14,6 +13,5 @@ https://trello.com/b/c79LNQaH/coding-school-17
 -   **git** : les exercices sur _Git_;
 -   **vs-code** : des listes d'extensions pour _Visual Studio Code_ des coachs;
 -   **js** : les exercices sur _JS_ écrits en _typescript_/_javascript_;
--   **coding-week-19** : préparation de la coding week 19;
 -   **react** : les exercices sur _React_;
 -   **laravel** : les exercices sur _Laravel_.
