@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
 DEFAULT_NAME="projet"
-G=false
-S=false
 B=false
-A=false
-T=false
+bootstrap_version="^5.0.0-beta3" 
+
 
 help () {
-   echo "usage: code-laravel [--help] [-g | --git] [-s | --scss] [-b | --bootstrap] [-a | --awesome] <folder>"
+   echo "usage: code-laravel [--help] [-b version] <folder>"
    echo "Create a laravel project and open it with Visual Studio Code."
 }
 
@@ -21,59 +19,29 @@ check_folder () {
 }
 
 opts_flag () {
-    while getopts "gsba-:" opt; do
+    while getopts "b:-:" opt; do
         case "$opt" in
             -)
                 case ${OPTARG} in
                     help)       help
                                 exit ;;
-                    git)        G=true ;;
-                    bootstrap)  B=true ;;
-                    awesome)    A=true ;;
-                    scss)       S=true ;;
-                    react)      R=true ;;
                 esac ;;
-            g) G=true ;;
-            s) S=true ;;
-            b) B=true ;;
-            a) A=true ;;
-            r) R=true ;;
+            b)  B=true
+                if [[ ${OPTARG} != $FOLDER ]] ; then
+                    bootstrap_version=${OPTARG}
+                fi 
+                ;;
             *) : ;;
         esac
     done
 }
 
-add_git () {
-    git init ./
-    [[ "$OSTYPE" == "darwin"* ]] && echo ".DS_Store" >> .gitignore
-    if [ "$A" = true ] || [ "$B" = true ] ; then
-        echo "node_modules" >> .gitignore
-        mkdir docs
-        # echo "#"$FOLDER >> docs/README.md
-    fi
-}
-
-add_scss () {
-    type="scss"
-    mkdir -p src/$type
-    touch src/$type/style.$type
-    # sass --watch src/sass/style.sass public/css/style.css
-    [ "$G" = true ] && echo "style.css.map" >> .gitignore
-    if [ "$B" = true ] ; then
-        touch src/$type/bootstrap.$type
-        touch src/$type/_variables.$type
-        [ "$G" = true ] && echo "bootstrap.css.map" >> .gitignore
-    fi
-}
-
-add_awesome () {
-    npm install @fortawesome/fontawesome-free
-}
-
 add_bootstrap () {
     composer require laravel/ui
     php artisan ui bootstrap
-    # modifier bootstrap to 5.0! to do
+    search="\"bootstrap\": \"^4.0.0\""
+    replace="\"bootstrap\": \"$bootstrap_version\""
+    sed -i "" "s/$search/$replace/" "package.json"
     npm install @popperjs/core
     npm install && npm run dev
     npm run dev
@@ -81,16 +49,16 @@ add_bootstrap () {
 
 create_laravel () {
     laravel new "$FOLDER"
+    cd "$FOLDER"
 }
 
-opts_flag "$@"
 check_folder "$@"
-create_laravel
+opts_flag "$@"
 
-# [ "$B" = true ] || [ "$A" = true ] && npm init -y
-# [ "$B" = true ] && add_bootstrap
-# [ "$A" = true ] && add_awesome
-# [ "$G" = true ] && add_git
-# [ "$S" = true ] && add_scss
+
+create_laravel
+[ "$B" = true ] && add_bootstrap
+
 
 code ./
+php artisan serve
