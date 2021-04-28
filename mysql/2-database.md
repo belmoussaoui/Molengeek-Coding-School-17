@@ -24,6 +24,18 @@ CREATE TABLE classes (
     taille INT UNSIGNED
 );
 
+INSERT INTO classes(nom, age) VALUE ("Nicolas", 18);
+INSERT INTO classes(nom, age) VALUE ("Maxime", 9);
+INSERT INTO classes(nom, age) VALUE ("Elias", 14);
+INSERT INTO classes(nom, age) VALUE ("Maryam", 4);
+INSERT INTO classes(nom, age) VALUE ("André", 12);
+
+
+INSERT INTO classes(nom, taille) VALUE ("Coding School", 20);
+INSERT INTO classes(nom, taille) VALUE ("Webmaster School", 14);
+
+
+
 UPDATE users SET classe="CS15" where id="Nicolas";
 UPDATE users SET classe="CS17" where id="Maxime";
 UPDATE users SET classe="CS6" where id="Elias";

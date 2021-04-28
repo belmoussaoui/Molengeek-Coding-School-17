@@ -48,6 +48,7 @@ add_bootstrap () {
 }
 
 create_laravel () {
+    cd /Applications/MAMP/htdocs/
     laravel new "$FOLDER"
     cd "$FOLDER"
 }

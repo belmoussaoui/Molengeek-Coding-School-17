@@ -12,15 +12,17 @@ use exo3_coding_school;
 
 create table users (
     id int primary key auto_increment,
-    nom varchar(30), prenom varchar(30),
+    nom varchar(30),
+    prenom varchar(30),
+    age int unsigned,
     `date de naissance` DATE,
-    email varchar(30),
-    `mot de passe` varchar(30)
+    email varchar(40),
+    `mot de passe` varchar(40)
 );
 
 create table articles (
     id int auto_increment primary key,
-    auteur varchar(40),
+    auteur varchar(30),
     date DATE,
     texte TEXT
 );
@@ -31,4 +33,6 @@ create table animaux (
     age int unsigned,
     `couleur de peau` varchar(30)
 );
+
+INSERT INTO animaux(nom, age, `couleur de peau`) VALUE ("animal1", "nom1", 10), ("animal2", "nom2", 5);
 ```
