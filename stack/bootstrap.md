@@ -138,5 +138,22 @@ donc on peut facilement changer la couleur `primary` par la notre.
 ### margin et padding
 https://stackoverflow.com/a/59743693
 
+### changement de couleurs bootstrap 5.0
+
+```scss
+//@import  "./variables";
+$primary: #cd504b;
+$secondary: #f3f3f3;
+$tertiary: #353a3f;
+$custom-colors: (
+	"tertiary": $tertiary,
+);
+
+@import  "../../node_modules/bootstrap/scss/functions";
+@import  "../../node_modules/bootstrap/scss/variables";
+@import  "../../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+```
 
 > Written with [StackEdit](https://stackedit.io/).
