@@ -51,6 +51,8 @@ create_laravel () {
     cd /Applications/MAMP/htdocs/
     laravel new "$FOLDER"
     cd "$FOLDER"
+    database=$(echo "$FOLDER" | tr '-' '_')
+    /Applications/MAMP/Library/bin/mysql -u root -p"root" -Bse "CREATE DATABASE $database; exit;"
 }
 
 check_folder "$@"
@@ -62,4 +64,4 @@ create_laravel
 
 
 code ./
-php artisan serve
+# php artisan serve

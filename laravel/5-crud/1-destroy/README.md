@@ -1,0 +1,5 @@
+- Vous allez créer une table personnes avec (nom, prénom, age, date de naissance, genre)
+- Vous allez créer un model qui permet de sécuriser toutes les données
+- Vous allez créer créer 20 personnes avec les factory
+- Vous devez installer bootstrap et afficher dans une blade toutes les personnes, et un bouton delete à coté de chaque personne
+- Vous devez rendre fonctionnel le bouton delete
