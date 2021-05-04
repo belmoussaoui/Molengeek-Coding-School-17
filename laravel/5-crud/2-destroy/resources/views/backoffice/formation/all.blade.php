@@ -9,6 +9,7 @@
             <th scope="col">Nombre de personnes</th>
             <th scope="col">Hors condition</th>
             <th scope="col">Description</th>
+            <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +21,13 @@
                     <td>{{ $f->ndpHC }}</td>
                     <td>{{ $f->description }}</td>
                     <td>
-                        <form action="/formation/{{ $f->id }}/delete" method="post">
-                            @csrf
-                            <button type="submit" class="btn btn-danger">delete</button>
-                        </form>
+                        <div class="d-flex">
+                            <a class="btn btn-primary mx-1" href="/formation/{{ $f->id }}/edit">Edit</a>
+                            <form class="mx-1" action="/formation/{{ $f->id }}/delete" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">delete</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach
