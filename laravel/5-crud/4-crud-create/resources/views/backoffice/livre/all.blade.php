@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h2 class="text-center text-decoration-underline my-3">Livre</h2>
     <a class="btn btn-success my-2" href="/livre/create">Create</a>
     <table class="table">
         <thead>
@@ -26,7 +27,7 @@
                 <td>
                     <div class="d-flex">
                         <a class="mx-1 btn btn-primary text-white" href="/livre/{{ $livre->id }}/edit">Edit</a>
-                        <form class="mx-1" action="/livre/{{ $livre->id }}/delete" method="post">
+                    <form class="mx-1" action="/livre/{{ $livre->id }}/delete" method="post">
                             @csrf
                             <button class="btn btn-danger text-white" type="submit">Delete</button>
                         </form>

@@ -25,8 +25,8 @@ class ImageController extends Controller
 
     public function update($id, Request $request) {
         $image = Image::find($id);
-        $image->nom = $request->lien ;
-        $image->adresse = $request->adresse ;
+        $image->lien = $request->lien ;
+        $image->description = $request->description ;
         $image->updated_at = now();
         
         $image->save();
@@ -39,8 +39,8 @@ class ImageController extends Controller
 
     public function store(Request $request) {
         $image = new Image();
-        $image->nom = $request->lien ;
-        $image->adresse = $request->adresse ;
+        $image->lien = $request->lien ;
+        $image->description = $request->description;
         $image->created_at = now();
         
         $image->save();

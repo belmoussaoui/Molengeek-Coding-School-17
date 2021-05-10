@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <h2 class="text-center text-decoration-underline my-3">Edit User</h2>
     <form action="/user/{{ $user->id }}/update" method="post">
         @csrf
         <div class="mb-3">

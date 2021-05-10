@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <h2 class="text-center text-decoration-underline my-3">Bibliotheque</h2>
     <a class="btn btn-success my-2" href="/bibliotheque/create">Create</a>
     <table class="table">
         <thead>

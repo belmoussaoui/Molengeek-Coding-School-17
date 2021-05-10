@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <h2 class="text-center text-decoration-underline my-3">Edit Image</h2>
     <form action="/image/{{ $image->id }}/update" method="post">
         @csrf
         <div class="mb-3">

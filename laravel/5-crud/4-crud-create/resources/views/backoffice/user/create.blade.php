@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <h2 class="text-center text-decoration-underline my-3">Create User</h2>
     <form action="/user/store" method="post">
         @csrf
         <div class="mb-3">

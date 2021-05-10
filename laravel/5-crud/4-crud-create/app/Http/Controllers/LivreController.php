@@ -29,7 +29,7 @@ class LivreController extends Controller
         $livre->auteur = $request->auteur;
         $livre->ddp = $request->ddp;
         $livre->ndp = $request->ndp;
-        $livre->estMobile = $request->estMobile;
+        $livre->estMobile = $request->estMobile ? true : false;
         
         $livre->updated_at = now();
         
@@ -47,7 +47,7 @@ class LivreController extends Controller
         $livre->auteur = $request->auteur;
         $livre->ddp = $request->ddp;
         $livre->ndp = $request->ndp;
-        $livre->estMobile = $request->estMobile;
+        $livre->estMobile = $request->estMobile ? true : false;
         
         $livre->created_at = now();
         

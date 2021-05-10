@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
+    <h2 class="text-center text-decoration-underline my-3">Create Bibliotheque</h2>
     <form action="/bibliotheque/store" method="post">
         @csrf
         <div class="mb-3">

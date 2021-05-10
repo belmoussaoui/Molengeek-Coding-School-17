@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <a class="btn btn-success my-2" href="/bibilotheque/create">Create</a>
+    <h2 class="text-center text-decoration-underline my-3">Image</h2>
+    <a class="btn btn-success my-2" href="/image/create">Create</a>
     <table class="table">
         <thead>
             <tr>
