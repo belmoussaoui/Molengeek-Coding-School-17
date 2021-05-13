@@ -16,7 +16,7 @@
             @foreach ($albums as $album)
             <tr>
             <th scope="row">{{ $album->id }}</th>
-                <td>{{ $album->nom }}</td>
+                <td><a href="/albums/{{ $album->id }}/show">{{ $album->nom }}</a></td>
                 <td>{{ $album->description }}</td>
                 <td>
                     <div class="d-flex">

@@ -4,9 +4,15 @@
     <h2 class="text-center text-decoration-underline my-3">Photos</h2>
     <a class="btn btn-success my-2" href="/photos/create">Create</a>
     
-    @if(session()->has('message'))
+    @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session()->get('message') }}
+        </div>
+    @endif
+    
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
         </div>
     @endif
     
@@ -25,13 +31,13 @@
             @foreach ($photos as $photo)
             <tr>
             <th scope="row">{{ $photo->id }}</th>
-                <td>{{ $photo->nom }}</td>
+                <td><a href="/photos/{{ $photo->id }}/show">{{ $photo->nom }}</a></td>
                 <td><img style="width: 30%" src="{{ asset("img/" . $photo->lien) }}" alt=""></td>
                 <td>{{ $photo->categorie }}</td>
                 <td>{{ $photo->description }}</td>
                
                 <td>
-                    <div class="d-flex">
+                    <div class="d-flex  align-items-center h-100">
                         <form class="mx-1" action="/photos/{{ $photo->id }}/download" method="post">
                             @csrf
                             <button class="btn btn-warning" type="submit">Download</button>

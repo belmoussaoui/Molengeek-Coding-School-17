@@ -27,8 +27,8 @@
             @foreach ($users as $user)
             <tr>
             <th scope="row">{{ $user->id }}</th>
-                <td>{{ $user->nom }}</td>
-                <td>{{ $user->prenom }}</td>
+                <td><a href="/users/{{ $user->id }}/show">{{ $user->nom }}</a></td>
+                <td><a href="/users/{{ $user->id }}/show">{{ $user->prenom }}</a></td>
                 <td>{{ $user->age }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->mdp }}</td>
