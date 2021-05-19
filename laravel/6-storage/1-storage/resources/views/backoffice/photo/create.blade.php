@@ -9,7 +9,7 @@
     @endforeach
     
     </ul>
-    <form action="/photos/store" method="post" enctype="multipart/form-data">
+    <form action="{{ route("photos.store") }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label class="form-label">Nom</label>

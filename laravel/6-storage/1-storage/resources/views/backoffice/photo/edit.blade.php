@@ -9,8 +9,9 @@
     @endforeach
     
     </ul>
-    <form action="/photos/{{ $photo->id }}/update" method="post" enctype="multipart/form-data">
+    <form action="/photos/{{ $photo->id }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method("put")
         <div class="mb-3">
             <label class="form-label">Nom</label>
             <input value="{{ $photo->nom }}" type="text" class="form-control" name="nom">

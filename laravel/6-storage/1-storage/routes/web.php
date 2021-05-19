@@ -37,11 +37,13 @@ Route::get('/albums/{id}/edit', [AlbumController::class, 'edit']);
 Route::post('/albums/{id}/update', [AlbumController::class, 'update']);
 Route::get('/albums/{id}/show', [AlbumController::class, 'show']);
 
-Route::get('/photos', [PhotoController::class, 'index'])->name('photos');
-Route::get('/photos/create', [PhotoController::class, 'create']);
-Route::post('/photos/store', [PhotoController::class, 'store']);
-Route::post('/photos/{id}/delete', [PhotoController::class, 'destroy']);
+// Route::get('/photos', [PhotoController::class, 'index'])->name('photos');
+// Route::get('/photos/create', [PhotoController::class, 'create']);
+// Route::post('/photos/store', [PhotoController::class, 'store']);
+// Route::post('/photos/{id}/delete', [PhotoController::class, 'destroy']);
+// Route::get('/photos/{id}/edit', [PhotoController::class, 'edit']);
+// Route::post('/photos/{id}/update', [PhotoController::class, 'update']);
+// Route::get('/photos/{id}/show', [PhotoController::class, 'show']);
+
+Route::resource('/photos', PhotoController::class);
 Route::post('/photos/{id}/download', [PhotoController::class, 'download']);
-Route::get('/photos/{id}/edit', [PhotoController::class, 'edit']);
-Route::post('/photos/{id}/update', [PhotoController::class, 'update']);
-Route::get('/photos/{id}/show', [PhotoController::class, 'show']);

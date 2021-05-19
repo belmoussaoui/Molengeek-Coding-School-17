@@ -13,8 +13,7 @@ class PhotoController extends Controller
         return view('backoffice.photo.all', compact('photos'));
     }
 
-    public function destroy($id) {
-        $photo = Photo::find($id);
+    public function destroy(Photo $photo) {
         Storage::disk('public')->delete('img/' . $photo->lien);
         $photo->delete();
         return redirect()->back();
@@ -39,7 +38,7 @@ class PhotoController extends Controller
         $photo->created_at = now();
         $photo->save();
         $request->file('lien')->storePublicly('img', 'public');
-        return redirect()->route('photos')->with('message', 'Vous avez bien créer la photo' . $photo->nom);
+        return redirect()->route('photos.index')->with('message', 'Vous avez bien créer la photo' . $photo->nom);
     }
 
     public function download($id) {
@@ -48,24 +47,21 @@ class PhotoController extends Controller
         return response()->download($filepath);
     }
 
-    public function edit($id) {
-        $photo = Photo::find($id);
+    public function edit(Photo $photo) {
         return view('backoffice.photo.edit', compact('photo'));
     }
     
-    public function show($id) {
-        $photo = Photo::find($id);
+    public function show(Photo $photo) {
         return view('backoffice.photo.show', compact('photo'));
     }
     
-    public function update($id, Request $request) {
+    public function update(Photo $photo, Request $request) {
         $request->validate([
 	        'nom' => 'required|max:30',
 	        'lien' => 'required|max:255',
             'categorie' => 'required|max:50',
 	        'description' => 'required|max:255',
 	    ]);
-        $photo = Photo::find($id);
         $photo->nom = $request->nom;
         Storage::disk('public')->delete('img/'  .  $photo->lien);
         $photo->lien = $request->file('lien')->hashName();;
@@ -74,7 +70,7 @@ class PhotoController extends Controller
         $photo->updated_at = now();
         $photo->save();
         $request->file('lien')->storePublicly('img', 'public');
-        return redirect()->route('photos')->with('message', 'Vous avez bien modifié la photo ' . $photo->nom);
+        return redirect()->route('photos.index')->with('message', 'Vous avez bien modifié la photo ' . $photo->nom);
     }
 
 }

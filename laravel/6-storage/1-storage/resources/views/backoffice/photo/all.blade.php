@@ -2,13 +2,8 @@
 
 @section('content')
     <h2 class="text-center text-decoration-underline my-3">Photos</h2>
-    <a class="btn btn-success my-2" href="/photos/create">Create</a>
-    
-    @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
+    <a class="btn btn-success my-2" href="{{ route("photos.create") }}">Create</a>
+
     
     @if (session('message'))
         <div class="alert alert-success">
@@ -31,7 +26,7 @@
             @foreach ($photos as $photo)
             <tr>
             <th scope="row">{{ $photo->id }}</th>
-                <td><a href="/photos/{{ $photo->id }}/show">{{ $photo->nom }}</a></td>
+                <td><a href="/photos/{{ $photo->id }}">{{ $photo->nom }}</a></td>
                 <td><img style="width: 30%" src="{{ asset("img/" . $photo->lien) }}" alt=""></td>
                 <td>{{ $photo->categorie }}</td>
                 <td>{{ $photo->description }}</td>
@@ -43,8 +38,9 @@
                             <button class="btn btn-warning" type="submit">Download</button>
                         </form>
                         <a class="mx-1 btn btn-primary text-white" href="/photos/{{ $photo->id }}/edit">Edit</a>
-                        <form class="mx-1" action="/photos/{{ $photo->id }}/delete" method="post"  enctype="multipart/form-data">
+                        <form class="mx-1" action="/photos/{{ $photo->id }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('delete')
                             <button class="btn btn-danger text-white" type="submit">Delete</button>
                         </form>
                     </div>
