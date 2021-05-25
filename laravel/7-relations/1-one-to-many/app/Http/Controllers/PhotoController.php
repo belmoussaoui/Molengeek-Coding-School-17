@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
 {
@@ -14,7 +16,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photo = Photo::all();
+        $photos = Photo::all();
         return view('backoffice.photo.all', compact('photos'));
     }
 
@@ -25,7 +27,8 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        return view('backoffice.photo.create');
+        $albums = Album::all();
+        return view('backoffice.photo.create', compact('albums'));
     }
 
     /**
@@ -41,14 +44,17 @@ class PhotoController extends Controller
             'lien' => 'required',
             'categorie' => 'required',
             'description' => 'required',
+            'album_id' => 'required',
         ]);
         $photo = new Photo();
         $photo->nom = $request->nom;
-        $photo->lien = $request->lien;
+        $photo->lien = $request->file('lien')->hashName();
         $photo->categorie = $request->categorie;
         $photo->description = $request->description;
+        $photo->album_id = $request->album_id;
         $photo->created_at = now();
         $photo->save();
+        $request->file('lien')->storePublicly('img', 'public');
         return redirect()->route('photos.index')->with('message', 'Vous avez créer une photo.');
     }
 
@@ -71,7 +77,8 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('backoffice.album.edit', compact('photo'));
+        $albums = Album::all();
+        return view('backoffice.photo.edit', compact('photo', 'albums'));
     }
 
     /**
@@ -90,11 +97,14 @@ class PhotoController extends Controller
             'description' => 'required',
         ]);
         $photo->nom = $request->nom;
-        $photo->lien = $request->lien;
+        Storage::disk('public')->delete('img/' . $request->lien);
+        $photo->lien = $request->file('lien')->hashName();
         $photo->categorie = $request->categorie;
         $photo->description = $request->description;
+        $photo->album_id = $request->album_id;
         $photo->updated_at = now();
         $photo->save();
+        $request->file('lien')->storePublicly('img', 'public');
         return redirect()->route('photos.index')->with('message', 'Vous avez modifié une photo.');
     }
 
@@ -106,7 +116,14 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        Storage::disk('public')->delete('img/' . $photo->lien);
         $photo->delete();
         return redirect()->back()->with('message', 'Vous avez supprimé une photo.');
+    }
+    
+    public function download($id)
+    {
+        $photo = Photo::find($id);
+        return Storage::disk('public')->download('img/' . $photo->lien);
     }
 }

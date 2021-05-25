@@ -12,7 +12,7 @@ class Photo extends Model
     protected $fillable = ['nom', 'lien', 'categorie', 'description'];
 
     public function album() {
-        return $this->belongsTo('albums');
+        return $this->belongsTo(Album::class);
     }
 
 }

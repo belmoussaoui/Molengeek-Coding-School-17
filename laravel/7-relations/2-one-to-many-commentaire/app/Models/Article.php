@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Album extends Model
+class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'description'];
-
-    public function photos() {
-        return $this->hasMany(Photo::class);
+    public function commenatires() {
+        return $this->hasMany(Commentaire::class);
     }
 }

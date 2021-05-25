@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\AlbumController;
-use App\Http\Controllers\PhotoController;
-use App\Models\Album;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/albums', AlbumController::class);
-
-Route::resource('/photos', PhotoController::class);
-Route::post('/photos/{id}/download', [PhotoController::class, 'download']);
-
+Route::resource('/articles', ArticleController::class);
+Route::resource('/commentaires', CommentaireController::class);
+Route::post('/articles/{id}/download', [ArticleController::class, 'download']);
