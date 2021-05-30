@@ -1,0 +1,46 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap-utilities";
+@import "./font";
+@import "./icons";
+@import "./components";
+@import "./pages/header";
+@import "./pages/recents-products";
+@import "./pages/discover";
+@import "./pages/fashion-products";
+@import "./pages/learn-more";
+@import "./pages/footer";
+
+body {
+    font-family: $font-1;
+    max-width: 1440px;
+}
+
+body.dark-mode {
+    background-color: $dark;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: white;
+    }
+    nav {
+        background-color: $dark;
+        .nav-link {
+            color: white !important;
+        }
+        &.nav-fixed {
+            border-bottom: solid $light 1px;
+        }
+        .logo {
+            color: white;
+        }
+        .navbar-toggler {
+            background-color: white;
+        }
+    }
+    .modal-content {
+        background-color: $dark;
+    }
+}

@@ -1,0 +1,20 @@
+.learn-block {
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+    i {
+        font-size: 1.5rem;
+    }
+    span {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    p {
+        line-height: 1.5rem;
+        font-size: 13px;
+    }
+}
