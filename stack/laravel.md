@@ -63,79 +63,77 @@ controller (gestion de la base de donnée et de ce qu'on voit)
 
 chaque fichier fait une seule chose et c'est pour ca qu'il y a beaucoup de fichiers
 
-### app
+- app
 il va gérer tous , relation entre l'application et la base de données. c'est là ou se trouve les controllers et la base de données
+	- console et exceptions
+	pas utile (juste des messages d'erreurs
+	- http
+	on va utiliser les **controllers** (quoi faire) (des fonctions qui permettent la suppression, création et modification) et les middleware (qui peut exécuter les controllers).
+	- model
+	relation entre la base de données et les tables du projet
+	- providers
+	donne l'autorisation des middleware a être exécuté dans des parties du projet (les middleware seront principalement dans les routes)
 
-- console et exceptions
-pas utile (juste des messages d'erreurs
-- http
-on va utiliser les **controllers** (quoi faire) (des fonctions qui permettent la suppression, création et modification) et les middleware (qui peut exécuter les controllers).
-- model
-relation entre la base de données et les tables du projet
-- providers
-donne l'autorisation des middleware a être exécuté dans des parties du projet (les middleware seront principalement dans les routes)
-
-### bootstrap
+- bootstrap
 gestion de l'interface (on va pas utiliser car on utilisera des interfaces déjà faites)
 
-### config
+- config
 des paramètres pour notre application
 (on peut change le nom du domaine et plein d'autres paramètres)
 
-#### timezone
+	- timezone
 on peut modifier le fuseau horaire et le remplacer paf 
 `timezone' => "utc-8",`
 `'timezone' => "Europe/Brussels",`
 
-### database
+- database
 pour travaille sur la base de données. séparation de la création des tables et du contenue.
-- factories
-valeurs automatiquement (aléatoire) via une librairie "faker". c'est une usine pour donner des valeurs par défauts. pour éviter de créer des utilisateurs à la main via une libraire. c'est surtout pour tester.
-- migrations
-création de tables (petites parties de la base de données): une table c'est un objet avec des propriétés.
-
+	- factories
+	valeurs automatiquement (aléatoire) via une librairie "faker". c'est une usine pour donner des valeurs par défauts. pour éviter de créer des utilisateurs à la main via une libraire. c'est surtout pour tester.
+	- migrations
+	création de tables (petites parties de la base de données): une table c'est un objet avec des propriétés.
 3 tables sont déjà faits
 
-- seeders
-création des valeurs manuellement (soit on utilise le seeders soit factories)
+	- seeders
+	création des valeurs manuellement (soit on utilise le seeders soit factories)
 
-### public
-- index.php
-aller dans un dossier est grâce aux routes ce qu'il doit executer (il remplace index.html). on le laisse tel quel.
+- public
+	- index.php
+	aller dans un dossier est grâce aux routes ce qu'il doit executer (il remplace index.html). on le laisse tel quel.
 
-### resources
+- resources
 dossier de production (css, js, ...) il le met dans public par la suite.
 
-- views
-les views sont ce qui remplace le contenu html et *.blade.php* c'est comme du jsx en quelque sorte. c'est du html dans php.
+	- views
+	les views sont ce qui remplace le contenu html et *.blade.php* c'est comme du jsx en quelque sorte. c'est du html dans php.
 
-### routes
+- routes
 ce sont les url. on indique la route `/...` et la vue attribuée.
 le chemin et ce qu'il doit faire
 
-les *broadcast* sont les notifications et les popups (on va pas voir ca)
+	les *broadcast* sont les notifications et les popups (on va pas voir ca)
 
-### storage
+- storage
 stockage des images
-- app
-- framework
-- logs
+	- app
+	- framework
+	- logs
 
-### tests
+- tests
 les tests unitaires (les requêtes) 
 
-### vendor
+- vendor
 c'est le node_modules de php
 
-### fichiers
-- .env : la relation pour recevoir et envoyer des requêtes
-`DB_PORT=8889` a mettre sur mac
-`DB_PASSWORD=root`
-- artisan: permet d'executer des commandes
-- composer.json : c'est comme package.json
-composer i pour installer les dépendances
-- server.php: l'antivirus veut le supprimer (il est utiliser par php artisan serve)
-- webpack.mix: c'est pour indiquer quoi watch les ressources
+- fichiers
+	- .env : la relation pour recevoir et envoyer des requêtes
+	`DB_PORT=8889` a mettre sur mac
+	`DB_PASSWORD=root`
+	- artisan: permet d'executer des commandes
+	- composer.json : c'est comme package.json
+	composer i pour installer les dépendances
+	- server.php: l'antivirus veut le supprimer (il est utiliser par php artisan serve)
+	- webpack.mix: c'est pour indiquer quoi watch les ressources
 
 ## Fonctions
 ### dump and die
@@ -334,30 +332,6 @@ on peut étendre un layout qui comport un `yield` avec des composants avec le `@
 permet d'injecter directement une view dans une autre
 ```php
 @include("component")
-```
-
-## divers
-### comment tuer un serveur créer par php artisan serve
-https://stackoverflow.com/questions/38761354/stop-laravel-server-with-command-line-interface
-```
-sudo kill $(sudo lsof -t -i:port_number)
-// par exemple
-sudo kill $(sudo lsof -t -i:8000)
-```
-
-### navbar avec élement en active
-```php
-<a  class="nav-link {{  "about"  ==  Route::currentRouteName() ? 'active' : ''  }}"  href={{  route("about")  }}>About</a>
-```
-par passage de variable par la route
-```php
-<a  class="nav-link {{  "about"  ==  $page ? 'active' : ''  }}"  href={{  route("about")  }}>About</a>
-```
-
-### utiliser du html dans une variable blade
-```php
-$title = "<h1>je suis un h1</h1>";
-{!! $title !!}
 ```
 
 ## migrations
@@ -580,6 +554,8 @@ pour mettre à jour les données d'un seul élément (une colonne) d'une table.
 - suppression (delete)
 la suppression d'un seul élément précis d'une table
 
+Les CRUD sont des action qui se trouvent dans le Controller qui permettent d'agir sur les données d'une table. Dans un Controller, généralement il y a 7 fonctions (index, create, store, show, edit, update et destroy).
+
 ### crud (create, read, update, delete)
 c'est en quelque sorte de "recréer" `phpmyadmins` directement dans le site pour les moldus (client) qui ne sait pas l'utiliser.
 
@@ -598,15 +574,432 @@ Route::get('/user', [UserController::class, 'index']);
 ```
 
 ### méthodes
-- index
+#### index
 prends tous les éléments du model et les envois dans une blade. elle doit donc retourner une `view`
+La fonction index est une fonction qui permet prendre toutes les données que vous avez dans une table et les afficher dans la blade
+Pour cette méthode, il vous faut créer la fonction index dans le controller, stocker tous les éléments que vous avez dans une table, et les passer à une blade.
 ```php
 public  function  index() {
-	return  view("welcome");
+	$users = User::all();
+	return  view("welcome", compact('users');
+}
+```
+Puis, il vous faut le chemin pour communiquer avec cette fonction dans le controller
+```php
+Route::get('/user', [UserController::class, 'index']);
+```
+
+#### destroy
+la fonction destroy est une fonction qui permet de supprimer un élément précis dans une table.
+permet de supprimer un élément du model grâce à son id. on retourne  une vue car la suppression redirige vers une url (`user/3/delete` par exemple) et donc on souhaite revenir dans le back office. dans la route, on a envoyé une variable dynamique qui aura comme valeur l'id d'un élément précis dans la table, et on passera cette variable comme paramètre dans la fonction pour agir directement sur l’élément en question. On va le chercher dans la table, on va le supprimer grâce à la méthode **delete** et après on va revenir sur la blade où on était.
+```php
+public  function  destroy($id) {
+	$user = User::find($id);
+	$user->delete();
+	return redirect()->back();
+}
+```
+Pour cette fonction, il faut récupérer l'id qu'on va envoyer depuis la blade grâce à un form dont l'action sera le chemin avec l'id, et une méthode POST pour pouvoir faire des changements dans la table, ainsi qu'une méthode **@csrf** pour sécuriser les données.
+```php
+@foreach ($users  as  $user)
+	<p>{{ $user->name . "  " . $user->email }}</p>
+	<form  action="/user/{{ $user->id }}/delete" method="POST">
+	@csrf
+		<button  type="submit">delete</button>
+	</form>
+@endforeach
+```
+
+et enfin pour la route
+```php
+Route::post('/user/{id}/delete', [UserController::class, 'destroy']);
+```
+
+#### update
+on a besoin d'un dossier `backoffice` dans laquelle on mets les fichiers qui permettent la gestion du `crud`.
+
+on utilise tout simplement utiliser la balise `<a>` pour l'action de l'édition car on a juste besoin de l'action `get` d'un form.
+```html
+<a  class="btn btn-danger mx-1"  href="/batiment/{{  $b->id  }}/edit">Edit</a>
+<!-- similaire à-->
+<form  action="/batiment/{{ $b->id }}/edit" method="get" class="mx-1">
+	@csrf
+	<button type="submit" class="btn btn-danger">delete</button>
+</form>
+```
+et sa route est la suivante
+```php
+Route::get('/batiment/{id}/edit', [BatimentController::class, 'edit']);
+```
+
+on crée la fonction `edit` dans le controller qui va renvoyer vers une blade `edit.blade.php` dans laquelle on met un formulaire .
+```php
+public function edit($id) {
+	$batiment = Batiment::find($id);
+	return view('backoffice.batiment.edit',  compact('batiment'));
+}
+```
+son formulaire
+```html
+<form  method="POST"  action="/batiment/{{  batiment->id  }}/update">
+	@csrf
+	<!-- input et textarea... -->
+	<input type="text" class="form-control" value="{{ $batiment->nom }}" name="nom">
+</form>
+```
+on utilise l'attribut `name` pour récupérer les informations.
+et sa route
+```php
+Route::post('/batiment/{id}/update', [BatimentController::class, 'update']);
+```
+
+on utilise les `Request` pour récupérer les données dans le controller et on redirige l'utilisateur dans la route bâtiment (`->name("")`)
+```php
+public function update($id, Request  $request) {
+	$batiment = Batiment::find($id);
+	$batiment->nom = $request->nom;
+	$batiment->adresse = $request->adresse;
+	$batiment->description = $request->description;
+	$batiment->updated_at = now();
+	$batiment->save();
+	return redirect()->route("batiment");
+}
+``` 
+#### create
+similaire à `update` sauf qu'on a pas de données et que la fonction pour ajouter la donnée dans la base de donnée se nomme `store`.
+
+
+## storage
+filesystem permet d'indiquer ou on veut stocker ce qui est externe à notre projet (fichier et images). on doit modifier le fichier `config/filesystems.php` et on définit les valeurs suivantes :
+```php
+'public'  => [
+	'driver' => 'local',
+	'root' => public_path('') . "/",
+	'url' => env('APP_URL') . '/public',
+	'visibility' => 'public',
+],
+```
+indique le chemin vers le repertoire `public`.
+
+### create
+dans le formulaire
+```html
+<form action="/image/{{ $image->id }}/update" method="post" enctype="multipart/form-data">
+...
+...
+</form>
+```
+et on modifier le request pour stocker l'image dans le dossier `public`
+```php
+$image->path = $request->file('path')->hashName(); // pour ne pas afficher le nom de l'image
+...
+$image->save();
+$request->file('path')->storePublicly('img', 'public');
+```
+
+dans le `all.blade.php`
+```html
+<td><img  style="width: 30%"  src="{{  asset("img/" . $image->path)  }}"  alt=""></td>
+```
+
+### delete
+```php
+public  function  delete($id) {
+	$image  =  Image::find($id);
+	Storage::disk('public')->delete('img/' . $image->path);
+	$image->delete();
+	return  redirect()->back();
 }
 ```
 
-## erreurs
+### update
+```php
+public  function  update($id, Request  $request) {
+	$image  =  Image::find($id);
+	...
+	// laisse l'image d'avant si pas de nouvelle image
+	if ($request->file('lien') !== null) {
+		Storage::disk('public')->delete('img/' . $image->path);
+		$image->path  =  $request->file('path')->hashName();
+		$request->file('path')->storePublicly('img', 'public');
+	}
+	...
+	$image->save();
+	
+	return  redirect()->route('image');
+}
+```
+
+### download image
+pour télécharger une image
+```php
+public  function  download($id) {
+	$photo = Photo::find($id);
+	$filepath = public_path('img/') . $photo->lien;
+	return response()->download($filepath);
+}
+```
+```php
+public  function  download($id) {
+	$photo = Photo::find($id);
+	return Storage::disk('public')->download('img/' . $photo->lien);
+}
+```
+
+## validate
+permet de valider un formulaire pour éviter d'afficher une erreur laravel. `validate` est une méthode de `$request`.
+
+```php
+public  function  store(Request  $request) {
+	$request->validate([
+	'nom' => 'required',
+	'path' => 'required|max:255',
+	'description' => 'required',
+	]);
+	...
+}
+```
+
+### erreurs
+pour afficher les erreurs d'un formulaire
+```php
+@foreach ($errors->all() as  $message)
+	<li>{{ $message }}</li>
+@endforeach
+```
+
+### succès
+pour afficher un message de succès dans la blade suivante
+```php
+...
+return  redirect()->route('photos')->with('message', 'The success message!');
+```
+et dans la blade ciblée
+```php
+@if (session()->has('message'))
+<div class="alert alert-success">
+	{{ session()->get('message') }}
+</div>
+@endif
+```
+ou
+```php
+@if (session('message'))
+	<div  class="alert alert-success">{{ session('message') }}</div>
+@endif
+```
+
+#### traduction française des erreurs
+https://laravel.sillo.org/cours-laravel-8-les-bases-la-validation/
+
+## pagination
+dans la méthode `index` du controller:
+```php
+DB::table('cars')->paginate(10);
+// ou tout simplement
+Cars::paginate(10);
+```
+et ensuite dans la blade `all` en dessous de la table:
+```php
+{{ $cars->links() }}
+```
+et pour que la pagination utilise bootstrap il faut modifier le fichier `App\Providers\AppServiceProvider`
+```php
+use Illuminate\Pagination\Paginator;
+
+public function boot()
+{
+    Paginator::useBootstrap();
+}
+```
+
+## ressources
+affiche toutes les routes est les actions associées
+```
+php artisan route:list
+```
+
+### web.php
+on peut écrire toutes les routes en une fois sauf le download (car elle est pas commun à toutes les routes)
+```php
+Route::resource('/photos', PhotoController::class);
+Route::post('/photos/{id}/download', [PhotoController::class, 'download']);
+```
+
+### controllers
+il faut modifier aussi modifier le controller
+
+on utilise plus l'`id` pour le controller mais directement l'objet comme l'exemple ci-dessous
+```php
+public function edit(Photo $photo) {
+	return  view('backoffice.photo.edit',  compact('photo'));
+}
+```
+il ne faut pas oublier de modifier les routes :
+```php
+redirect()->route('photos.index')
+```
+
+### views (all.blade.php)
+
+### delete
+on modifie le lien de l'action du formulaire et on ajoute `@method('delete')`
+```php
+<form action="/photos/{{  $photo->id }}" method="post" enctype="multipart/form-data">
+	@csrf
+	@method('delete')
+	<button  class="btn btn-danger text-white"  type="submit">Delete</button>
+</form>
+```
+
+### create
+pour le create on peut utiliser le nom de la route car on a pas besoin d'envoyer de données comme l'id par 
+```php
+<a  class="btn btn-success my-2"  href="{{  route("photo.create")  }}">Create</a>
+```
+
+dans le `create.blade.php`
+```php
+<form  action="{{  route("photos.store")  }}"  method="post"  enctype="multipart/form-data">
+```
+
+### edit
+comme pour le `delete` on modifie l'action et on ajoute une méthode `put`
+```php
+<form  action="/photos/{{  $photo->id  }}"  method="post"  enctype="multipart/form-data">
+	@csrf
+	@method("put")
+	//...
+```
+
+### show
+```html
+<td><a  href="/photos/{{  $photo->id  }}">{{  $photo->nom  }}</a></td>
+```
+
+### resources
+on peut créer toutes les méthodes (vides) dans le controller avec le paramètre `-r` comme par exemple
+```shell
+php artisan make:model Personne -mfcr
+```
+
+## les relations
+![](https://miro.medium.com/max/5656/1*-jP5kV0P5HxSaHxMfaaCrg.png)
+
+il existe trois types de relations
+	- one to one (1, 1)
+	- one to many (1, n\*)
+	- many to many (m\*, n*) (articles et catégories)
+
+### one to many
+role à des utilisateurs et donc ce n'est pas au role à indiquer les utilisateur qui possèdent. ce sont les utilisateurs qui indique leur role. donc dans la table `users`
+```php
+Schema::table('users', function(Blueprint  $table) {
+	$table->foreignId('role_id')->constrained('roles');
+});
+```
+la table `roles` doit donc être créée en premier.
+
+on doit ajouter la fonction suivante dans le modèle `role``
+```php
+public  function  users() {
+	return  $this->hasMany(User::class);
+}
+```
+et dans le modèle `user` pour indiquer qu'il appartient à un seule `role` et la **méthode doit être en singulier**
+```php
+public  function  role() {
+	return  $this->belongsTo(Role::class);
+}
+```
+
+pour avoir accès au rôle à partir de `user` on fait appel à la méthode (attribut?) `role` :
+```php
+$user = User::first();
+$user->role->nom;  // Administrateur
+```
+ici role c'est un seul élément (car en singulier `belongsTo`). 
+```php
+$role = Role::first();
+$role->users;  // [user, user] retourne tous les utilisateur qui on le premier rôle
+```
+
+### one to one
+```php
+public function role() {
+	return $this->hasOne(Role::class);
+}
+```
+et
+```php
+public function user() {
+	return  $this->belongsTo(User::class);
+}
+```
+
+### many to many
+
+## authentification
+ce sont les autorisations pour avoir accès à la base de données ou a certains privilèges.
+le passage de la blade (ce que le monde peut voir) aux éléments qui ne sont pas accessibles pour tous via une route.
+il faudra se connecter avec un compte ou en créer un pour gérer les accès aux routes.
+c'est le dévelopeur qui créer les comptes et pas le client
+
+avant il y avait un seul système d'authentification qui était lourd et maintenant il en existe 3 selon les besoins du projet
+3 systèmes d'authentification
+	-  breeze (léger et blade)
+	-  livewire/jetstream (lourd blade)
+	- inertia javascript
+
+### laravel breeze
+https://laravel.com/docs/8.x/starter-kits#laravel-breeze
+```bash
+composer require laravel/breeze
+php artisan breeze:install
+
+npm install
+npm run dev
+php artisan migrate
+```
+
+site internet -> |auth| -> backoffice
+le auth travaille avec seulement la table **users**.
+il permet de donner accès au backoffice en identifiant l'utilisateur.
+ensuite on peut ajouter une seconde couche en vérifiant le rôle de celui-ci.
+
+on installe pas avec bootstrap car le système d'authentification utilise tawilwind
+
+### controllers
+les controllers sont séparés en plusieurs fichiers pour une raison de sécurité. il est plus difficile d'attaquer plusieurs fichier qu'un seul fichier.
+
+### blade
+xhtml permet de faire du html spécifique au backoffice.
+web.php permet de faire communiquer les blades avec les controllers. 
+
+#### if
+la commande `@auth` est un sorte de if qu'on peut combiner avec un else et qui vérifie si on est authentifier.
+```html
+@auth
+	<a  href="{{  url('/dashboard')  }}"  class="text-sm text-gray-700 underline">Dashboard</a>
+@else
+	<a  href="{{  route('login')  }}"  class="text-sm text-gray-700 underline">Log in</a>
+@endauth
+```
+
+### providers
+on peut modifier les variables d'environnement dans le fichier `RouteServiceProviders`
+```php
+public const HOME = '/dashboard';
+```
+
+###
+```php
+Bonjour {{ Auth::user()->name }}, comment va?
+Bonjour {{ Auth::id() }}, comment va?
+Bonjour {{ Auth::check() }}, comment va? // return 1 ou 0 si on est identifier ou pas
+```
+
+## erreurs et astuces
 ### error 500 server not found
 Si vous avez une erreur 500 Server, c'est parce que vous n'avez pas de fichier .env
 
@@ -627,6 +1020,65 @@ mix.js('resources/js/app.js', 'public/js')
 	.sourceMaps();
 ```
 
+### comment tuer un serveur créer par php artisan serve
+https://stackoverflow.com/questions/38761354/stop-laravel-server-with-command-line-interface
+```
+sudo kill $(sudo lsof -t -i:port_number)
+// par exemple
+sudo kill $(sudo lsof -t -i:8000)
+```
+
+### navbar avec éléments en active
+```php
+<a  class="nav-link {{ "about" == Route::currentRouteName() ? 'active': '' }}" href={{ route("about") }}>About</a>
+```
+par passage de variable par la route
+```php
+<a class="nav-link {{ "about" == $page ? 'active' : '' }}" href={{ route("about") }}>About</a>
+```
+
+### utiliser du html dans une variable blade
+```php
+$title = "<h1>je suis un h1</h1>";
+{!! $title !!}
+```
+
+### obtenir l'age avec la date
+https://stackoverflow.com/a/19521323
+```php
+$date  =  $this->faker->date();
+$from  =  new  DateTime($date);
+$now  =  new  DateTime();
+$age  =  $from->diff($now)->y;
+```
+
+### git clone project laravel
+https://stackoverflow.com/a/39913449
+- `composer i`
+- copier `.env`
+- `php artisan key:generate`
+- créer une base de donnée avec le même nom que celui indiqué dans le `.env`
+-  `php artisan migrate`
+
+### destroy de relations
+```php
+foreach ($equipe->joueurs as joueur) {
+	$joueur->equipe_id = Equipe::where('nom', 'sans equipe')->first()->id;
+	$joueur->save();
+}
+$equipe->delete();
+return redirect()->back();
+```
+
+### ne pas supprimé de données
+ajouter une condition dans la méthode destroy de controller
+
+### pagination
+https://laravel.com/docs/8.x/pagination#customizing-the-pagination-view
+on peut modifier le style de la pagination
+```php
+php artisan vendor:publish --tag=laravel-pagination
+```
 
 
 > Written with [StackEdit](https://stackedit.io/).
