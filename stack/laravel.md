@@ -992,13 +992,136 @@ on peut modifier les variables d'environnement dans le fichier `RouteServiceProv
 public const HOME = '/dashboard';
 ```
 
-###
+### methodes
 ```php
 Bonjour {{ Auth::user()->name }}, comment va?
 Bonjour {{ Auth::id() }}, comment va?
 Bonjour {{ Auth::check() }}, comment va? // return 1 ou 0 si on est identifier ou pas
 ```
 
+## authorization
+### middleware vs policy vs gate
+- les middleware bloquent l'accès à une route et agissent directement dans le fichier `web.php`
+- les policy bloquent directement un crud (action) spécifique dans le controller.
+- les gates bloquent l'accès à une route spécifique comme le formulaire edit
+
+
+
+### 1. middleware
+auth vs middleware : authentification c'est une porte entre le backoffice et le front end et les middleware check s'il peut avoir accès au controller. **les middleware bloquent les routes de bases et agissent sur les routes de web.php**
+
+#### if auth::check
+on peut check dans les méthodes du controller si l'utilisateur est authentifier:
+```php
+if (Auth:check()) {
+	...
+} else {
+	return redirect()->back();
+}
+```
+mais il faut le faire à chaque méthode et c'est lourd
+
+#### création d'un middleware
+- étape 1: créer un middleware
+```shell
+php artisan make:middleware isConnected
+```
+- étape 2: ajouter la condition dans le middleware qui se trouve dans `app/Http/Middleware`
+- étape 3: déclarer le middleware dans `app/Http/Kernel` dans l'array `$routeMiddleware`
+```php
+'isConnected' => \App\Http\Middleware\isConnected::class,
+```
+- étape 4: ajouter le middleware à la route dans le fichier `web.php`
+```php
+Route::get('/', 'HomeController')->middleware('isConnected');
+```
+ou dans le controller ajouter la méthode pour appliqué les middleware à des méthodes spécifiques
+```php
+public function __construct() {
+	$this->middleware(['isConnected', 'isAdmin'])->only(['index', 'create']);
+}
+```
+
+#### rôles
+```php
+if (Auth::user()->role_id === 3) {
+	// is an admin
+} else {
+	// is not an admin
+}
+```
+
+##### ne pas modifier une autre donnée à partir d'un form
+https://youtu.be/umR2VbKW2so?t=462
+on va créer un middleware `isRealUser`qui va check si l'id du formulaire est la même de celui qui se trouve dans la route.
+```php
+$id = $request->route()->parameters()['id'];
+if ($request->user()->id === $id) {
+	// ce n'est pas un hack!
+} else {
+	return redirect()->back();
+}
+```
+
+
+on peut dissimuler le bouton create avec le mot clef `@can`
+```php
+@can('create', \App\Models\User::class)
+	// button create
+@endcan
+```
+
+### 2. policy
+bloque directement un crud spécifique dans le controller.
+on a accès au formulaire pour créer un modèle mais lorsqu'on submit on obtient une erreur 403.
+```php
+php artisan make:policy UserPolicy --model=User
+```
+
+la méthode suivante authorize l'utilisateur qui a le role 1 et 2 a créer un utilisateur
+```php
+public function create(User $user) {
+	return in_array($user->role_id, [1, 2]);
+}
+```
+
+et ensuite l'appel cette méthode dans le userController
+```php
+// dans UserController
+public function create(Request $request) {
+	$this->authorize("create", User::class);
+}
+
+public function delete(User $user) {
+	$this->authorize("create", $user);
+}
+```
+
+### 3. gate
+bloque les routes pour avoir accès aux méthodes du crud
+
+`AuthServiceProvider` dans `app/providers` pour bloquer certaines routes à certains utilisateurs (portes globales) dans la fonction boot
+
+l'exemple suivante bloque la route `create` de `user`:
+
+```php
+Gate::define("user-create", function() {
+	return in_array(Auth::user()->role_id, [1]);
+});
+```
+ou tout simplement
+```php
+Gate::define("user-create", function(User $user) {
+	return in_array($user->role_id, [1]);
+});
+```
+et dans `UserController``
+```php
+public function create() {
+	$this->authorize("user-create", User::class);
+	// ...
+}
+```
 ## erreurs et astuces
 ### error 500 server not found
 Si vous avez une erreur 500 Server, c'est parce que vous n'avez pas de fichier .env
@@ -1010,6 +1133,81 @@ et puis lancer
 php artisan key:generate
 ```
 cela arrive lorsqu'on clone un projet avec github
+
+## mail
+https://mailtrap.io/
+```php
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=a6805bf1c8afbf
+MAIL_PASSWORD=538cccdaca16cd
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=bilal@test.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+```
+php artisan make:mail FormulaireContact
+```
+dans `app/mail/` on ajoute l'attribut suivante dans la classe
+```php
+public $contenuEmail = $contenuEmail;
+```
+et aussi le constructeur
+```php
+public function __construct($contenuEmail)
+{
+	$this->contenuEmail = $contenuEmail;
+}
+```
+c'est dans la méthode `build` qu'on construit le mail, on doit construire une vue pour afficher l'email
+```php
+public function build()
+{
+	return $this->view('email');
+}
+```
+```html
+@extends('layouts.index')
+@section('content')
+	<h1>{{  $contenuEmail->name  }}</h1>
+	<h2>{{  $contenuEmail->email  }}</h2>
+	<h3>{{  $contenuEmail->subject  }}</h3>
+	<p>{{  $contenuEmail->message  }}</p>
+@endsection
+```
+
+et on doit créer un controleur pour le formulaire
+```
+php artisan make:controller FormulaireController
+```
+
+et dans ce controller on ajouter la méthode suivante :
+```php
+public  function  sendMail(Request  $request) {
+	$contenuEmail  = [
+		'name'  =>  $request->name,
+		'email'  =>  $request->email,
+		'subject'  =>  $request->subject,
+		'message'  =>  $request->message
+	];
+	Mail::to('bilal@test.com')->send(new  FormulaireContact($contenuEmail));
+	return  redirect('/#contact')->with('message', 'message sended!');
+}
+```
+et on ajoute la route suivante (post)
+```php
+Route::post('/send-mail', [FormulaireController::class, 'sendMail']);
+```
+et dans le formulaire on utilise l'`action`suivant sans oublier le `@csrf`:
+```php
+<form  action="/send-mail"  method="post"  role="form"  class="php-email-form">
+	@csrf
+	// ...
+</form>
+```
+
 
 ### 1 ERROR child compilations
 modifier les chemins dans le scss ou ajouter la ligne suivante dans webpack.mix.js (peut causer certains problèmes)
