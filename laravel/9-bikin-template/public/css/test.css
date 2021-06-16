@@ -293,3 +293,11 @@ form label {
     transition: all 0.3s ease-in-out;
     border-radius: 3px;
 }
+
+.text-theme {
+    color: #2d405f !important;
+}
+
+.bg-clear {
+    background-color:#f6f7ff !important;
+}

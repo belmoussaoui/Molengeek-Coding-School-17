@@ -19,4 +19,12 @@ class Section extends Model
     public function hero() {
         return $this->hasOne(Hero::class);
     }
+    
+    public function about() {
+        return $this->hasOne(About::class);
+    }
+    
+    public function feature() {
+        return $this->hasOne(Feature::class);
+    }
 }

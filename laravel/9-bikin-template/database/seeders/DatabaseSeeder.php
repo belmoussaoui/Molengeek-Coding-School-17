@@ -16,7 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SectionSeeder::class,
             UserSeeder::class,
-            HeroSeeder::class
+            HeroSeeder::class,
+            AboutSeeder::class,
+            IconSeeder::class,
+            FeatureSeeder::class,
+            FeatureItemSeeder::class
         ]);
     }
 }

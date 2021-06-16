@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FeatureItemController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\IconController;
+use App\Models\About;
+use App\Models\Hero;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +21,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $hero = Hero::first();
+    $about = About::first();
+    return view('home', compact('hero', 'about'));
 });
 
 Route::resource('/admin/hero', HeroController::class);
+Route::resource('/admin/about', AboutController::class);
+Route::resource('/admin/icons', IconController::class);
+Route::resource('/admin/features', FeatureController::class);
+Route::resource('/admin/feature-items', FeatureItemController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

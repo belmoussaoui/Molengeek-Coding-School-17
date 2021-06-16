@@ -53,7 +53,7 @@
                 </li>
                 <li class="nav-item {{ "dashboard" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('dashboard') }}">
-                        <p>Dashboard</p>
+                        <p class="getstarted">Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "hero.index" == Route::currentRouteName() ? 'active': '' }}">
@@ -61,10 +61,50 @@
                         <p>Hero Section</p>
                     </a>
                 </li>
+                <li class="nav-item {{ "about.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('about.index') }}">
+                        <p>About Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Features Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "services.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Services Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "portfolio.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Portfolio Section</p>
+                    </a>
+                </li>
+                {{-- <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Testimonials Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Team Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Contact Section</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('features.index') }}">
+                        <p>Footer Section</p>
+                    </a>
+                </li> --}}
             </ul>
         </div>
     </div>
-    <div class="main-panel text-center">
+    <div class="main-panel">
         <div class="container d-flex flex-column align-items-center justify-content-center aos-init aos-animate" data-aos="fade-up">
             @yield('content')
         </div>
