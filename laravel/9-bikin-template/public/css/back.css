@@ -299,5 +299,9 @@ form label {
 }
 
 .bg-clear {
-    background-color:#f6f7ff !important;
+    background-color: #f6f7ff !important;
+}
+
+.services .section-title h2::after {
+    background: #aabbd7;
 }

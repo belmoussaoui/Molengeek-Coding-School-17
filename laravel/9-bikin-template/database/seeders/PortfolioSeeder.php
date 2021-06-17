@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ServiceSeeder extends Seeder
+class PortfolioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,8 @@ class ServiceSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('services')->insert([
-            'section_id' => 4,
+        DB::table('portfolios')->insert([
+            'section_id' => 5,
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TestimonialItem;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +21,13 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
             IconSeeder::class,
             FeatureSeeder::class,
-            FeatureItemSeeder::class
+            FeatureItemSeeder::class,
+            ServiceSeeder::class,
+            ServiceItemSeeder::class,
+            PortfolioSeeder::class,
+            CardSeeder::class,
+            TestimonialSeeder::class,
+            TestimonialItemSeeder::class
         ]);
     }
 }

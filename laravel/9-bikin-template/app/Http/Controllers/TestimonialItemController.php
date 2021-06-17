@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feature;
+use App\Models\TestimonialItem;
 use Illuminate\Http\Request;
 
-class FeatureController extends Controller
+class TestimonialItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $feature = Feature::first();
-        return view('backoffice.feature.all', compact('feature'));
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class FeatureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\TestimonialItem  $testimonialItem
      * @return \Illuminate\Http\Response
      */
-    public function show(Feature $feature)
+    public function show(TestimonialItem $testimonialItem)
     {
         //
     }
@@ -53,43 +52,33 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\TestimonialItem  $testimonialItem
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit(TestimonialItem $testimonialItem)
     {
-        return view('backoffice.feature.edit', compact('feature'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\TestimonialItem  $testimonialItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feature $feature)
+    public function update(Request $request, TestimonialItem $testimonialItem)
     {
-        $request->validate([
-            'title' => 'required',
-            'text' => 'required',
-        ]);
-        $section = $feature->section;
-        $section->title = $request->title;
-        $section->text = $request->text;
-        $section->save();
-        $section->updated_at = now();
-
-        return redirect()->route('features.index')->with('message', 'Features Section has been updated');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\TestimonialItem  $testimonialItem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feature $feature)
+    public function destroy(TestimonialItem $testimonialItem)
     {
         //
     }

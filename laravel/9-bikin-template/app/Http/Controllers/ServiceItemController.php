@@ -57,7 +57,7 @@ class ServiceItemController extends Controller
      */
     public function edit(ServiceItem $serviceItem)
     {
-        //
+        return view('backoffice.service.item.edit', compact('serviceItem'));
     }
 
     /**
@@ -69,7 +69,19 @@ class ServiceItemController extends Controller
      */
     public function update(Request $request, ServiceItem $serviceItem)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'icon' => 'required',
+        ]);
+
+        $serviceItem->title = $request->title;
+        $serviceItem->description = $request->description;
+        $serviceItem->icon = $request->icon;
+        $serviceItem->save();
+        $serviceItem->updated_at = now();
+
+        return redirect()->route('services.index')->with('message', 'Services item has been updated');
     }
 
     /**

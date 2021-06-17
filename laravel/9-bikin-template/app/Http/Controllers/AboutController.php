@@ -58,7 +58,7 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-         return view('backoffice.about.edit', compact('about'));
+        return view('backoffice.about.edit', compact('about'));
     }
 
     /**

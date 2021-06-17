@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $service = Service::first();
+        return view('backoffice.service.all', compact('service'));
     }
 
     /**
@@ -57,7 +58,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view('backoffice.service.edit', compact('service'));
     }
 
     /**
@@ -69,7 +70,17 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'text' => 'required',
+        ]);
+        $section = $service->section;
+        $section->title = $request->title;
+        $section->text = $request->text;
+        $section->save();
+        $section->updated_at = now();
+
+        return redirect()->route('services.index')->with('message', 'Services Section has been updated');
     }
 
     /**

@@ -35,20 +35,23 @@
     <div class="col-xl-7 d-flex align-items-stretch" data-aos="fade-left">
         <div class="icon-boxes d-flex flex-column justify-content-center">
         <div class="row">
-            @foreach ($about->icons as $icon)
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="bx {{ $icon->icon }}"></i>
-                <h4>{{ $icon->title }}</h4>
-                <p>{{ $icon->description }}</p>
-                <div class="navbar d-flex justify-content-center">
-                    <a class="mx-1 getstarted" href="{{ route('icons.edit', $icon) }}">Edit</a>
-                    <form action={{ route('icons.destroy', $icon) }} method="post">
-                        @csrf
-                        @method('delete')
-                        <a href="" onclick="event.preventDefault(); this.closest('form').submit();" class="mx-1 getstarted">Delete</a>
-                    </form>
-                </div>
-                </div>
+            @foreach ($about->icons as $key => $icon)
+                @if ($key < 4)
+                    <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx {{ $icon->icon }}"></i>
+                        <h4>{{ $icon->title }}</h4>
+                        <p>{{ $icon->description }}</p>
+                        <div class="navbar d-flex justify-content-center">
+                            <a class="mx-1 getstarted" href="{{ route('icons.edit', $icon) }}">Edit</a>
+                            <form action={{ route('icons.destroy', $icon) }} method="post">
+                                @csrf
+                                @method('delete')
+                                <a href="" onclick="event.preventDefault(); this.closest('form').submit();" class="mx-1 getstarted">Delete</a>
+                            </form>
+                        </div>
+                    </div>
+                @endif
+                
             @endforeach
         </div>
         </div><!-- End .content-->

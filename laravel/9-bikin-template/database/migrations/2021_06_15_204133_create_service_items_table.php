@@ -15,6 +15,10 @@ class CreateServiceItemsTable extends Migration
     {
         Schema::create('service_items', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->string('icon');
+            $table->foreignId('service_id')->constrained('services');
             $table->timestamps();
         });
     }

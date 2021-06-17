@@ -61,7 +61,7 @@
                 {{-- <a href="" onclick="event.preventDefault(); this.closest('form').submit();" class="mx-1 getstarted">Delete</a> --}}
             </form>
         </div>
-        @endforeach
+    @endforeach
     </div>
 </div>
 </section>

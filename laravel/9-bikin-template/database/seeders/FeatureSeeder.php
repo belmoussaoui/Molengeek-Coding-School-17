@@ -14,9 +14,8 @@ class FeatureSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('features')->insert([
+        DB::table('features')->insert([
             'section_id' => 3,
-            
         ]);
     }
 }

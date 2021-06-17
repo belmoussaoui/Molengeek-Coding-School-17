@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feature;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
-class FeatureController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $feature = Feature::first();
-        return view('backoffice.feature.all', compact('feature'));
+        $testimonial = Testimonial::first();
+        return view('backoffice.testimonial.all', compact('testimonial'));
     }
 
     /**
@@ -42,10 +42,10 @@ class FeatureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function show(Feature $feature)
+    public function show(Testimonial $testimonial)
     {
         //
     }
@@ -53,43 +53,43 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit(Testimonial $testimonial)
     {
-        return view('backoffice.feature.edit', compact('feature'));
+        return view('backoffice.testimonial.edit', compact('testimonial'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feature $feature)
+    public function update(Request $request, Testimonial $testimonial)
     {
         $request->validate([
             'title' => 'required',
             'text' => 'required',
         ]);
-        $section = $feature->section;
+        $section = $testimonial->section;
         $section->title = $request->title;
         $section->text = $request->text;
         $section->save();
         $section->updated_at = now();
 
-        return redirect()->route('features.index')->with('message', 'Features Section has been updated');
+        return redirect()->route('testimonials.index')->with('message', 'Testimonial Section has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feature $feature)
+    public function destroy(Testimonial $testimonial)
     {
         //
     }

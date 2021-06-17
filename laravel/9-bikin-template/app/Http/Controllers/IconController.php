@@ -72,6 +72,7 @@ class IconController extends Controller
      */
     public function edit(Icon $icon)
     {
+        
         return view('backoffice.about.icon.edit', compact('icon'));
     }
 

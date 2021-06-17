@@ -26,7 +26,8 @@
 
 <!-- Template Main CSS File -->
 <link href={{ asset("css/style.css") }} rel="stylesheet">
-<link href={{ asset("css/test.css") }} rel="stylesheet">
+<!-- Backend CSS File -->
+<link href={{ asset("css/back.css") }} rel="stylesheet">
 
 <!-- =======================================================
 * Template Name: Bikin - v4.3.0
@@ -58,32 +59,32 @@
                 </li>
                 <li class="nav-item {{ "hero.index" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('hero.index') }}">
-                        <p>Hero Section</p>
+                        <p>Hero</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "about.index" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('about.index') }}">
-                        <p>About Section</p>
+                        <p>About</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('features.index') }}">
-                        <p>Features Section</p>
+                        <p>Features</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "services.index" == Route::currentRouteName() ? 'active': '' }}">
-                    <a class="nav-link" href="{{ route('features.index') }}">
-                        <p>Services Section</p>
+                    <a class="nav-link" href="{{ route('services.index') }}">
+                        <p>Services</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "portfolio.index" == Route::currentRouteName() ? 'active': '' }}">
-                    <a class="nav-link" href="{{ route('features.index') }}">
-                        <p>Portfolio Section</p>
+                    <a class="nav-link" href="{{ route('portfolio.index') }}">
+                        <p>Portfolio</p>
                     </a>
                 </li>
-                {{-- <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
-                    <a class="nav-link" href="{{ route('features.index') }}">
-                        <p>Testimonials Section</p>
+                <li class="nav-item {{ "testimonials.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('testimonials.index') }}">
+                        <p>Testimonials</p>
                     </a>
                 </li>
                 <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
@@ -91,6 +92,7 @@
                         <p>Team Section</p>
                     </a>
                 </li>
+                {{-- 
                 <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('features.index') }}">
                         <p>Contact Section</p>

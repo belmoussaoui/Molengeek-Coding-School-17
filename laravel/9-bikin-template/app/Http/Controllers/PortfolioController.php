@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feature;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
-class FeatureController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $feature = Feature::first();
-        return view('backoffice.feature.all', compact('feature'));
+        $portfolio = Portfolio::first();
+        return view('backoffice.portfolio.all', compact('portfolio'));
     }
 
     /**
@@ -42,10 +42,10 @@ class FeatureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(Feature $feature)
+    public function show(Portfolio $portfolio)
     {
         //
     }
@@ -53,43 +53,43 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit(Portfolio $portfolio)
     {
-        return view('backoffice.feature.edit', compact('feature'));
+        return view('backoffice.portfolio.edit', compact('portfolio'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feature $feature)
+    public function update(Request $request, Portfolio $portfolio)
     {
         $request->validate([
             'title' => 'required',
             'text' => 'required',
         ]);
-        $section = $feature->section;
+        $section = $portfolio->section;
         $section->title = $request->title;
         $section->text = $request->text;
         $section->save();
         $section->updated_at = now();
 
-        return redirect()->route('features.index')->with('message', 'Features Section has been updated');
+        return redirect()->route('portfolio.index')->with('message', 'Portfolio Section has been updated');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feature $feature)
+    public function destroy(Portfolio $portfolio)
     {
         //
     }
