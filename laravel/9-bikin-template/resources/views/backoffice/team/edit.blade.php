@@ -5,7 +5,7 @@
 <header id="header" class="fixed-top bg-transparent border-0">
     <div class="container d-flex align-items-center justify-content-between">
 
-    <h1 class="logo"><a href="index.html">Portfolio Section Edit</a></h1>
+    <h1 class="logo"><a href="index.html">Team Section Edit</a></h1>
 
     <nav id="navbar" class="navbar">
         <ul>
@@ -32,16 +32,16 @@
         <div class="row mt-2 pt-5">
             <div class="col-2"></div>
             <div class="col-8">
-                    <form id='form-edit' action={{ route('portfolio.update', $portfolio) }} method="post" enctype="multipart/form-data">
+                    <form id='form-edit' action={{ route('team.update', $team) }} method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
                             <label class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" value="{{$portfolio->section->title}}">
+                            <input type="text" class="form-control" name="title" value="{{$team->section->title}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Text</label>
-                            <input type="text" class="form-control" name="text" value="{{$portfolio->section->text}}">
+                            <input type="text" class="form-control" name="text" value="{{$team->section->text}}">
                         </div>
                     </form>
                </div>

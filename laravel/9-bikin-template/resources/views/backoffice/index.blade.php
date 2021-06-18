@@ -87,18 +87,18 @@
                         <p>Testimonials</p>
                     </a>
                 </li>
-                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
-                    <a class="nav-link" href="{{ route('features.index') }}">
+                <li class="nav-item {{ "team.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('team.index') }}">
                         <p>Team Section</p>
                     </a>
                 </li>
-                {{-- 
-                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
-                    <a class="nav-link" href="{{ route('features.index') }}">
+                
+                <li class="nav-item {{ "contact.index" == Route::currentRouteName() ? 'active': '' }}">
+                    <a class="nav-link" href="{{ route('contact.index') }}">
                         <p>Contact Section</p>
                     </a>
                 </li>
-                <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
+                {{-- <li class="nav-item {{ "features.index" == Route::currentRouteName() ? 'active': '' }}">
                     <a class="nav-link" href="{{ route('features.index') }}">
                         <p>Footer Section</p>
                     </a>

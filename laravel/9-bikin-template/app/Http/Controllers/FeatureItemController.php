@@ -98,7 +98,7 @@ class FeatureItemController extends Controller
         $featureItem->save();
         $featureItem->updated_at = now();
 
-        return redirect()->route('features.index')->with('message', 'Features item has been updated');
+        return redirect()->route('features.index')->with('message', 'Feature item has been updated');
     }
 
     /**

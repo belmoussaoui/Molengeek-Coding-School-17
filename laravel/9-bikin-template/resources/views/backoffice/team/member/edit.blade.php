@@ -4,12 +4,12 @@
 <header id="header" class="fixed-top bg-transparent border-0">
     <div class="container d-flex align-items-center justify-content-between">
 
-    <h1 class="logo"><a href="index.html">Testimonial Edit</a></h1>
+    <h1 class="logo"><a href="index.html">Member Edit</a></h1>
 
     <nav id="navbar" class="navbar">
         <ul>
             <li><a class="getstarted mx-2" onclick="event.preventDefault(); document.getElementById('form-edit').submit()">Submit</a></li>
-            <li><a class="getstarted mx-2" href="{{ route('service-items.index') }}">Back</a></li>
+            <li><a class="getstarted mx-2" href="{{ route('member.index') }}">Back</a></li>
             {{-- <li><a class="getstarted ms-2" href="/login">Log In</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -31,26 +31,23 @@
         <div class="row mt-2 pt-5">
             <div class="col-2"></div>
             <div class="col-8">
-                    <form id='form-edit' action={{ route('testimonial-items.update', $testimonialItem) }} method="post" enctype="multipart/form-data">
+                    <form id='form-edit' action={{ route('member.update', $member) }} method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="mb-3">
-                            <label class="form-label">Quote</label>
-                            <input type="text" class="form-control" name="quote" value="{{ $testimonialItem->quote }}">
-                        </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control" name="name" value="{{ $testimonialItem->name }}">
+                            <input type="text" class="form-control" name="name" value="{{$member->usertitle}}">
+                        </div> --}}
                         <div class="mb-3">
                             <label class="form-label">Job</label>
-                            <input type="text" class="form-control" name="job" value="{{ $testimonialItem->job }}">
+                            <input type="text" class="form-control" name="job" value="{{$member->job}}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Image</label>
                             <input type="file" class="form-control" name="image">
                         </div>
-                        <div class="text-center">
-                            <img class="img-fluid" src="{{ asset("img/$testimonialItem->image") }}" alt="">
+                        <div>
+                            <img class="img-fluid" src="{{ asset("img/team/$member->image") }}" alt="">
                         </div>
                         
                     </form>

@@ -9,11 +9,11 @@
         <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Bikin</h3>
             <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            {{ $contact->address_street }} <br>
+            {{ $contact->address_city }}, {{ $contact->address_number }}<br>
+            {{ $contact->address_country }} <br><br>
+            <strong>Phone:</strong> {{ $contact->phone1 }}<br>
+            <strong>Email:</strong> {{ $contact->email1 }}<br>
             </p>
         </div>
 

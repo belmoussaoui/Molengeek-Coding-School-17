@@ -1,5 +1,24 @@
+@extends('backoffice.index')
+
+@section('content')
+<!-- ======= Hero Section ======= -->
+<header id="header" class="fixed-top bg-transparent border-0">
+    <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"><a href="index.html">Contact Section</a></h1>
+
+    <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="getstarted mx-2" href="{{ route('contact.edit', $contact) }}">Edit</a></li>
+            {{-- <li><a class="getstarted ms-2" href="/login">Log In</a></li> --}}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact section-bg">
+<section id="contact" class="contact section-bg bg-transparent mt-4">
 <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -9,7 +28,7 @@
 
     <div class="row">
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
 
         <div class="row">
         <div class="col-md-12">
@@ -37,9 +56,8 @@
 
     </div>
 
-    <div class="col-lg-6 mt-4 mt-md-0">
-        <form  action="/send-mail"  method="post"  role="form"  class="php-email-form">
-        @csrf
+    {{-- <div class="col-lg-6 mt-4 mt-md-0">
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
         <div class="row">
             <div class="col-md-6 form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -61,9 +79,10 @@
         </div>
         <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
-    </div>
+    </div> --}}
 
     </div>
 
 </div>
 </section><!-- End Contact Section -->
+@endsection

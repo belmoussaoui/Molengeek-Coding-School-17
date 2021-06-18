@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Contact;
 use App\Models\TestimonialItem;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             SectionSeeder::class,
-            UserSeeder::class,
             HeroSeeder::class,
             AboutSeeder::class,
             IconSeeder::class,
@@ -27,7 +27,12 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             CardSeeder::class,
             TestimonialSeeder::class,
-            TestimonialItemSeeder::class
+            TestimonialItemSeeder::class,
+            TeamSeeder::class,
+            MemberSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
+            ContactSeeder::class
         ]);
     }
 }
