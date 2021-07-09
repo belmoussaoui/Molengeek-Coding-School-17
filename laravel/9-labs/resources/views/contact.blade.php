@@ -2,11 +2,10 @@
 
 @section('content')
     @include('partials.header')
-    @include('partials.page-header')
-    <!-- Google map -->
-    <div class="map" id="map-area"></div>
-    @include('partials.contact')
+    @include('partials.contact.page-header')
+    
+    <iframe width="100%" height="750px" src="https://maps.google.com/maps?q=%7B%7B{{ $contact->marker }}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>
+    
 
-    <script src="{{ asset("https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo") }}"></script>
-	<script src="{{ asset("js/map.js") }}"></script>
+    @include('partials.contact')
 @endsection

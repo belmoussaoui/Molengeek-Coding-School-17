@@ -60,7 +60,7 @@ footer {
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
     .sidebar {
         width: 100%;
         height: auto;
@@ -70,9 +70,6 @@ footer {
         float: left;
     }
     div.content {
-        margin-left: 0;
-    }
-    footer {
         margin-left: 0;
     }
 }

@@ -1,0 +1,71 @@
+% !TEX encoding = UTF-8 Unicode
+% entity-relation model
+% El Moussaoui Bilal
+% 21/03/17
+
+\RequirePackage{tikz}
+
+% les commandes spéciaux relatives à ce document
+\newcommand\entity[1]{\textcolor{color5}{\textbf{\texttt{#1}}}}
+\newcommand\attribute[1]{{\texttt{#1}}}
+\newcommand\relation[1]{\textit{{\texttt{#1}}}}
+\newcommand\key[1]{\textcolor{color3}{\underline{#1}}}
+\newcommand\trad[2]{\entity{#1}\texttt{(#2)}}
+\newcommand\refer[2]{\hspace*{1cm}\attribute{#1} \textit{référence} \attribute{#2}}
+
+% Création d'une entité.
+% 	#1 -- le nom de l'entité
+%	#2 -- la position en x, y
+%	#3 -- la liste des attributs
+\usetikzlibrary{shapes} % rectangle split
+\tikzstyle{entity} = [draw, rectangle, black, very thick, minimum width=6em, minimum height=3em, fill=color1!20, rectangle split, rectangle split parts=2, align=left, font=\sffamily] 
+\newcommand\tikzentity[3]{\node[entity] (#1) at (#2) {#1 \nodepart{second} #3};}
+
+% Création d'une relation.
+% 	#1 -- le nom de la relation
+%	#2 -- la position en x, y
+\tikzstyle{relation} = [draw, ellipse, black, very thick, minimum width=2em, aspect=1, font=\sffamily]
+\newcommand\tikzrelation[2]{\node[relation] (#1) at (#2) {#1};}
+
+% Création d'un lien.
+% 	#1 -- le nom de l'entité de départ 
+%	#2 -- le nom de l'entité d'arrivé
+%	#3 -- la jointure [to, --, |-, |-]
+\usetikzlibrary{arrows}
+\tikzstyle{link} = [draw, thick]
+\newcommand\tikzlink[3]{\draw[link] (#1) #3 (#2);}
+
+% Création d'un lien de relation.
+% 	#1 -- le nom de l'entité de départ 
+%	#2 -- le nom de l'entité d'arrivé
+%	#3 -- la jointure [to, --, |-, |-]
+%	#4 -- la cardinalité
+%	#5 -- la position de la cardinalité [above, left, right, below] 
+\usetikzlibrary{arrows}
+\tikzstyle{linkrelation} = [draw, thick]
+\newcommand\tikzlinkrelation[5]{\draw[linkrelation] (#1) #3 node[font=\sffamily, #5] {(#4)} (#2);}
+
+
+% Création d'un lien d'héritage.
+% 	#1 -- le nom de l'entité de départ 
+%	#2 -- le nom de l'entité d'arrivé
+%	#3 -- la jointure [to, --, |-, |-]
+%	#4 -- le type d'héritage [t, p, e, o]
+%	#5 -- la position du type [above, left, right, below] 
+\usetikzlibrary{arrows}
+\tikzstyle{linkinherit} = [-open triangle 90, draw, thick]
+\newcommand\tikzlinkinherit[5]{\draw[linkinherit] (#1) #3 node[font=\sffamily, #5] {(#4)}  (#2);}
+
+
+
+% Exemple d'utilisation.
+\iffalse
+\begin{tikzpicture}
+\tikzentity{A}{0, 0}{attribute\\test}
+\tikzrelation{Relation}{3, 0}
+\tikzentity{B}{6, 0}{attribute\\test}
+\tikzlink{A}{Relation}
+\tikzlink{Relation}{B}
+\end{tikzpicture}
+\end{center}
+\fi

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Footer;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -30,6 +31,7 @@ class FormulaireContact extends Mailable
      */
     public function build()
     {
-        return $this->view('email');
+        $footer = Footer::first(); 
+        return $this->view('mail.contact', compact('footer'));
     }
 }

@@ -2,6 +2,7 @@
 désactivation de l'antivirus car un fichier de laravel est considéré comme un virus.
 
 https://laracasts.com/
+https://laravel.sillo.org/
 
 ## installation
 https://5balloons.info/how-to-install-laravel-with-mamp-on-mac-os/
@@ -289,7 +290,7 @@ npm run dev
 ```
 
 ## utilitaires
-laravel permet d'utiliser des fonctions préfètes.
+laravel permet d'utiliser des fonctions pré-faites.
 ```
 $fruits = Arr::shuffle(["pomme", "fraise", "banane", "ananas"]);
 ```
@@ -938,6 +939,27 @@ public function user() {
 ```
 
 ### many to many
+https://www.youtube.com/watch?v=9aUvEgY6N_I&t=744s
+
+pour delete :
+```php
+$article->tags()->detach();
+$article->categories()->detach();
+```
+
+pour update :
+```php
+$article->categories()->sync($request->categories);
+$article->tags()->sync($request->tags);
+```
+
+pour store :
+```php
+$article->categories()->attach($request->categories);
+$article->tags()->attach($request->tags);
+```
+
+1 juillet 2021
 
 ## authentification
 ce sont les autorisations pour avoir accès à la base de données ou a certains privilèges.
@@ -1066,7 +1088,7 @@ if ($request->user()->id === $id) {
 
 on peut dissimuler le bouton create avec le mot clef `@can`
 ```php
-@can('create', \App\Models\User::class)
+@can('user-create', \App\Models\User::class)
 	// button create
 @endcan
 ```
@@ -1092,8 +1114,8 @@ public function create(Request $request) {
 	$this->authorize("create", User::class);
 }
 
-public function delete(User $user) {
-	$this->authorize("create", $user);
+public function destroy(User $user) {
+	$this->authorize("delete", $user);
 }
 ```
 
@@ -1122,17 +1144,6 @@ public function create() {
 	// ...
 }
 ```
-## erreurs et astuces
-### error 500 server not found
-Si vous avez une erreur 500 Server, c'est parce que vous n'avez pas de fichier .env
-
-Vous devez créer ce fichier à la racine du projet, copier ce qu'il y a dans le fichier .env.example et le mettre dans le fichier .env
-
-et puis lancer
-```
-php artisan key:generate
-```
-cela arrive lorsqu'on clone un projet avec github
 
 ## mail
 https://mailtrap.io/
@@ -1152,7 +1163,7 @@ php artisan make:mail FormulaireContact
 ```
 dans `app/mail/` on ajoute l'attribut suivante dans la classe
 ```php
-public $contenuEmail = $contenuEmail;
+public $contenuEmail;
 ```
 et aussi le constructeur
 ```php
@@ -1207,7 +1218,26 @@ et dans le formulaire on utilise l'`action`suivant sans oublier le `@csrf`:
 	// ...
 </form>
 ```
+## axios
+traduction du js en php pour pouvoir utiliser react avec laravel
+il faut avoir terminer son projet react entièrement avant de l'importer dans laravel
 
+```
+php artisan ui react
+npm i && npm run dev
+```
+
+## erreurs et astuces
+### error 500 server not found
+Si vous avez une erreur 500 Server, c'est parce que vous n'avez pas de fichier .env
+
+Vous devez créer ce fichier à la racine du projet, copier ce qu'il y a dans le fichier .env.example et le mettre dans le fichier .env
+
+et puis lancer
+```
+php artisan key:generate
+```
+cela arrive lorsqu'on clone un projet avec github
 
 ### 1 ERROR child compilations
 modifier les chemins dans le scss ou ajouter la ligne suivante dans webpack.mix.js (peut causer certains problèmes)
@@ -1244,10 +1274,10 @@ $title = "<h1>je suis un h1</h1>";
 ### obtenir l'age avec la date
 https://stackoverflow.com/a/19521323
 ```php
-$date  =  $this->faker->date();
-$from  =  new  DateTime($date);
-$now  =  new  DateTime();
-$age  =  $from->diff($now)->y;
+$date = $this->faker->date();
+$from = new DateTime($date);
+$now = new DateTime();
+$age = $from->diff($now)->y;
 ```
 
 ### git clone project laravel
@@ -1273,10 +1303,76 @@ ajouter une condition dans la méthode destroy de controller
 
 ### pagination
 https://laravel.com/docs/8.x/pagination#customizing-the-pagination-view
+https://adevait.com/laravel/laravel-overwriting-default-pagination-system
 on peut modifier le style de la pagination
 ```php
 php artisan vendor:publish --tag=laravel-pagination
 ```
+
+### font awesome avec authentification
+```js
+mix.sass("resources/sass/app.scss", "public/css")
+.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css/tailwind.css', [
+	require('postcss-import'),
+	require('tailwindcss'),
+	require('autoprefixer'),
+]);
+```
+```sass
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts"; @import "~@fortawesome/fontawesome-free/scss/fontawesome"; @import "~@fortawesome/fontawesome-free/scss/regular"; @import "~@fortawesome/fontawesome-free/scss/solid"; @import "~@fortawesome/fontawesome-free/scss/brands";
+```
+
+### newsletter
+https://mailtrap.io/blog/laravel-notification-tutorial/
+https://www.youtube.com/watch?v=gtMXs9a1e0Y
+
+https://www.positronx.io/laravel-notification-example-create-notification-in-laravel/
+
+### pagination avec recherche
+https://github.com/laravel/framework/issues/19441#issuecomment-305491111
+```php
+<div  class="page-pagination">
+{{  $posts->appends(request()->except('page')) }}
+</div>
+```
+
+###  partage de ressource
+appserviceproviders fonction boot
+```php
+View::share
+```
+
+### Mail
+```
+php artisan make:mail NewsSender --markdown=mail.newsletter
+```
+```php
+Mail::to($request->mail)->send(new NewsSender($request));
+```
+
+```php
+return $this->markdown('mail.newsletter');
+// par
+return $this->from('contact@labs.com')->markdown('mail.newsletter')->subject('Newsletter');
+```
+
+```php
+$mails = Newsletter::all();
+foreach ($mails as mail) {
+	Mail::to...
+}
+```
+
+
+### stripe
+https://www.youtube.com/watch?v=1dt-g5Au6ZI&t=11s
+https://laravel.com/docs/8.x/billing
+https://github.com/ludoguenet/ecommerce-app-laravel-6
+https://stripe.com/docs
+
+1- création d'un controller (vue index)
+2- installation de stripe
+
 
 
 > Written with [StackEdit](https://stackedit.io/).

@@ -7,12 +7,13 @@
 	<meta name="keywords" content="lab, onepage, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="{{ asset("img/favicon.ico") }}" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
 
 	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{{ asset("css/app.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/flaticon.css") }}"/>
@@ -31,17 +32,14 @@
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader">
-			<img src="img/logo.png" alt="">
+			<img class="inline-block" src="img/logo.png" alt="">
 			<h2>Loading.....</h2>
 		</div>
 	</div>
     
     @yield('content')
 
-    <!-- Footer section -->
-	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
-	</footer>
+    @include('partials.footer')
 	<!-- Footer section end -->
 	
     <!--====== Javascripts & Jquery ======-->

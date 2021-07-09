@@ -1,21 +1,49 @@
 <!-- Contact section -->
-<div class="contact-section spad fix">
+<div id="contact" class="contact-section spad fix">
     <div class="container">
         <div class="row">
             <!-- contact info -->
+
             <div class="col-md-5 col-md-offset-1 contact-info col-push">
+                 @auth
+                    @if (Auth::user()->canEdit())
+                        <div class="edit edit-2">
+                            <a class="edit" href="/contact/{{ $contact->id }}/edit">
+                                Edit Contact
+                            </a>
+                        </div>
+                    @endif
+                @endauth
                 <div class="section-title left">
-                    <h2>Contact us</h2>
+                    <h2>{{ $contact->title }}</h2>
                 </div>
-                <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
-                <h3 class="mt60">Main Office</h3>
-                <p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-                <p class="con-item">0034 37483 2445 322</p>
-                <p class="con-item">hello@company.com</p>
+                <p>{{ $contact->description }} </p>
+                <h3 class="mt60">{{ $contact->subtitle }}</h3>
+                <p class="con-item">{{ $contact->address1 }} <br> {{ $contact->address2 }} </p>
+                <p class="con-item">{{ $contact->number }}</p>
+                <p class="con-item">{{ $contact->mail }}</p>
             </div>
             <!-- contact form -->
             <div class="col-md-6 col-pull">
-                <form class="form-class" id="con_form">
+                <!-- newsletter section -->
+                @if (count($errors->all()))    
+                    <div class="mb-12">
+                        <div class="p-3 text-center" style="background-color: #2be6ab;">
+                            @foreach ($errors->all() as  $message)
+                            <p class="text-white" style="color: #6a23b5; text-transform: uppercase; font-weight: 600">{{ $message }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+                @if (session('message'))
+                 <div class="mb-12">
+                        <div class="p-3 text-center" style="background-color: #2be6ab;">
+                            <p class="text-white" style="color: #6a23b5; text-transform: uppercase; font-weight: 600">{{ session('message') }}</p>
+                        </div>
+                    </div>
+                @endif
+                <form action="/send-mail"  method="post"  role="form"  class="form-class" id="con_form">
+                    @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <input type="text" name="name" placeholder="Your name">

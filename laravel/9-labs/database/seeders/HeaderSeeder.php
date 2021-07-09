@@ -14,7 +14,7 @@ class HeaderSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('header')->insert([
+         DB::table('headers')->insert([
             'logo' => 'logo.png',
             'item1' => 'Home',
             'item2' => 'Services',

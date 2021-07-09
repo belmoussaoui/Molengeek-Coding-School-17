@@ -21,7 +21,7 @@
             <div class="col-md-4 col-sm-6">
                 <div class="sv-card">
                     <div class="card-img">
-                        <img src="{{ asset("img/$item->image") }}" alt="">
+                        <img style="height:100%;" src="{{ asset("img/$item->image") }}" alt="">
                     </div>
                     <div class="card-text">
                         <h2>#{{ $item->id }}</h2>
@@ -38,4 +38,7 @@
             </div>
         @endforeach
 	</div>
+    <div>
+        {{ $heroItems->links() }}
+    </div>
 @endsection

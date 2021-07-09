@@ -9,7 +9,7 @@ class HeroItem extends Model
 {
     use HasFactory;
 
-        public function hero() {
+    public function hero() {
         return $this->belongsTo(Hero::class);
     }
 }

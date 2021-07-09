@@ -30,6 +30,6 @@ class HeroController extends Controller
 
         $hero->updated_at = now();
         $hero->save();
-        return redirect('/#hero')->with('message', 'The Hero section has been updated.');
+        return redirect('/#hero');//->with('message', 'The Hero section has been updated.');
     }
 }

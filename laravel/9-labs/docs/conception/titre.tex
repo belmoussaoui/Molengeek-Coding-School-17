@@ -1,0 +1,84 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{emb}
+\RequirePackage{er}
+
+\begin{document}
+\thispagestyle{firstpage}
+\maketitle
+
+% !TEX encoding = UTF-8 Unicode
+
+\section{Le Blog}
+%-------------------------------------------------------------------------------------------------------------------------------------------------%
+% Le diagramme EA
+%-------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Le diagramme EA}
+\begin{center}
+\vspace{1cm}
+\begin{tikzpicture}
+
+\def\y{-2}
+\def\x{2}
+% Les entités
+\tikzentity{Post}{\x*0, \y*1}{\key{id}\\title\\content\\created\_at\\thumbnail}
+\tikzentity{Comment}{\x*-2, \y*3}{\key{id}\\subject\\message\\created\_at}
+\tikzentity{User}{\x*-2, \y*-1}{\key{id}\\name\\email\\password}
+\tikzentity{Tag}{\x*2, \y*3}{\key{id}\\name}
+\tikzentity{Categorie}{\x*2, \y*-1}{\key{id}\\name}
+
+
+% Les relations
+\tikzrelation{Affiche}{\x*0, \y*3}
+\tikzrelation{Ecrit}{\x*0, \y*-1}
+\tikzrelation{Envoie}{\x*-2, \y*1}
+\tikzrelation{Possède}{\x*2, \y*1}
+
+
+	% Utilisateur- Consulte -- Cinéma
+\tikzlinkrelation{Post}{Affiche}{to}{1, 1}{above right}
+\tikzlinkrelation{Comment}{Affiche}{to}{0, n}{below}
+
+\tikzlinkrelation{Post}{Possède}{to}{1, n}{below}
+\tikzlinkrelation{Categorie}{Possède}{to}{1, n}{above right}
+
+\tikzlinkrelation{Tag}{Possède}{to}{1, n}{below right}
+
+\tikzlinkrelation{User}{Ecrit}{to}{1, 1}{above left}
+\tikzlinkrelation{Post}{Ecrit}{to}{0, n}{below right}
+
+\tikzlinkrelation{User}{Envoie}{to}{1, 1}{above left}
+\tikzlinkrelation{Comment}{Envoie}{to}{0, n}{below right}
+
+\end{tikzpicture}
+\end{center}
+
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------%
+% Le modèle relationnel
+%-------------------------------------------------------------------------------------------------------------------------------------------------%
+\newpage
+\subsection{Le modèle relationnel}
+\noindent
+\trad{User}{\key{id}, name email, password}\\
+\trad{Post}{\key{id}, title, content, created\_at, thumbnail, user\_id}\\
+\refer{user\_id}{User.id}\\
+\trad{Comment}{\key{id}, subject, message, created\_at, user\_id, post\_id}\\
+\refer{user\_id}{User.id}\\
+\refer{post\_id}{Post.id}\\
+
+\noindent
+\trad{Categorie}{\key{id}, name}\\
+\refer{user\_id}{User.id}\\
+\trad{PostCategorie}{\key{id}, post\_id, categorie\_id}\\
+\refer{post\_id}{Post.id}\\
+\refer{categorie\_id}{Categorie.id}\\
+\trad{Tag}{\key{id}, name}\\
+\trad{PostTag}{\key{id}, post\_id, tag\_id}\\
+\refer{post\_id}{Post.id}\\
+\refer{tag\_id}{Tag.id}\\
+
+
+
+
+\end{document}

@@ -7,12 +7,13 @@
 	<meta name="keywords" content="lab, onepage, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+	<link href="{{ asset("img/favicon.ico") }}" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
 
 	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{{ asset("css/app.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/font-awesome.min.css") }}"/>
 	<link rel="stylesheet" href="{{ asset("css/flaticon.css") }}"/>
@@ -33,20 +34,27 @@
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader">
-			<img src="img/logo.png" alt="">
+			<img class="inline-block" src="img/logo.png" alt="">
 			<h2>Loading.....</h2>
 		</div>
 	</div>
 
     <header class="header-section sidebar text-center">
         <div class="logo d-block">
-            <img src={{ asset("img/logo.png") }} alt=""><!-- Logo -->
+            <a href="/">
+                <img src={{ asset("img/logo.png") }} alt="">
+            </a><!-- Logo -->
         </div>
         <!-- Navigation -->
         <div class="responsive"><i class="fa fa-bars"></i></div>
         <nav>
             <ul class="menu-list">
-                <li class="active"><a href="{{ route("home") }}">Hero</a></li>
+                <li class="{{ "hero-items" == explode(".", Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("hero-items.index") }}">Slider Images</a></li>
+                <li class="{{ "testimonial-items" == explode(".",Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("testimonial-items.index") }}">Testimonial</a></li>
+                <li class="{{ "service-items" == explode(".",Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("service-items.index") }}">Services</a></li>
+                <li class="{{ "users" == explode(".",Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("users.index") }}">Users</a></li>
+                <li class="{{ "feature-items" == explode(".",Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("feature-items.index") }}">Features</a></li>
+                <li class="{{ "posts" == explode(".",Route::currentRouteName())[0] ? 'active': '' }}"><a href="{{ route("posts.index") }}">Posts</a></li>
             </ul>
         </nav>
     </header>

@@ -15,7 +15,7 @@ class HeroItemController extends Controller
      */
     public function index()
     {
-        $heroItems = HeroItem::all();
+        $heroItems = HeroItem::paginate(3);
         return view('backoffice.hero.item.all', compact('heroItems'));
     }
 

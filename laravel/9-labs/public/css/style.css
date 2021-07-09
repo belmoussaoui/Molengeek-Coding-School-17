@@ -1719,3 +1719,78 @@ ul {
         margin-bottom: 20px;
     }
 }
+
+.edit {
+    text-align: center;
+    margin: 20px 0px;
+    font-family: "Oswald", sans-serif;
+}
+
+.edit a {
+    text-align: right;
+    background: transparent;
+    color: #6a23b5;
+    border: 1px solid #6a23b5;
+    border-radius: 0%;
+    padding: 8px 8px;
+    font-size: 15px;
+}
+
+.edit-2 a {
+    background-color: #2be6ab;
+    color: #6a23b5;
+}
+
+img {
+    display: inline;
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+    /* -webkit-appearance: none; */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border-color: #6b7280;
+    border-width: 1px;
+    border-radius: 0px;
+    padding-top: 0.5rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    font-size: inherit !important;
+    line-height: 1.5rem;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.form-class input[type="password"] {
+    width: 100%;
+    margin-bottom: 26px;
+    border: none;
+    background: #f6edfb;
+    padding: 17px 20px;
+}
+
+.form-class input[type="email"] {
+    width: 100%;
+    margin-bottom: 26px;
+    border: none;
+    background: #f6edfb;
+    padding: 17px 20px;
+}
